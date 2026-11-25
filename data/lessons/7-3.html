@@ -1,0 +1,27 @@
+<div class="note info">3 past problems (two in our instructor's review). §7.3 is named on the exam announcement, so expect at least one problem.</div>
+<h2>What you need to know (strategy table)</h2>
+<div class="box def"><div class="box-title">$\int\sin^mx\cos^nx\,dx$</div><ul>
+<li>$n$ odd: save one $\cos x$, convert the rest with $\cos^2=1-\sin^2$, put $u=\sin x$.</li>
+<li>$m$ odd: save one $\sin x$, convert with $\sin^2=1-\cos^2$, put $u=\cos x$.</li>
+<li>Both even: use the half-angle formulas $\sin^2x=\frac{1-\cos2x}2$, $\cos^2x=\frac{1+\cos2x}2$.</li></ul></div>
+<div class="box def"><div class="box-title">$\int\tan^mx\sec^nx\,dx$</div><ul>
+<li>$n$ even: save $\sec^2x$, convert the rest with $\sec^2=1+\tan^2$, put $u=\tan x$.</li>
+<li>$m$ odd: save $\sec x\tan x$, convert with $\tan^2=\sec^2-1$, put $u=\sec x$.</li>
+<li>Only $\tan^mx$: split off $\tan^2x=\sec^2x-1$ repeatedly.</li></ul></div>
+<div class="box def"><div class="box-title">Must-know integrals and identities</div>
+$\int\tan x\,dx=\ln|\sec x|+C$, $\ \int\sec x\,dx=\ln|\sec x+\tan x|+C$<br>
+$\sin A\cos B=\frac12[\sin(A-B)+\sin(A+B)]$, $\ \sin A\sin B=\frac12[\cos(A-B)-\cos(A+B)]$, $\ \cos A\cos B=\frac12[\cos(A-B)+\cos(A+B)]$</div>
+<h2>Worked examples</h2>
+<details class="example" open><summary>Example 1 (Review Ch7 #3): $\int_0^{\pi/3}\sin^43x\cos^33x\,dx$</summary>
+<p>Odd cosine: $\sin^43x(1-\sin^23x)\cos3x$, $u=\sin3x$; limits $0\to\sin\pi=0$ ⇒ the integral is $0$.</p></details>
+<details class="example"><summary>Example 2 (Review Ch7 #4): $\int\tan^4x\,dx$</summary>
+<p>$\tan^4x=\tan^2x\sec^2x-\sec^2x+1$ ⇒ $\frac{\tan^3x}3-\tan x+x+C$.</p></details>
+<details class="example"><summary>Example 3 (Review Ch7 #5): $\int\sqrt{\tan x}\sec^4x\,dx$</summary>
+<p>Even secant: $\sqrt{\tan x}(1+\tan^2x)\sec^2x$, $u=\tan x$: $\frac23\tan^{3/2}x+\frac27\tan^{7/2}x+C$.</p></details>
+<details class="example"><summary>Example 4 (both even): $\int\cos^2x\,dx$</summary>
+<p>$\int\frac{1+\cos2x}2dx=\frac x2+\frac{\sin2x}4+C$.</p></details>
+<div class="box mistake"><div class="box-title">Common mistakes</div><ul>
+<li>Saving the wrong factor (with $m$ odd, you must save $\sin x$, not $\cos x$).</li>
+<li>Forgetting the chain-rule factor: $u=\sin3x$ gives $du=3\cos3x\,dx$.</li>
+<li>Mixing up $\sec^2=1+\tan^2$ and $\tan^2=\sec^2-1$.</li></ul></div>
+<div class="box tip"><div class="box-title">Exam tips</div><ul><li>First decide which power is odd or even and write the plan (“save $\cos x$, $u=\sin x$”). The rest is mechanical.</li></ul></div>

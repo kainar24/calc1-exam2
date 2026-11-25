@@ -1,0 +1,34 @@
+<p class="muted small">Follows Lecture 8, slides 28–36.</p>
+
+<h2>1. Position and displacement</h2>
+<div class="box def"><div class="box-title">Definition</div>Motion of a particle along a straight line is called <b>rectilinear motion</b>. As the particle moves along the $s$-axis, its coordinate is a function of time, $s=s(t)$: the <b>position function</b>. The graph of $s$ against $t$ is the <b>position versus time curve</b>; where $s(t)&gt;0$ the particle is on the positive side of the origin, where $s(t)&lt;0$ it is on the negative side.<br>
+If $s(t_1)$ and $s(t_2)$ are the positions at times $t_1,t_2$, then $s(t_2)-s(t_1)$ is the <b>displacement</b> over $[t_1,t_2]$.</div>
+<details class="example"><summary>Lecture example: reading a position–time graph</summary>
+<p>The particle is at $s=-3$ when $t=0$. It moves in the positive direction until $t=4$ (since $s$ is increasing), reaching $s=3$. At $t=4$ it turns around and travels in the negative direction until $t=7$ (since $s$ is decreasing). At $t=7$ it is at $s=-1$ and stays there, since $s$ is constant for $t&gt;7$.</p></details>
+
+<h2>2. Velocity, speed, acceleration</h2>
+<div class="box def"><div class="box-title">Definitions</div>
+<b>Velocity</b>: $v(t)=s'(t)=\dfrac{ds}{dt}$. Its sign tells the direction: $v&gt;0$ ⇒ $s$ increasing (moving in the positive direction); $v&lt;0$ ⇒ moving in the negative direction.<br>
+<b>Speed</b>: $|v(t)|=|s'(t)|=\left|\dfrac{ds}{dt}\right|$: how fast the particle moves; always $\ge0$, carries no direction.<br>
+<b>Acceleration</b>: $a(t)=v'(t)=\dfrac{dv}{dt}=s''(t)=\dfrac{d^2s}{dt^2}$.</div>
+<details class="example" open><summary>Lecture example: $s(t)=t^3-6t^2$</summary>
+<ol><li><b>Position</b>: $s(t)=t^2(t-6)$: negative side of the origin for $0&lt;t&lt;6$, positive side for $t&gt;6$; at the origin at $t=0$ and $t=6$.</li>
+<li><b>Velocity</b>: $v(t)=3t^2-12t=3t(t-4)$: moving in the negative direction for $0&lt;t&lt;4$, positive direction for $t&gt;4$, momentarily stopped at $t=0$ and $t=4$.</li>
+<li><b>Speed</b>: $|v(t)|=3t|t-4|$: increasing for $0&lt;t&lt;2$ and $t&gt;4$, decreasing for $2&lt;t&lt;4$.</li>
+<li><b>Acceleration</b>: $a(t)=6t-12=6(t-2)$.</li></ol></details>
+
+<h2>3. Speeding up and slowing down</h2>
+<div class="box thm"><div class="box-title">Remark (key rule)</div>A particle in rectilinear motion is <b>speeding up</b> when its velocity and acceleration have the <b>same sign</b>, and <b>slowing down</b> when they have <b>opposite signs</b>.</div>
+<details class="example"><summary>Lecture example (continued): $v=3t(t-4)$, $a=6(t-2)$</summary>
+<p>Same sign for $0&lt;t&lt;2$ (both negative) and for $t&gt;4$ (both positive) ⇒ speeding up. Opposite signs for $2&lt;t&lt;4$ ($v&lt;0$, $a&gt;0$) ⇒ slowing down. This agrees with the speed graph above.</p></details>
+<details class="example" open><summary>Lecture example: analyzing $s(t)=2t^3-21t^2+60t+3$</summary>
+<ol><li>$v(t)=6t^2-42t+60=6(t-2)(t-5)$; $a(t)=12t-42=12\left(t-\frac72\right)$.</li>
+<li>Sign lines: $v$: $+$ on $(0,2)$, $-$ on $(2,5)$, $+$ for $t&gt;5$. $a$: $-$ before $\frac72$, $+$ after.</li>
+<li>Change in speed: slowing down on $(0,2)$, speeding up on $(2,\frac72)$, slowing down on $(\frac72,5)$, speeding up for $t&gt;5$.</li>
+<li>The path on the $s$-axis: starts at $s(0)=3$, moves right to $s(2)=55$, turns around, passes $s(\frac72)=41.5$ (where it switches from speeding up to slowing down), stops at $s(5)=28$, turns around again and moves right forever.</li></ol></details>
+
+<h2>Checklist for exam problems</h2>
+<ul><li>“When is the particle at rest / does it change direction?” → solve $v=0$ and check that $v$ changes sign.</li>
+<li>“Velocity when the acceleration is $k$” → solve $a(t)=k$ for $t$, then plug into $v$.</li>
+<li>“Speeding up / slowing down” → two sign lines ($v$ and $a$) and compare.</li>
+<li>“Maximum acceleration / velocity on $[t_0,t_1]$” → closed-interval method from §4.4 applied to $a$ or $v$.</li></ul>

@@ -1,0 +1,41 @@
+<p class="muted small">Follows Lecture 11, slides 35–43.</p>
+
+<h2>1. Position from velocity, velocity from acceleration</h2>
+<div class="box def"><div class="box-title">Idea</div>Since $v(t)=s'(t)$ and $a(t)=v'(t)$, $s$ is an antiderivative of $v$ and $v$ is an antiderivative of $a$:
+$$s(t)=\int v(t)\,dt,\qquad v(t)=\int a(t)\,dt.$$
+Knowing $v(t)$ gives a <b>family</b> of position functions (vertical shifts of one another). If we also know the position $s_0$ at one time $t_0$, there is exactly one position function with $s(t_0)=s_0$. Similarly, $a(t)$ plus one known velocity gives $v(t)$.</div>
+<details class="example" open><summary>Lecture example: $v(t)=\cos\pi t$, $s=4$ at $t=0$. Find $s(t)$.</summary>
+<p>$s(t)=\int\cos\pi t\,dt=\frac1\pi\sin\pi t+C$; $4=s(0)=0+C$ ⇒ $s(t)=\frac1\pi\sin\pi t+4$.</p></details>
+
+<h2>2. Displacement and distance</h2>
+<div class="box thm"><div class="box-title">Formulas</div>
+$$\text{displacement over }[t_0,t_1]=s(t_1)-s(t_0)=\int_{t_0}^{t_1}s'(t)\,dt=\int_{t_0}^{t_1}v(t)\,dt,$$
+$$\text{distance traveled during }[t_0,t_1]=\int_{t_0}^{t_1}|v(t)|\,dt.$$
+The distance is the distance traveled in the positive direction <b>plus</b> the distance traveled in the negative direction, which is why we integrate $|v|$.</div>
+<details class="example"><summary>Lecture example: $v(t)=t^2-2t$ m/s on $[0,3]$</summary>
+<ol><li>Displacement: $\int_0^3(t^2-2t)\,dt=\left[\frac{t^3}3-t^2\right]_0^3=9-9=0$.</li>
+<li>$v=t(t-2)$: negative on $(0,2)$, positive on $(2,3)$.</li>
+<li>Distance: $\int_0^2-(t^2-2t)\,dt+\int_2^3(t^2-2t)\,dt=-\left[\frac{t^3}3-t^2\right]_0^2+\left[\frac{t^3}3-t^2\right]_2^3=\frac43+\frac43=\frac83$ m.</li></ol></details>
+<div class="box def"><div class="box-title">From the $v$–$t$ graph</div>The <b>net signed area</b> between the velocity curve and $[t_0,t_1]$ is the displacement; the <b>total area</b> is the distance traveled. With areas $A_1$ (above), $A_2$ (below), $A_3$ (above): displacement $=A_1-A_2+A_3$, distance $=A_1+A_2+A_3$.</div>
+<details class="example"><summary>Lecture example: displacement and distance on $[0,4]$ from three $v$–$t$ graphs <span class="small muted">(the answers are mine; the slide shows only the graphs)</span></summary>
+<ul><li>(a) a triangle above the axis, peak $v=1$ at $t=2$: displacement $=2$, distance $=2$.</li>
+<li>(b) a triangle below the axis, lowest $v=-1$ at $t=2$: displacement $=-2$, distance $=2$.</li>
+<li>(c) a triangle above on $[0,2]$ (peak 1 at $t=1$, area 1) and one below on $[2,4]$ (area 1): displacement $=0$, distance $=2$.</li></ul></details>
+
+<h2>3. Constant acceleration</h2>
+<div class="box thm"><div class="box-title">Derivation</div>Let $a(t)=a$ (constant), $s(0)=s_0$, $v(0)=v_0$.
+<ul><li>$v(t)=\int a\,dt=at+C_1$, and $v_0=v(0)=C_1$ ⇒ $\boxed{v(t)=v_0+at}$.</li>
+<li>$s(t)=\int(v_0+at)\,dt=v_0t+\frac12at^2+C_2$, and $s_0=s(0)=C_2$ ⇒ $\boxed{s(t)=s_0+v_0t+\frac12at^2}$.</li></ul></div>
+
+<h2>4. Free-fall motion</h2>
+<div class="box def"><div class="box-title">Free fall</div>An object near the earth is given an initial velocity (up or down) and moves along a vertical line; the only force is gravity, with $g\approx9.8\ \text{m/s}^2$ or $32\ \text{ft/s}^2$, directed down. Going up, the object slows down ($v&gt;0$, $a&lt;0$); coming down, it speeds up ($v&lt;0$, $a&lt;0$).
+$$a(t)=-g,\qquad v(t)=v_0-gt,\qquad s(t)=s_0+v_0t-\frac12gt^2.$$</div>
+<details class="example"><summary>Lecture example: a penny dropped from rest 1250 ft above the ground</summary>
+<ol><li>$g=32$, $s_0=1250$, $v_0=0$ ⇒ $s(t)=1250-16t^2$.</li>
+<li>Impact when $s(t)=0$: $t^2=\frac{1250}{16}=\frac{625}8$ ⇒ $t=\frac{25}{\sqrt8}\approx8.84$ s.</li>
+<li>$v(t)=-32t$ ⇒ $v\left(\frac{25}{\sqrt8}\right)=-\frac{800}{\sqrt8}\approx-282.8$ ft/s; speed at impact $\approx282.8$ ft/s.</li></ol></details>
+
+<h2>Exam patterns</h2>
+<ul><li>“$a(t)$ given, $s$ known at two times” (Fall 2025 Test 3): integrate twice with constants $C_1,C_2$, then solve a 2×2 system.</li>
+<li>“Displacement and distance”: always find where $v=0$ first and split the integral there.</li>
+<li>“Average velocity” = displacement / time = $\frac1{t_1-t_0}\int_{t_0}^{t_1}v\,dt$ (see §5.8).</li></ul>

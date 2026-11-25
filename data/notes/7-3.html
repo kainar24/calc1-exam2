@@ -1,0 +1,61 @@
+<p class="muted small">Follows Lecture 13, slides 3–18.</p>
+
+<h2>1. Reduction formulas for $\sin^n$ and $\cos^n$</h2>
+<div class="box def"><div class="box-title">Definition</div><b>Reduction formulas</b> express an integral of a power of a function through an integral of a lower power of that function. For $n\ge2$:
+$$\int\sin^nx\,dx=-\frac1n\sin^{n-1}x\cos x+\frac{n-1}n\int\sin^{n-2}x\,dx,$$
+$$\int\cos^nx\,dx=\frac1n\cos^{n-1}x\sin x+\frac{n-1}n\int\cos^{n-2}x\,dx.$$</div>
+<details class="example"><summary>Proof of the first formula (integration by parts)</summary>
+<ol><li>Let $I_n=\int\sin^nx\,dx$. Write $\sin^nx=\sin^{n-1}x\sin x$: $u=\sin^{n-1}x$, $dv=\sin x\,dx$ ⇒ $du=(n-1)\sin^{n-2}x\cos x\,dx$, $v=-\cos x$.</li>
+<li>$I_n=-\sin^{n-1}x\cos x+(n-1)\int\sin^{n-2}x\cos^2x\,dx$.</li>
+<li>$\cos^2x=1-\sin^2x$: $\int\sin^{n-2}x\cos^2x\,dx=I_{n-2}-I_n$.</li>
+<li>$I_n=-\sin^{n-1}x\cos x+(n-1)I_{n-2}-(n-1)I_n\Rightarrow nI_n=-\sin^{n-1}x\cos x+(n-1)I_{n-2}$. Divide by $n$. ∎</li></ol></details>
+<details class="example"><summary>Lecture examples: $\int\sin^2x\,dx$, $\int\sin^4x\,dx$, $\int\sin^3x\,dx$, $\int\cos^3x\,dx$</summary>
+<ul><li>$n=2$: $\int\sin^2x\,dx=-\frac12\sin x\cos x+\frac12\int1\,dx=-\frac12\sin x\cos x+\frac x2+C$.</li>
+<li>$n=4$: $\int\sin^4x\,dx=-\frac14\sin^3x\cos x+\frac34\int\sin^2x\,dx=-\frac14\sin^3x\cos x-\frac38\sin x\cos x+\frac{3x}8+C$.</li>
+<li>$n=3$: $\int\sin^3x\,dx=-\frac13\sin^2x\cos x+\frac23\int\sin x\,dx=-\frac13\sin^2x\cos x-\frac23\cos x+C$.</li>
+<li>$\int\cos^3x\,dx=\frac13\cos^2x\sin x+\frac23\int\cos x\,dx=\frac13\cos^2x\sin x+\frac23\sin x+C$.</li></ul></details>
+<div class="box def"><div class="box-title">Squares: the half-angle way (faster)</div>
+$\sin^2x=\frac12(1-\cos2x)$, $\cos^2x=\frac12(1+\cos2x)$, so
+$$\int\sin^2x\,dx=\frac x2-\frac14\sin2x+C,\qquad\int\cos^2x\,dx=\frac x2+\frac14\sin2x+C.$$
+(The same as the reduction-formula answers, since $\sin2x=2\sin x\cos x$.)</div>
+
+<h2>2. Products $\int\sin^mx\cos^nx\,dx$</h2>
+<table class="small"><tr><th>case</th><th>procedure</th><th>identity</th></tr>
+<tr><td>$n$ odd</td><td>split off one $\cos x$, convert the rest, $u=\sin x$</td><td>$\cos^2x=1-\sin^2x$</td></tr>
+<tr><td>$m$ odd</td><td>split off one $\sin x$, convert the rest, $u=\cos x$</td><td>$\sin^2x=1-\cos^2x$</td></tr>
+<tr><td>$m,n$ both even</td><td>reduce the powers with half-angle formulas</td><td>$\sin^2x=\frac12(1-\cos2x)$, $\cos^2x=\frac12(1+\cos2x)$</td></tr></table>
+<details class="example" open><summary>Lecture example: $\int\sin^4x\cos^5x\,dx$ ($n$ odd)</summary>
+<ol><li>$=\int\sin^4x\cos^4x\cos x\,dx=\int\sin^4x(1-\sin^2x)^2\cos x\,dx$.</li>
+<li>$u=\sin x$: $\int u^4(1-u^2)^2du=\int(u^4-2u^6+u^8)\,du=\frac15u^5-\frac27u^7+\frac19u^9+C$.</li>
+<li>$=\frac15\sin^5x-\frac27\sin^7x+\frac19\sin^9x+C$.</li></ol></details>
+<details class="example"><summary>Lecture example: $\int\sin^4x\cos^4x\,dx$ (both even)</summary>
+<ol><li>$=\int\left(\frac12[1-\cos2x]\right)^2\left(\frac12[1+\cos2x]\right)^2dx=\frac1{16}\int(1-\cos^22x)^2dx=\frac1{16}\int\sin^42x\,dx$.</li>
+<li>$u=2x$, $dx=\frac12du$: $\frac1{32}\int\sin^4u\,du=\frac1{32}\left(\frac38u-\frac14\sin2u+\frac1{32}\sin4u\right)+C$.</li>
+<li>$=\frac3{128}x-\frac1{128}\sin4x+\frac1{1024}\sin8x+C$.</li></ol></details>
+
+<h2>3. $\int\sin mx\cos nx$, $\int\sin mx\sin nx$, $\int\cos mx\cos nx$</h2>
+<div class="box def"><div class="box-title">Product-to-sum identities</div>
+$\sin\alpha\cos\beta=\frac12[\sin(\alpha-\beta)+\sin(\alpha+\beta)]$<br>
+$\sin\alpha\sin\beta=\frac12[\cos(\alpha-\beta)-\cos(\alpha+\beta)]$<br>
+$\cos\alpha\cos\beta=\frac12[\cos(\alpha-\beta)+\cos(\alpha+\beta)]$</div>
+<details class="example"><summary>Lecture example: $\int\sin7x\cos3x\,dx$</summary>
+<p>$=\frac12\int(\sin4x+\sin10x)\,dx=-\frac18\cos4x-\frac1{20}\cos10x+C$.</p></details>
+
+<h2>4. Tangent and secant</h2>
+<div class="box def"><div class="box-title">Basic formulas</div>
+$$\int\tan x\,dx=\ln|\sec x|+C,\qquad\int\sec x\,dx=\ln|\sec x+\tan x|+C.$$
+Proof of the first: $\int\frac{\sin x}{\cos x}dx$, $u=\cos x$, $du=-\sin x\,dx$: $-\int\frac{du}u=-\ln|\cos x|+C=\ln|\sec x|+C$.</div>
+<div class="box def"><div class="box-title">Reduction formulas</div>
+$$\int\tan^nx\,dx=\frac{\tan^{n-1}x}{n-1}-\int\tan^{n-2}x\,dx,\qquad\int\sec^nx\,dx=\frac{\sec^{n-2}x\tan x}{n-1}+\frac{n-2}{n-1}\int\sec^{n-2}x\,dx.$$
+Examples: $\int\tan^2x\,dx=\tan x-x+C$; $\int\sec^2x\,dx=\tan x+C$; $\int\tan^3x\,dx=\frac12\tan^2x-\ln|\sec x|+C$; $\int\sec^3x\,dx=\frac12\sec x\tan x+\frac12\ln|\sec x+\tan x|+C$.</div>
+<h2>5. Products $\int\tan^mx\sec^nx\,dx$</h2>
+<table class="small"><tr><th>case</th><th>procedure</th><th>identity</th></tr>
+<tr><td>$n$ even</td><td>split off $\sec^2x$, convert the rest, $u=\tan x$</td><td>$\sec^2x=\tan^2x+1$</td></tr>
+<tr><td>$m$ odd</td><td>split off $\sec x\tan x$, convert the rest, $u=\sec x$</td><td>$\tan^2x=\sec^2x-1$</td></tr>
+<tr><td>$m$ even, $n$ odd</td><td>reduce to powers of $\sec x$ alone, then use the reduction formula for $\sec^n$</td><td>$\tan^2x=\sec^2x-1$</td></tr></table>
+<details class="example"><summary>Lecture example: $\int\tan^3x\sec^3x\,dx$ ($m$ odd)</summary>
+<ol><li>$=\int\tan^2x\sec^2x(\sec x\tan x)\,dx=\int(\sec^2x-1)\sec^2x(\sec x\tan x)\,dx$.</li>
+<li>$u=\sec x$, $du=\sec x\tan x\,dx$: $\int(u^2-1)u^2du=\frac15u^5-\frac13u^3+C=\frac15\sec^5x-\frac13\sec^3x+C$.</li></ol></details>
+<details class="example"><summary>Lecture example: $\int\tan^2x\sec^4x\,dx$ ($n$ even)</summary>
+<ol><li>$=\int\tan^2x\sec^2x\sec^2x\,dx=\int\tan^2x(\tan^2x+1)\sec^2x\,dx$.</li>
+<li>$u=\tan x$, $du=\sec^2x\,dx$: $\int u^2(u^2+1)\,du=\frac15u^5+\frac13u^3+C=\frac15\tan^5x+\frac13\tan^3x+C$.</li></ol></details>

@@ -1,0 +1,131 @@
+[
+ {
+  "title": "Exam 2 Review slides — Achenef Tesfahun",
+  "source": "Moodle · Calculus I Lecture Sec 1",
+  "sections": [
+   "4.1",
+   "4.2",
+   "4.4",
+   "4.5",
+   "4.8",
+   "5.4",
+   "5.5",
+   "5.3",
+   "5.6",
+   "5.7",
+   "5.8",
+   "5.9",
+   "7.2",
+   "7.3"
+  ],
+  "note": "Opened all 24 slides. Our instructor's own review: 5 problems from Ch. 7 (parts incl. tabular, cyclic ∫cos(ln x); trig powers), 6 from Ch. 5 (Riemann sum, quarter-disk substitution, piecewise integral, FTC derivatives, average value, displacement vs distance), 5 from Ch. 4 (concavity of e^{−x²/2}, first derivative test, extrema on (0,3), minimal perimeter, MVT). All split into the <a href=\"#/paper/rev-f26\">Review F26</a> paper. <b>Top priority.</b>",
+  "files": [
+   "materials/moodle/Review - Exam 2.pdf"
+  ]
+ },
+ {
+  "title": "Lecture slides 7–13 (Achenef Tesfahun)",
+  "source": "Moodle",
+  "sections": [
+   "4.1",
+   "4.2",
+   "4.4",
+   "4.5",
+   "4.6",
+   "4.8",
+   "5.1",
+   "5.2",
+   "5.3",
+   "5.4",
+   "5.5",
+   "5.6",
+   "5.7",
+   "5.8",
+   "5.9",
+   "5.10",
+   "7.2",
+   "7.3"
+  ],
+  "note": "Opened the plan slides of all of them and the text of Lec 8–9 (formulas are pictures, so only the structure was readable). Lec 7: §4.1–4.3 · Lec 8: §4.4–4.7 (absolute extrema, garden/cone/closest-point optimization, rectilinear motion with the s(t)=2t³−21t²+60t+3 example) · Lec 9: §4.8, 5.1, 5.2 (Rolle, MVT, rectangle method, integral curves, IVPs) · Lec 10: §5.3–5.4 · Lec 11: §5.5–5.7 · Lec 12: §5.8–5.10, 7.2 · Lec 13: §7.3. Lec 6 (§3.5–3.6) is out of scope and was not copied into the lessons. PowerPoint files: they download when clicked.",
+  "files": [
+   "materials/moodle/lectures/Lec 7.pptx",
+   "materials/moodle/lectures/Lec 8.pptx",
+   "materials/moodle/lectures/Lec 9.pptx",
+   "materials/moodle/lectures/Lec 10.pptx",
+   "materials/moodle/lectures/Lec 11.pptx",
+   "materials/moodle/lectures/Lec 12.pptx",
+   "materials/moodle/lectures/Lec 13.pptx"
+  ]
+ },
+ {
+  "title": "“Chapters 4, 5, 7 — Typical MATH 161 Midterm Preparation Problems” (@math161nu)",
+  "source": "Telegram · MATH 161 All Sections (posted 2, 7 and 16 Nov)",
+  "sections": [
+   "4.1",
+   "4.2",
+   "4.4",
+   "4.5",
+   "4.8",
+   "5.2",
+   "5.3",
+   "5.4",
+   "5.5",
+   "5.6",
+   "5.8",
+   "5.9",
+   "7.2",
+   "7.3"
+  ],
+  "note": "A 101-slide deck made by the student channel @math161nu: ~100 problems (pictures, no solutions) grouped by type. All 101 slides are now transcribed into the site as the paper “Prep deck” (#/paper/deck-nu), in slide order, each with the original slide picture and a full step-by-step solution. 62 problems are copies of past-paper problems already on the site (they say “also in …” and reuse that verified solution); the other ~40 are new and were solved and checked with SymPy here. Out of scope but still solved: §4.3 rational-function sketching (slides 4, 34, 36, 38–41) and Ch. 6 areas (87–90, 93).",
+  "files": [
+   "materials/telegram/MATH161_All_Sections/MATH161 Chapters 4,5,7.pptx"
+  ]
+ },
+ {
+  "title": "Syllabus MATH 161 Fall 2026 (Melnikov, 3L/4L)",
+  "source": "Telegram",
+  "sections": [],
+  "note": "Opened. Confirms the textbook (Anton, Calculus Early Transcendentals 10e), the weekly section plan and Exam 2 = Ch. 4, 5 and §7.2, 7.3 on 28 November, worth 40% of the grade. Exams are “at the same level” as WeBWorK homework and textbook exercises.",
+  "files": [
+   "materials/telegram/MATH161_All_Sections/Syllabus_MATH_161_Fall_2026_v2_ee5d991daae9330b05cdd1d591baf53c.pdf"
+  ]
+ },
+ {
+  "title": "Textbook: Anton, Bivens, Davis — Calculus Early Transcendentals 10e",
+  "source": "Your Downloads (same book is posted in both Telegram groups)",
+  "sections": [
+   "4.1",
+   "4.2",
+   "4.4",
+   "4.5",
+   "4.6",
+   "4.8",
+   "5.1",
+   "5.2",
+   "5.3",
+   "5.4",
+   "5.5",
+   "5.6",
+   "5.7",
+   "5.8",
+   "5.9",
+   "5.10",
+   "7.2",
+   "7.3"
+  ],
+  "note": "Only the table of contents was opened (to check section names). PDF page numbers: §4.1 p.256 · 4.2 p.268 · 4.4 p.290 · 4.5 p.298 · 4.6 p.312 · 4.8 p.326 · 5.1 p.340 · 5.2 p.346 · 5.3 p.356 · 5.4 p.364 · 5.5 p.377 · 5.6 p.386 · 5.7 p.400 · 5.8 p.409 · 5.9 p.414 · 5.10 p.420 · 7.2 p.515 · 7.3 p.524.",
+  "files": [
+   "materials/textbook/Calculus Early Transcendentals.pdf"
+  ]
+ },
+ {
+  "title": "Exam 2 announcement and the note about §4.6, 4.7, 5.7",
+  "source": "Telegram · MATH 161 All Sections (screenshots in Media)",
+  "sections": [
+   "4.6",
+   "5.7"
+  ],
+  "note": "Moodle forum post by Achenef Tesfahun (21 Nov 2026): Exam 2 on Saturday 28 Nov, 12:00–13:30; Ch. 4 all sections except 4.3 and 4.7; Ch. 5 all; Ch. 7 only 7.2 and 7.3; Group 1 in Ballroom Left, Group 2 in Senate Hall (check the Excel sheet on Moodle, “Find your room for Exam 2”); about 8 open-ended problems. A second screenshot is an email from Andrey Melnikov (3 Nov) saying §4.6, 4.7 and 5.7 would appear only if covered in lectures. Your section's announcement includes 4.6 and 5.7, and both were taught (Lec 8, Lec 11).",
+  "files": []
+ }
+]

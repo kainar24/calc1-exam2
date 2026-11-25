@@ -1,0 +1,27 @@
+<p class="muted small">Follows Lecture 12, slides 3–10.</p>
+
+<h2>1. Average velocity</h2>
+<p>The average velocity over $[t_0,t_1]$ is $v_{\rm ave}=\dfrac{s(t_1)-s(t_0)}{t_1-t_0}$. By the FTC, $s(t_1)-s(t_0)=\int_{t_0}^{t_1}s'(t)\,dt=\int_{t_0}^{t_1}v(t)\,dt$, so
+$$v_{\rm ave}=\frac1{t_1-t_0}\int_{t_0}^{t_1}v(t)\,dt.$$</p>
+<details class="example" open><summary>Lecture example: $v(t)=2+\cos t$, average velocity on $0\le t\le\pi$</summary>
+<p>$v_{\rm ave}=\frac1\pi\int_0^\pi(2+\cos t)\,dt=\frac1\pi\left(2t+\sin t\right)\Big|_0^\pi=\frac1\pi(2\pi)=2$.</p></details>
+
+<h2>2. Average value of a function</h2>
+<p><b>Where the formula comes from.</b> Divide $[a,b]$ into $n$ equal pieces ($\Delta x=\frac{b-a}n$) and pick $x_k^*$ in each. The average of the $n$ values is
+$$\frac1n\sum_{k=1}^nf(x_k^*)=\frac1{b-a}\sum_{k=1}^nf(x_k^*)\Delta x\quad(\text{since }\tfrac1n=\tfrac{\Delta x}{b-a}),$$
+and letting $n\to\infty$ turns the Riemann sum into an integral.</p>
+<div class="box thm"><div class="box-title">Definition / theorem</div>The average value of a continuous $f$ over $[a,b]$ is
+$$f_{\rm ave}=\frac1{b-a}\int_a^bf(x)\,dx.$$
+<b>Remark:</b> $f_{\rm ave}\cdot(b-a)=\int_a^bf(x)\,dx$: the rectangle of height $f_{\rm ave}$ over $[a,b]$ has the same area as the region under the curve. By the MVT for integrals, $f$ actually takes the value $f_{\rm ave}$ somewhere in $[a,b]$.</div>
+<details class="example" open><summary>Lecture example: $f(x)=\sqrt x$ on $[1,4]$; where does $f$ equal its average?</summary>
+<ol><li>$f_{\rm ave}=\frac1{4-1}\int_1^4x^{1/2}dx=\frac13\cdot\frac23x^{3/2}\Big|_1^4=\frac29(8-1)=\frac{14}9$.</li>
+<li>Solve $\sqrt x=\frac{14}9\Rightarrow x=\frac{196}{81}\approx2.42$, which is in $[1,4]$.</li></ol></details>
+<details class="example"><summary>Lecture example: $f(x)=\frac1{1+x^2}$ on $[1,\sqrt3]$</summary>
+<p>$f_{\rm ave}=\frac1{\sqrt3-1}\int_1^{\sqrt3}\frac{dx}{1+x^2}=\frac1{\sqrt3-1}\arctan x\Big|_1^{\sqrt3}=\frac1{\sqrt3-1}\left(\frac\pi3-\frac\pi4\right)=\frac\pi{12(\sqrt3-1)}$.</p></details>
+<details class="example"><summary>Lecture example: find $k&gt;0$ such that the average of $f(x)=\sqrt{3x}$ on $[0,k]$ is $6$</summary>
+<ol><li>$f_{\rm ave}=\frac1k\int_0^k\sqrt3\,x^{1/2}dx=\frac{\sqrt3}k\cdot\frac23k^{3/2}=\frac{2\sqrt3}3\sqrt k$.</li>
+<li>$\frac{2\sqrt3}3\sqrt k=6\Rightarrow\sqrt k=\frac{18}{2\sqrt3}=3\sqrt3\Rightarrow k=27$.</li></ol></details>
+<details class="example"><summary>Lecture example: free fall from rest. Show $v_{\rm ave}$ over $[0,T]$ equals $v(T/2)$.</summary>
+<p>$v_0=0$, so $v(t)=-gt$. $v_{\rm ave}=\frac1T\int_0^T-gt\,dt=-\frac gT\left[\frac12t^2\right]_0^T=-g\cdot\frac T2=v\left(\frac T2\right)$. (True for any linear velocity.)</p></details>
+
+<div class="box tip"><div class="box-title">On the exam</div>Fall 2025 Test 3 #7 and Review #5 are exactly this section combined with u-substitution. Write the formula with the numbers in (2 points), do the substitution with new limits, and don't forget the factor $\frac1{b-a}$.</div>

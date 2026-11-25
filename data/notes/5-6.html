@@ -1,0 +1,42 @@
+<p class="muted small">Follows Lecture 11, slides 19–34.</p>
+
+<h2>1. FTC Part 1: evaluating definite integrals</h2>
+<div class="box def"><div class="box-title">Why it is true (slide 20)</div>
+<ul><li>Let $A=\int_a^bf(x)\,dx$ be the area under $f$ over $[a,b]$, and let $A(x)$ be the area over $[a,x]$. From §5.1, $A'(x)=f(x)$.</li>
+<li>So any antiderivative of $f$ has the form $F(x)=A(x)+C$.</li>
+<li>$F(b)-F(a)=[A(b)+C]-[A(a)+C]=A(b)-A(a)=A-0=A$.</li></ul></div>
+<div class="box thm"><div class="box-title">Theorem (FTC, Part 1)</div>If $f$ is <b>continuous on $[a,b]$</b> and $F$ is <b>any</b> antiderivative of $f$ on $(a,b)$, then
+$$\int_a^bf(x)\,dx=F(b)-F(a).$$
+Notation: $F(b)-F(a)=F(x)\Big|_a^b=\Big[F(x)\Big]_{x=a}^{x=b}$.<br>
+Relationship with the indefinite integral: $\int_a^bf(x)\,dx=[F(x)+C]_{a}^{b}=\left.\int f(x)\,dx\right|_a^b$. The constant cancels, so you never need $+C$ in a definite integral.</div>
+<details class="example" open><summary>Lecture example: area under $y=\cos x$ over $[0,\frac\pi2]$ and $[0,\pi]$</summary>
+<p>$\int_0^{\pi/2}\cos x\,dx=\sin x\Big|_0^{\pi/2}=1-0=1$. $\ \int_0^\pi\cos x\,dx=\sin\pi-\sin0=0$. The second is a <b>net signed</b> area: the part below the axis cancels the part above.</p></details>
+<details class="example"><summary>Lecture examples</summary>
+<ul><li>$\int_0^{\ln3}5e^xdx=5e^x\Big|_0^{\ln3}=5(3-1)=10$.</li>
+<li>$\int_0^{\pi/3}\sec^2x\,dx=\tan x\Big|_0^{\pi/3}=\sqrt3$.</li>
+<li>$\int_{-1/2}^{1/2}\frac{dx}{\sqrt{1-x^2}}=\sin^{-1}x\Big|_{-1/2}^{1/2}=\frac\pi6-\left(-\frac\pi6\right)=\frac\pi3$.</li></ul></details>
+
+<h2>2. Total area</h2>
+<div class="box def"><div class="box-title">Definition (total area)</div>If $f$ is continuous on $[a,b]$, the <b>total area</b> between $y=f(x)$ and $[a,b]$ is $\int_a^b|f(x)|\,dx$ (all pieces counted positively). Remember: $\int_a^bf(x)\,dx$ is the <b>signed</b> area.</div>
+<details class="example"><summary>Lecture example: total area between $y=1-x^2$ and the $x$-axis over $[0,2]$</summary>
+<ol><li>$1-x^2\ge0$ on $[0,1]$ and $\le0$ on $[1,2]$.</li>
+<li>$A=\int_0^1(1-x^2)\,dx+\int_1^2-(1-x^2)\,dx=\left[x-\frac{x^3}3\right]_0^1-\left[x-\frac{x^3}3\right]_1^2=\frac23-\left(-\frac43\right)=2$.</li></ol></details>
+
+<h2>3. Mean-Value Theorem for Integrals</h2>
+<p><b>Remark.</b> If $m\le f(x)\le M$ on $[a,b]$, then $m(b-a)\le\int_a^bf(x)\,dx\le M(b-a)$ (the area lies between two rectangles).</p>
+<div class="box thm"><div class="box-title">Theorem (MVT for integrals)</div>If $f$ is continuous on $[a,b]$, there is at least one $x^*\in[a,b]$ with $\int_a^bf(x)\,dx=f(x^*)(b-a)$. (This is used again in §5.8.)</div>
+<details class="example"><summary>Lecture example: $f(x)=x^2$ on $[1,4]$</summary>
+<p>$\int_1^4x^2dx=\frac{x^3}3\Big|_1^4=21=3(x^*)^2\Rightarrow(x^*)^2=7\Rightarrow x^*=\pm\sqrt7$; only $x^*=\sqrt7\in[1,4]$.</p></details>
+
+<h2>4. FTC Part 2: differentiating an integral</h2>
+<div class="box thm"><div class="box-title">Theorem (FTC, Part 2)</div>If $f$ is continuous on an interval, then $f$ has an antiderivative there. In particular, if $a$ is any point of the interval, $F(x)=\int_a^xf(t)\,dt$ is an antiderivative of $f$:
+$$\frac{d}{dx}\left[\int_a^xf(t)\,dt\right]=f(x).$$</div>
+<details class="example"><summary>Lecture examples</summary>
+<ul><li>$\frac{d}{dx}\int_1^xt^3dt=x^3$; $\quad\frac{d}{dx}\int_1^x\frac{\sin t}t\,dt=\frac{\sin x}x$.</li>
+<li>$\frac{d}{dx}\int_1^x\ln t\,dt=\ln x$ (for $x&gt;0$).</li>
+<li>$F(x)=\int_4^x\sqrt{t^2+9}\,dt$: $F'(x)=\sqrt{x^2+9}$, so $F'(4)=\sqrt{25}=5$.</li></ul></details>
+<div class="box tip"><div class="box-title">With the chain rule (exam form)</div>$\dfrac{d}{dx}\displaystyle\int_a^{g(x)}f(t)\,dt=f(g(x))\,g'(x)$, and $\dfrac{d}{dx}\displaystyle\int_{h(x)}^{g(x)}f(t)\,dt=f(g(x))g'(x)-f(h(x))h'(x)$. See the worked exam examples in the lesson above.</div>
+
+<h2>5. Integrating a rate of change</h2>
+<div class="box def"><div class="box-title">Net change</div>Since $\int_a^bf=F(b)-F(a)$ with $F'=f$: $\displaystyle\int_a^bF'(x)\,dx=F(b)-F(a)$. <b>Integrating the rate of change of $F$ over $[a,b]$ gives the change in $F$ as $x$ goes from $a$ to $b$.</b></div>
+<p>Examples from the slide: if $P(t)$ is a population, $\int_{t_1}^{t_2}P'(t)\,dt=P(t_2)-P(t_1)$ is the change in population; if $A(t)$ is the area of an oil spill, $\int_{t_1}^{t_2}A'(t)\,dt$ is the change in its area. The same idea gives displacement $=\int v\,dt$ in §5.7.</p>

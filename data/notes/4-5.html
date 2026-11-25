@@ -1,0 +1,43 @@
+<p class="muted small">Follows Lecture 8, slides 20–27. The lecture solves three model problems; each one shows a different way to justify the extremum.</p>
+
+<div class="box def"><div class="box-title">A procedure for solving applied maximum and minimum problems (from the slides)</div>
+<ol><li><b>Step 1.</b> Draw an appropriate figure and label the quantities relevant to the problem.</li>
+<li><b>Step 2.</b> Find a formula for the quantity to be maximized or minimized.</li>
+<li><b>Step 3.</b> Using the conditions stated in the problem to eliminate variables, express the quantity to be maximized or minimized as a function of <b>one variable</b>.</li>
+<li><b>Step 4.</b> Find the <b>interval of possible values</b> for this variable from the physical restrictions in the problem.</li>
+<li><b>Step 5.</b> If applicable, use the techniques of §4.4 (absolute extrema) to obtain the maximum or minimum.</li></ol>
+Step 4 decides which justification you use: a <b>closed</b> interval → compare values at critical points and endpoints; an <b>open/infinite</b> interval → use the limits at the ends (or the second derivative with a single critical point).</div>
+
+<h2>Model problem 1: the garden (closed interval)</h2>
+<details class="example" open><summary>A rectangular garden is fenced with 100 m of wire. What is the largest possible area?</summary>
+<ol><li>Let $x$ = length, $y$ = width (m), $A$ = area. Objective: $A=xy$.</li>
+<li>Constraint (perimeter): $2x+2y=100\Rightarrow y=50-x$. So $A(x)=x(50-x)=50x-x^2$.</li>
+<li>Interval of possible $x$: $0\le x\le50$ (lengths can't be negative; $y\ge0$). Goal: the absolute max of $A$ on $[0,50]$.</li>
+<li>$A'(x)=50-2x=2(25-x)$; critical point $x=25$.</li>
+<li>Compare: $A(0)=A(50)=0$, $A(25)=625$.</li>
+<li>Maximum area $625\ \text{m}^2$ when $x=25$ m (and then $y=25$ m: the best rectangle is a square).</li></ol></details>
+
+<h2>Model problem 2: cylinder inscribed in a cone (closed interval)</h2>
+<details class="example"><summary>Find the radius and height of the right circular cylinder of largest volume inscribed in a cone of radius 6 in and height 10 in.</summary>
+<ol><li>$r$ = radius of the cylinder, $h$ = its height, $V=\pi r^2h$.</li>
+<li>Similar triangles (cross-section through the axis): $\dfrac{10-h}{r}=\dfrac{10}{6}\Rightarrow h=10-\frac53r$.</li>
+<li>$V(r)=\pi r^2\left(10-\frac53r\right)=10\pi r^2-\frac53\pi r^3=\frac{5\pi r^2}{3}(6-r)$.</li>
+<li>Interval: $0\le r\le6$.</li>
+<li>$\dfrac{dV}{dr}=20\pi r-5\pi r^2=5\pi r(4-r)$; the only critical point in $(0,6)$ is $r=4$.</li>
+<li>$V(0)=V(6)=0$, $V(4)=\frac{5\pi\cdot16}{3}\cdot2=\frac{160}3\pi\approx168\ \text{in}^3$.</li>
+<li>Maximum volume $\frac{160}{3}\pi$ in³ at $r=4$ in, $h=10-\frac{20}3=\frac{10}3$ in.</li></ol></details>
+
+<h2>Model problem 3: closest point (infinite interval)</h2>
+<details class="example"><summary>Find the point on $y=x^2$ closest to $(18,0)$.</summary>
+<ol><li>$L$ = distance from $(18,0)$ to $(x,y)$ on the curve: $L=\sqrt{(x-18)^2+(y-0)^2}$.</li>
+<li>Since $y=x^2$: $L(x)=\sqrt{(x-18)^2+x^4}$, and there is no restriction on $x$: $x\in(-\infty,\infty)$.</li>
+<li>$\lim_{x\to\pm\infty}L(x)=+\infty$ ⇒ there is an absolute minimum but no absolute maximum.</li>
+<li>$L'(x)=\dfrac{2(x-18)+4x^3}{2L(x)}=\dfrac{2x^3+x-18}{L(x)}$. $L'=0\iff2x^3+x-18=0$; $x=2$ is the only real root ($2x^3+x-18=(x-2)(2x^2+4x+9)$ and the quadratic has no real roots).</li>
+<li>So the absolute minimum occurs at $x=2$: the point $(2,4)$ is the closest point.</li></ol>
+<p class="small muted">Tip: minimizing $L^2=(x-18)^2+x^4$ instead of $L$ gives the same critical point with an easier derivative.</p></details>
+
+<h2>What to take from these three examples</h2>
+<ul><li>Always write the objective as a function of <b>one</b> variable, using the constraint.</li>
+<li>Always write the <b>domain</b>. It tells you how to justify max/min and earns a mark.</li>
+<li>Closed domain: evaluate at the endpoints as well. Infinite/open domain: argue with limits (here $L\to\infty$), or with $f''$ at the single critical point.</li>
+<li>Answer the exact question (dimensions? the point? the maximum value?) with units.</li></ul>

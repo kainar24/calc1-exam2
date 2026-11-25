@@ -1,0 +1,17 @@
+<div class="note">No past problem yet (the section was taught in week 13). It may appear as an FTC-type derivative or as properties of $\ln$. Know the basics.</div>
+<h2>What you need to know</h2>
+<ul>
+<li>Definition: $\ln x=\displaystyle\int_1^x\frac{dt}t$ for $x&gt;0$, the area under $y=\frac1t$ from 1 to $x$ (negative for $0&lt;x&lt;1$).</li>
+<li>By FTC: $\frac{d}{dx}\ln x=\frac1x$; $\ln1=0$; $\ln$ is increasing and concave down.</li>
+<li>$e$ is the number with $\int_1^e\frac{dt}t=1$.</li>
+<li>General functions defined by integrals: $F(x)=\int_a^xf(t)\,dt$ has $F(a)=0$ and $F'(x)=f(x)$, so you can study it with §4.1–4.2 (increasing where $f&gt;0$, inflection points where $f'$ changes sign).</li>
+<li>Integrals with $\frac1x$: $\int\frac{dx}x=\ln|x|+C$, $\int_1^{a}\frac{dt}t=\ln a$.</li>
+</ul>
+<div class="box def"><div class="box-title">Formulas</div>$\ln(ab)=\ln a+\ln b$, $\ \ln\frac ab=\ln a-\ln b$, $\ \ln a^r=r\ln a$ (all provable from the integral definition).</div>
+<h2>Examples</h2>
+<details class="example" open><summary>Example 1: where is $F(x)=\int_0^x\frac{t-1}{t^2+1}\,dt$ increasing, and where is its relative minimum?</summary>
+<p>$F'(x)=\frac{x-1}{x^2+1}$: negative for $x&lt;1$, positive for $x&gt;1$ ⇒ decreasing on $(-\infty,1]$, increasing on $[1,\infty)$, relative (and absolute) minimum at $x=1$.</p></details>
+<details class="example"><summary>Example 2: $\frac{d}{dx}\int_1^{x^2}\frac{dt}t$</summary>
+<p>$\frac1{x^2}\cdot2x=\frac2x$. Check: $\int_1^{x^2}\frac{dt}t=\ln x^2=2\ln x$, whose derivative is $\frac2x$. ✓</p></details>
+<div data-plot="ftc" data-args='{"f":"1/x","a":1,"bbox":[-0.3,2.5,5.5,-1.6]}'></div>
+<div class="box tip"><div class="box-title">Exam tip</div><ul><li>Any “function defined by an integral” question is really FTC Part 2 plus §4.1 sign analysis.</li></ul></div>

@@ -1,0 +1,35 @@
+<div class="note info">9 past problems, usually short: “find $\frac{d}{dx}\int_a^{g(x)}f(t)\,dt$” or “evaluate $\int_a^bf$ with an antiderivative”.</div>
+<h2>What you need to know</h2>
+<ul>
+<li><b>FTC part 1</b> (evaluation): $\int_a^bf(x)\,dx=F(b)-F(a)$ for any antiderivative $F$ of a continuous $f$.</li>
+<li><b>FTC part 2</b> (differentiation): $\dfrac{d}{dx}\int_a^xf(t)\,dt=f(x)$.</li>
+<li>With a variable limit, use the chain rule: $\dfrac{d}{dx}\int_a^{g(x)}f(t)\,dt=f(g(x))\,g'(x)$.</li>
+<li>Both limits variable: split at a constant, $\int_{h(x)}^{g(x)}=\int_c^{g(x)}-\int_c^{h(x)}$.</li>
+<li>$f$ must be continuous on the interval. Do not apply the FTC across a discontinuity, e.g. $\int_{-1}^1\frac{dx}{x^2}$.</li>
+</ul>
+<h2>Key formulas</h2>
+<div class="box thm"><div class="box-title">Fundamental Theorem of Calculus</div>
+If $f$ is continuous on $[a,b]$ and $F'=f$, then $\displaystyle\int_a^bf(x)\,dx=F(b)-F(a)$.<br>
+If $f$ is continuous on an open interval containing $a$, then $\displaystyle\frac{d}{dx}\int_a^xf(t)\,dt=f(x)$.</div>
+<div class="box def"><div class="box-title">Leibniz-type rule (what you actually use)</div>
+$$\frac{d}{dx}\int_{h(x)}^{g(x)}f(t)\,dt=f(g(x))\,g'(x)-f(h(x))\,h'(x).$$</div>
+<h2>Worked examples</h2>
+<details class="example" open><summary>Example 1 (Review #4a, Fall 2025 Test 3): $\frac{d}{dx}\int_1^{x^3}\sin^2t\,dt$</summary>
+<p>$f(t)=\sin^2t$, $g(x)=x^3$ ⇒ $\sin^2(x^3)\cdot3x^2=3x^2\sin^2(x^3)$.</p></details>
+<details class="example"><summary>Example 2 (Review #4b): $\frac{d}{dx}\int_{\sin x}^{x^2}\frac{dt}{1+t^2}$</summary>
+<ol><li>$\int_{\sin x}^{x^2}=\int_0^{x^2}-\int_0^{\sin x}$.</li>
+<li>$\dfrac1{1+x^4}\cdot2x-\dfrac1{1+\sin^2x}\cdot\cos x=\dfrac{2x}{1+x^4}-\dfrac{\cos x}{1+\sin^2x}$.</li></ol></details>
+<details class="example"><summary>Example 3 (Castro, Fall 2020 Final): find $f$ and $a$ with $2+\int_a^xf(t)\,dt=e^{3x}$</summary>
+<ol><li>Differentiate: $f(x)=3e^{3x}$.</li><li>Put $x=a$: $2+0=e^{3a}\Rightarrow a=\frac{\ln2}3$.</li></ol></details>
+<details class="example"><summary>Example 4 (Fall 2024 MT3): $f(x)=\int_1^{2x}\sqrt{1+2t}\,dt$, find $f'(2)$</summary>
+<p>$f'(x)=\sqrt{1+4x}\cdot2$, so $f'(2)=2\cdot3=6$.</p></details>
+<h2>Interactive: the area function</h2>
+<div data-plot="ftc" data-args='{"f":"1+0.6*sin(1.5*x)","a":0,"bbox":[-0.5,5,5.5,-0.8]}'></div>
+<div class="box mistake"><div class="box-title">Common mistakes</div><ul>
+<li>Forgetting the factor $g'(x)$ from the chain rule. This is the most common lost mark.</li>
+<li>Writing $f(x)$ instead of $f(g(x))$: you must substitute the upper limit into the integrand.</li>
+<li>Trying to evaluate the integral first, when often it cannot be done ($\int\cos(t^2)\,dt$) and is not needed.</li>
+<li>Sign errors when the variable is in the <b>lower</b> limit: $\frac{d}{dx}\int_x^5f=-f(x)$.</li></ul></div>
+<div class="box tip"><div class="box-title">Exam tips</div><ul>
+<li>State the theorem you use (“by FTC Part 2 and the chain rule”): the instructions say you must cite results.</li>
+<li>For $\int_a^b$ with an antiderivative, write $\left[F(x)\right]_a^b$ and then the two values. Partial credit comes from this line.</li></ul></div>

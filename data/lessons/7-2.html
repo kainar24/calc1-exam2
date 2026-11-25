@@ -1,0 +1,34 @@
+<div class="note info">6 past problems, and Chapter 7 is explicitly on Exam 2. Our instructor's review starts with three integration-by-parts problems.</div>
+<h2>What you need to know</h2>
+<ul>
+<li>Formula: $\int u\,dv=uv-\int v\,du$. Definite: $\int_a^bu\,dv=\left[uv\right]_a^b-\int_a^bv\,du$.</li>
+<li>Choose $u$ by <b>LIATE</b> (Log, Inverse trig, Algebraic, Trig, Exponential): the earlier in the list, the better a choice for $u$.</li>
+<li>Polynomial × $\sin$/$\cos$/$e^{x}$: use the <b>tabular method</b> (differentiate the polynomial to 0).</li>
+<li>$\ln x$, $\arctan x$ alone: take $u=\ln x$ (or $\arctan x$), $dv=dx$.</li>
+<li>“Cyclic” integrals ($e^x\sin x$, $\cos(\ln x)$): integrate by parts twice, then <b>solve for the integral</b>.</li>
+<li>Sometimes substitute first ($\int x^5e^{x^2}dx$: put $y=x^2$, then use parts).</li>
+</ul>
+<div class="box def"><div class="box-title">Tabular method (D / I columns)</div>
+Differentiate $u$ down to $0$ in column D, integrate $dv$ in column I, multiply along the diagonals with signs $+,-,+,-,\dots$ and add.</div>
+<h2>Worked examples</h2>
+<details class="example" open><summary>Example 1 (Review Ch7 #1b): $\int_1^ex^2\ln x\,dx$</summary>
+<ol><li>$u=\ln x$, $dv=x^2dx$ ⇒ $du=\frac{dx}x$, $v=\frac{x^3}3$.</li>
+<li>$\left[\frac{x^3}3\ln x\right]_1^e-\frac13\int_1^ex^2dx=\frac{e^3}3-\frac{e^3-1}9=\frac{2e^3+1}9$.</li></ol></details>
+<details class="example"><summary>Example 2 (Review Ch7 #1a): $\int4x^4\sin2x\,dx$ (tabular)</summary>
+<table class="small"><tr><th>D</th><td>$4x^4$</td><td>$16x^3$</td><td>$48x^2$</td><td>$96x$</td><td>$96$</td><td>$0$</td></tr>
+<tr><th>I</th><td>$\sin2x$</td><td>$-\frac12\cos2x$</td><td>$-\frac14\sin2x$</td><td>$\frac18\cos2x$</td><td>$\frac1{16}\sin2x$</td><td>$-\frac1{32}\cos2x$</td></tr></table>
+<p>$=-2x^4\cos2x+4x^3\sin2x+6x^2\cos2x-6x\sin2x-3\cos2x+C$.</p></details>
+<details class="example"><summary>Example 3 (Review Ch7 #2): $\int\cos(\ln x)\,dx$ (cyclic)</summary>
+<ol><li>$u=\cos(\ln x)$, $dv=dx$: $I=x\cos(\ln x)+\int\sin(\ln x)\,dx$.</li>
+<li>$u=\sin(\ln x)$, $dv=dx$: $\int\sin(\ln x)\,dx=x\sin(\ln x)-I$.</li>
+<li>$2I=x(\cos\ln x+\sin\ln x)$ ⇒ $I=\frac x2(\cos\ln x+\sin\ln x)+C$.</li></ol></details>
+<details class="example"><summary>Example 4 (Fall 2024 MT3): $\int_0^1x\arctan x\,dx$</summary>
+<p>$u=\arctan x$, $v=\frac{x^2}2$: $\frac\pi8-\frac12\int_0^1\frac{x^2}{1+x^2}dx=\frac\pi8-\frac12\left(1-\frac\pi4\right)=\frac\pi4-\frac12$.</p></details>
+<div class="box mistake"><div class="box-title">Common mistakes</div><ul>
+<li>Choosing $u=e^x$ or $u=\sin x$ when the other factor is a polynomial: the integral gets worse.</li>
+<li>Sign errors in the tabular method: the signs alternate starting with $+$.</li>
+<li>In cyclic problems, writing $I=\dots+I$ and “cancelling”. The two $I$ must have opposite signs; solve $2I=\dots$.</li>
+<li>Forgetting to evaluate $uv$ at both limits in definite problems.</li></ul></div>
+<div class="box tip"><div class="box-title">Exam tips</div><ul>
+<li>Write the $u,dv,du,v$ box explicitly: it earns method points.</li>
+<li>For $\int x^n\ln x\,dx$, always $u=\ln x$. For $\int x^ne^{ax}dx$, always tabular.</li></ul></div>

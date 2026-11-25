@@ -1,0 +1,33 @@
+<div class="note info">7 past problems: properties ($\int_a^b=\int_a^c+\int_c^b$), integrals of $|x-a|$ and piecewise functions, integrals as signed area, and the limit definition.</div>
+<h2>What you need to know</h2>
+<ul>
+<li>Definition: $\displaystyle\int_a^bf(x)\,dx=\lim_{\max\Delta x_k\to0}\sum_{k=1}^nf(x_k^*)\Delta x_k$, i.e. the <b>net signed area</b>: area above the axis minus area below.</li>
+<li>Continuous functions (and functions with finitely many jumps) are integrable.</li>
+<li>Many exam integrals are solved by <b>geometry</b>: triangles for $|x-a|$, trapezoids for lines, quarter or half circles for $\sqrt{r^2-x^2}$.</li>
+<li>For an absolute value or piecewise function, <b>split at the break points</b>.</li>
+</ul>
+<h2>Properties (Theorem 5.5.4–5.5.5)</h2>
+<div class="box def">
+$\int_a^af=0,\qquad \int_b^af=-\int_a^bf,\qquad \int_a^bf=\int_a^cf+\int_c^bf$ (any order of $a,b,c$)<br>
+$\int_a^b(cf\pm g)=c\int_a^bf\pm\int_a^bg,\qquad \int_a^bc\,dx=c(b-a)$<br>
+If $f\ge0$ on $[a,b]$, then $\int_a^bf\ge0$; if $f\le g$, then $\int_a^bf\le\int_a^bg$.<br>
+Odd $f$: $\int_{-a}^af=0$. &nbsp;Even $f$: $\int_{-a}^af=2\int_0^af$.</div>
+<h2>Worked examples</h2>
+<details class="example" open><summary>Example 1 (Fall 2024 MT3 #1): $\int_1^8f=12$, $\int_5^1f=3$, $\int_7^8f=4$; find $\int_5^7(2f-1)\,dx$</summary>
+<ol><li>$\int_1^8=\int_1^5+\int_5^7+\int_7^8$, and $\int_1^5f=-3$.</li><li>$12=-3+\int_5^7f+4\Rightarrow\int_5^7f=11$.</li>
+<li>$\int_5^7(2f-1)\,dx=2(11)-(7-5)=20$.</li></ol></details>
+<details class="example"><summary>Example 2 (Review #3a): piecewise $f$, $\int_0^4f$</summary>
+<p>$f=5-x$ for $x\le2$, $x^2$ for $x&gt;2$: $\int_0^2(5-x)\,dx+\int_2^4x^2\,dx=8+\frac{56}3=\frac{80}3$.</p></details>
+<details class="example"><summary>Example 3 (Castro, Fall 2017 Final): $\int_{-3}^4(|x+1|-|x-1|+|x+2|)\,dx$</summary>
+<p>Use triangles for each term: $14.5-12.5+18.5=\frac{41}2$. (E.g. $\int_{-3}^4|x+1|\,dx$: two triangles with legs $2$ and $5$: $\frac{2^2}2+\frac{5^2}2$.)</p></details>
+<details class="example"><summary>Example 4 (Fall 2025 Test 3): write $\int_0^3\frac{x}{9x+8}dx$ as a limit of Riemann sums</summary>
+<p>$\displaystyle\lim_{\max\Delta x_k\to0}\sum_{k=1}^n\frac{x_k^*}{9x_k^*+8}\Delta x_k$. Watch the details: the sum goes to $n$, not to 3, and keeps $\Delta x_k$.</p></details>
+<h2>Interactive: signed area</h2>
+<div data-plot="netarea" data-args='{"f":"x*x*x-3*x","a":-2,"b":2.5,"bbox":[-2.5,4.5,3,-3]}'></div>
+<div class="box mistake"><div class="box-title">Common mistakes</div><ul>
+<li>Treating $\int_5^1f$ as $\int_1^5f$: reversing the limits changes the sign.</li>
+<li>$\int(2f-1)=2\int f-1$ is wrong: the constant also integrates, giving $-(b-a)$.</li>
+<li>For $\int|g|$, not splitting at the zero of $g$.</li></ul></div>
+<div class="box tip"><div class="box-title">Exam tips</div><ul>
+<li>Draw the graph. A 10-second sketch of $|x+1|$ turns the integral into two triangles.</li>
+<li>Write the additivity equation explicitly before plugging in numbers.</li></ul></div>

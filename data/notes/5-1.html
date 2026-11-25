@@ -1,0 +1,38 @@
+<p class="muted small">Follows Lecture 9, slides 11–28.</p>
+
+<h2>1. The area problem</h2>
+<p>How do we find the area of the region $R$ under $y=1-x^2$ over $[0,1]$? There is no simple geometric formula. <b>Idea:</b> approximate the area by rectangles.</p>
+<details class="example" open><summary>Lecture example: four rectangles for $y=1-x^2$ on $[0,1]$</summary>
+<ul><li><b>Rectangles containing $R$</b> (upper sum, heights at left endpoints since $f$ is decreasing): $A\approx1\cdot\frac14+\frac{15}{16}\cdot\frac14+\frac34\cdot\frac14+\frac7{16}\cdot\frac14=\frac{25}{32}=0.78125$. This <b>overshoots</b> the true value.</li>
+<li><b>Rectangles contained in $R$</b> (lower sum, right endpoints): $A\approx\frac{15}{16}\cdot\frac14+\frac34\cdot\frac14+\frac7{16}\cdot\frac14+0\cdot\frac14=\frac{17}{32}=0.53125$. This <b>undershoots</b>.</li>
+<li>So $0.53125&lt;A&lt;0.78125$.</li>
+<li><b>Midpoint rule</b> (heights at the midpoints $\frac18,\frac38,\frac58,\frac78$): $A\approx\left(\frac{63}{64}+\frac{55}{64}+\frac{39}{64}+\frac{15}{64}\right)\frac14=\frac{172}{64}\cdot\frac14=0.671875$. Closer to the truth, because overshoot and undershoot roughly balance. (Exact value: $\frac23$.)</li></ul></details>
+<p>Taking more and more, thinner and thinner rectangles (16, 100, …) gives better and better approximations.</p>
+
+<h2>2. The rectangle method</h2>
+<div class="box def"><div class="box-title">Rectangle method for finding area</div>
+<ol><li>Divide $[a,b]$ into $n$ equal subintervals.</li>
+<li>Over each subinterval construct a rectangle from the $x$-axis up to <b>any point on the curve</b> above that subinterval.</li>
+<li>Let $A_n$ = total area of the $n$ rectangles. Then $A\approx A_n$.</li>
+<li>As $n$ increases the approximations get better and approach the exact area as a limit: $$A=\lim_{n\to\infty}A_n.$$</li></ol></div>
+<details class="example"><summary>Lecture example: area under $y=x^2$ over $[0,1]$</summary>
+<ol><li>Divide $[0,1]$ into $n$ subintervals of width $\frac1n$: points $0,\frac1n,\frac2n,\dots,1$.</li>
+<li>Heights at the right endpoints: $\left(\frac1n\right)^2,\left(\frac2n\right)^2,\dots,1^2$.</li>
+<li>$A_n=\left[\left(\frac1n\right)^2+\left(\frac2n\right)^2+\dots+1^2\right]\frac1n$.</li>
+<li>Numerically: $A_4=0.46875$, $A_{10}=0.385$, $A_{100}=0.33835$, $A_{1000}=0.333834$, $A_{100000}=0.333338$, so $A\approx0.3338$.</li>
+<li>Exactly (with $\sum k^2$ from §5.4): $A_n=\frac{(n+1)(2n+1)}{6n^2}\to\frac13$.</li></ol></details>
+
+<h2>3. Antiderivative method: area and derivative</h2>
+<div class="box thm"><div class="box-title">Relationship between area and derivative</div>Suppose $f$ is <b>nonnegative and continuous</b> on $[a,b]$, and let $A(x)$ denote the area under the graph of $f$ over $[a,x]$, for $x\in[a,b]$. Then
+$$A'(x)=f(x).$$
+<b>Why:</b> $A(x+h)-A(x)$ is a thin strip, almost a rectangle of width $h$ and height $f(x)$: $A(x+h)-A(x)\approx f(x)h$. So $\dfrac{A(x+h)-A(x)}{h}\approx f(x)$, and letting $h\to0$ gives $A'(x)=f(x)$.</div>
+<details class="example"><summary>Lecture examples: checking $A'=f$ with geometry</summary>
+<ul><li>$f(x)=2$ on $[-1,x]$: rectangle, $A(x)=2(x+1)=2x+2$, so $A'(x)=2=f(x)$.</li>
+<li>$f(x)=x+1$ on $[-1,x]$: triangle, $A(x)=\frac12(x+1)(x+1)=\frac12x^2+x+\frac12$, so $A'(x)=x+1=f(x)$.</li>
+<li>$f(x)=2x+3$ on $[-1,x]$: trapezoid with parallel sides $1$ and $2x+3$, width $x+1$: $A(x)=\frac12\left((2x+3)+1\right)(x+1)=x^2+3x+2$, so $A'(x)=2x+3=f(x)$.</li></ul></details>
+<details class="example" open><summary>Lecture example: area under $y=x^2$ over $[0,1]$ by the antiderivative method</summary>
+<ol><li>Let $A(x)$ = area under $f(x)=x^2$ over $[0,x]$. Then $A'(x)=x^2$.</li>
+<li>So $A(x)=\frac13x^3+C$.</li>
+<li>$A(0)=0$ (no area over $[0,0]$) ⇒ $C=0$, $A(x)=\frac13x^3$.</li>
+<li>Area over $[0,1]$: $A(1)=\frac13$, which matches the limit of rectangle sums.</li></ol>
+<p>This is the idea behind the Fundamental Theorem of Calculus (§5.6): <b>area can be computed with an antiderivative</b>.</p></details>

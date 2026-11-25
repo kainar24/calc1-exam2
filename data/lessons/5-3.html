@@ -1,0 +1,30 @@
+<div class="note info">7 past problems. Indefinite substitution also appears inside average value, initial value problems and integration by parts.</div>
+<h2>What you need to know</h2>
+<ul>
+<li>Look for a function <b>and its derivative</b> (up to a constant) in the integrand. Let $u$ be the “inside” function.</li>
+<li>Steps: choose $u$, compute $du$, rewrite <i>everything</i> in $u$ (no $x$ left), integrate, substitute back, add $+C$.</li>
+<li>If an extra $x$ is left over, express it with $u$, e.g. $x^2=u-1$ when $u=x^2+1$.</li>
+<li>Check by differentiating your answer.</li>
+</ul>
+<h2>Key formulas</h2>
+<div class="box def">$\int f(g(x))g'(x)\,dx=\int f(u)\,du$ with $u=g(x)$.<br>
+Patterns: $\int\frac{g'}{g}=\ln|g|+C$; $\int g^ng'=\frac{g^{n+1}}{n+1}+C$; $\int\frac{g'}{1+g^2}=\arctan g+C$; $\int\frac{g'}{\sqrt{1-g^2}}=\arcsin g+C$; $\int\frac{dx}{a^2+x^2}=\frac1a\arctan\frac xa+C$.</div>
+<h2>Worked examples</h2>
+<details class="example" open><summary>Example 1 (Review #3b): $\displaystyle\int\frac{x^5+1}{\sqrt{x^6+6x}}\,dx$</summary>
+<ol><li>$u=x^6+6x$, $du=6(x^5+1)\,dx$.</li><li>$\frac16\int u^{-1/2}du=\frac13\sqrt u+C=\frac13\sqrt{x^6+6x}+C$.</li></ol></details>
+<details class="example"><summary>Example 2 (Fall 2025 Test 3): $\displaystyle\int\frac{4x^3}{9+x^8}\,dx$</summary>
+<p>$u=x^4$, $du=4x^3dx$: $\int\frac{du}{9+u^2}=\frac13\arctan\frac u3+C=\frac13\arctan\frac{x^4}3+C$.</p></details>
+<details class="example"><summary>Example 3 (Castro, Fall 2020 MT3): $\displaystyle\int x^5\sqrt{1+x^2}\,dx$</summary>
+<ol><li>$u=1+x^2$, $du=2x\,dx$, $x^4=(u-1)^2$.</li>
+<li>$\frac12\int(u-1)^2u^{1/2}du=\frac12\int(u^{5/2}-2u^{3/2}+u^{1/2})\,du$.</li>
+<li>$=\frac17u^{7/2}-\frac25u^{5/2}+\frac13u^{3/2}+C$, $u=1+x^2$.</li></ol></details>
+<details class="example"><summary>Example 4 (Fall 2024 MT2): $\displaystyle\int\frac{x^3}{\sqrt{1-x^8}}\,dx$</summary>
+<p>$u=x^4$: $\frac14\int\frac{du}{\sqrt{1-u^2}}=\frac14\arcsin(x^4)+C$.</p></details>
+<div class="box mistake"><div class="box-title">Common mistakes</div><ul>
+<li>Leaving some $x$ in the $u$-integral (“$\int u^3x\,du$”). That integral is meaningless.</li>
+<li>Losing the constant factor from $du$ (e.g. the $\frac16$ above).</li>
+<li>Forgetting $+C$, or forgetting to substitute back.</li>
+<li>$\int\frac{du}{9+u^2}=\arctan\frac u3$ without the $\frac13$ in front.</li></ul></div>
+<div class="box tip"><div class="box-title">Exam tips</div><ul>
+<li>When you see $x^{n-1}$ next to an $x^n$ inside something, take $u=x^n$.</li>
+<li>Differentiate your final answer: it takes 30 seconds and catches most errors.</li></ul></div>

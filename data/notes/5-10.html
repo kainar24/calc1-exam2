@@ -1,0 +1,40 @@
+<p class="muted small">Follows Lecture 12, slides 19–29.</p>
+
+<h2>1. Where $\ln x$ comes from: equal areas under $y=\frac1t$</h2>
+<p><b>Problem.</b> For $y=\frac1t$, $t\ge1$, find $t_1,t_2,t_3,\dots$ so that the areas $A_1=\int_1^{t_1},\ A_2=\int_{t_1}^{t_2},\dots$ are all equal.</p>
+<ul><li>$A_1=A_2$: $\int_1^{t_1}\frac{dt}t=\int_{t_1}^{t_2}\frac{dt}t\Rightarrow\ln t_1=\ln t_2-\ln t_1\Rightarrow\ln t_2=2\ln t_1=\ln t_1^2\Rightarrow t_2=t_1^2$.</li>
+<li>Similarly $t_3=t_1^3$, and in general $t_n=t_1^n$.</li>
+<li>Choosing $t_1=e$ gives $t_n=e^n$ and every strip has area 1: $A_1=\int_1^e\frac{dt}t=1$, $A_2=\int_e^{e^2}\frac{dt}t=1$, …</li>
+<li>So $\int_1^{e^n}\frac{dt}t=n=\ln(e^n)$. Replacing $e^n$ by any positive $x$: $\int_1^x\frac{dt}t=\ln x$.</li></ul>
+
+<h2>2. The natural logarithm as an integral</h2>
+<div class="box def"><div class="box-title">Definition (natural logarithm)</div>$$\ln x=\int_1^x\frac1t\,dt,\qquad x&gt;0.$$
+For $x&gt;1$ it is the area $A$ under $y=\frac1t$ from $1$ to $x$; for $0&lt;x&lt;1$ it is $\int_1^x=-\int_x^1\frac{dt}t=-A$. Hence $\ln x&gt;0$ if $x&gt;1$, $\ln x&lt;0$ if $0&lt;x&lt;1$, $\ln1=0$.</div>
+<div class="box thm"><div class="box-title">Derivative (by FTC Part 2)</div>$\ln x$ is differentiable, hence continuous, on $(0,\infty)$, and
+$$\frac{d}{dx}[\ln x]=\frac{d}{dx}\left[\int_1^x\frac1t\,dt\right]=\frac1x\quad(x&gt;0).$$
+Since $\frac1x&gt;0$, $\ln x$ is <b>increasing</b> (and $\frac{d^2}{dx^2}\ln x=-\frac1{x^2}&lt;0$: concave down).</div>
+<div class="box thm"><div class="box-title">Theorem (algebraic properties)</div>For $a,c&gt;0$ and rational $r$: (1) $\ln ac=\ln a+\ln c$; (2) $\ln\frac1c=-\ln c$; (3) $\ln\frac ac=\ln a-\ln c$; (4) $\ln a^r=r\ln a$.<br>
+<b>Proof of (1):</b> let $f(x)=\ln ax$. Then $f'(x)=\frac{a}{ax}=\frac1x$, so $\ln ax=\ln x+C$ (same derivative ⇒ differ by a constant). Put $x=1$: $C=\ln a$. Hence $\ln ax=\ln a+\ln x$.<br>
+(2): take $a=\frac1c$ in (1): $0=\ln1=\ln\frac1c+\ln c$. (3): $\ln\frac ac=\ln\left(a\cdot\frac1c\right)=\ln a-\ln c$. (4): induction, e.g. $\ln a^{n+1}=\ln a+\ln a^n=(n+1)\ln a$, then negative integers, then $r=\frac mn$.</div>
+
+<h2>3. $e$ and the exponential function</h2>
+<div class="box def"><div class="box-title">Definitions</div><ul><li>$e$ is the unique solution of $\ln x=1$, i.e. $\int_1^e\frac{dt}t=1$.</li>
+<li>The inverse of $\ln x$ is $e^x$, the <b>natural exponential function</b>.</li>
+<li>For $a&gt;0$ and real $r$: $a^r=e^{r\ln a}$.</li></ul></div>
+
+<h2>4. Functions defined by integrals</h2>
+<p>Many important functions are not elementary (not polynomials, rational, exponential, log, trig, …). They come up when solving initial value problems.</p>
+<div class="box thm"><div class="box-title">Solution formula for an IVP</div>The solution of $\dfrac{dy}{dx}=f(x)$, $y(x_0)=y_0$ is
+$$y(x)=y_0+\int_{x_0}^xf(t)\,dt.$$
+Check: $\frac{dy}{dx}=0+f(x)$ by the FTC, and $y(x_0)=y_0+0$.</div>
+<details class="example"><summary>Lecture example: $\frac{dy}{dx}=e^{-x^2}$, $y(0)=1$</summary>
+<p>$y(x)=1+\int_0^xe^{-t^2}dt$. This integral cannot be written with elementary functions. Related: the <b>error function</b> $\operatorname{erf}(x)=\frac2{\sqrt\pi}\int_0^xe^{-t^2}dt$, important in probability and statistics.</p></details>
+
+<h2>5. Differentiating integrals with variable limits</h2>
+<div class="box thm"><div class="box-title">Formula</div>Let $F(x)=\int_a^xf(t)\,dt$, so $F(g(x))=\int_a^{g(x)}f(t)\,dt$. By the chain rule
+$$\frac{d}{dx}\left[\int_a^{g(x)}f(t)\,dt\right]=F'(g(x))g'(x)=f(g(x))\,g'(x),$$
+and in general
+$$\frac{d}{dx}\left[\int_{h(x)}^{g(x)}f(t)\,dt\right]=f(g(x))g'(x)-f(h(x))h'(x).$$</div>
+<details class="example"><summary>Lecture examples</summary>
+<ul><li>$\frac{d}{dx}\int_1^{\sin x}(1-t^2)\,dt=(1-\sin^2x)\cos x=\cos^3x$.</li>
+<li>$\frac{d}{dx}\int_{x^2}^{\sin x}\sqrt{t^3+1}\,dt=\sqrt{\sin^3x+1}\,(\cos x)-\sqrt{x^6+1}\,(2x)$.</li></ul></details>

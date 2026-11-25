@@ -1,0 +1,43 @@
+<p class="muted small">Follows Lecture 9, slides 3–10.</p>
+
+<h2>1. Rolle's Theorem</h2>
+<div class="box thm"><div class="box-title">Theorem (Rolle)</div>Let $f$ be
+<ol type="a"><li>continuous on the closed interval $[a,b]$,</li><li>differentiable on the open interval $(a,b)$,</li><li>$f(a)=f(b)=0$.</li></ol>
+Then there is <b>at least one</b> point $c\in(a,b)$ such that $f'(c)=0$. (The same proof works whenever $f(a)=f(b)$.)</div>
+<div class="box def"><div class="box-title">Proof (as on the slide)</div>
+<ul><li>If $f$ is constant, then $f'(x)=0$ for all $x$, so any $c$ works.</li>
+<li>If $f(x)&gt;0$ somewhere, then by the Extreme Value Theorem $f$ has a maximum on $[a,b]$; it is positive, so it is not at the endpoints (where $f=0$). It is at some $c$ inside $(a,b)$. Since $f$ is differentiable there, $f'(c)=0$ (a relative extremum inside is a critical point).</li>
+<li>If $f(x)&lt;0$ somewhere, the same argument with the minimum.</li></ul></div>
+<details class="example" open><summary>Lecture example: $f(x)=x^2-5x+4=(x-1)(x-4)$ on $[1,4]$</summary>
+<ol><li>$f$ is continuous on $[1,4]$ and differentiable on $(1,4)$ (polynomial); $f(1)=0=f(4)$.</li>
+<li>By Rolle there is $c\in(1,4)$ with $f'(c)=0$.</li>
+<li>$f'(x)=2x-5=0\Rightarrow c=\frac52$.</li></ol></details>
+<details class="example"><summary>Remark: differentiability is crucial. $f(x)=|x|-1$ on $[-1,1]$</summary>
+<p>$f$ is continuous on $[-1,1]$ and $f(-1)=0=f(1)$, but $f$ is not differentiable at $x=0\in(-1,1)$ (corner). There is no horizontal tangent anywhere: $f'(x)=\pm1$, and $f'(0)$ does not exist. Rolle's conclusion fails because a hypothesis fails.</p></details>
+<details class="example"><summary>Remark: there can be more than one $c$. $f(x)=\sin x$ on $[0,2\pi]$</summary>
+<p>$f(0)=f(2\pi)=0$ and $f'(\frac\pi2)=f'(\frac{3\pi}2)=0$: two points.</p></details>
+
+<h2>2. Mean-Value Theorem</h2>
+<div class="box thm"><div class="box-title">Theorem (Mean-Value Theorem)</div>Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$. Then there is at least one $c\in(a,b)$ such that
+$$f'(c)=\frac{f(b)-f(a)}{b-a}.$$
+<b>Meaning:</b> at $c$, the tangent line is <b>parallel</b> to the secant line joining $A=(a,f(a))$ and $B=(b,f(b))$. In motion language: at some instant the instantaneous velocity equals the average velocity.</div>
+<div class="box def"><div class="box-title">Proof (as on the slide)</div>
+<ol><li>The secant line $AB$: $y=\dfrac{f(b)-f(a)}{b-a}(x-a)+f(a)$. <span class="small muted">(The slide has “$-f(a)$”, a typo; it must be $+f(a)$ so that $y(a)=f(a)$.)</span></li>
+<li>Define $v(x)=f(x)-y$, the vertical distance between the curve and the secant.</li>
+<li>$v$ is continuous on $[a,b]$, differentiable on $(a,b)$, and $v(a)=v(b)=0$.</li>
+<li>Rolle: there is $c\in(a,b)$ with $v'(c)=0$, i.e. $0=f'(c)-\dfrac{f(b)-f(a)}{b-a}$. ∎</li></ol></div>
+<details class="example" open><summary>Lecture example: $f(x)=\frac14x^3+1$ on $[0,2]$</summary>
+<ol><li>Continuous on $[0,2]$, differentiable on $(0,2)$.</li>
+<li>$f'(x)=\frac{3x^2}4$; secant slope $\dfrac{f(2)-f(0)}{2-0}=\dfrac{3-1}2=1$.</li>
+<li>$\frac{3c^2}4=1\Rightarrow c^2=\frac43\Rightarrow c=\pm\frac2{\sqrt3}$.</li>
+<li>Only $c=\frac2{\sqrt3}\approx1.15$ lies in $(0,2)$: there the tangent is parallel to the secant joining $(0,1)$ and $(2,3)$.</li></ol></details>
+
+<h2>3. Consequences (textbook §4.8, used in later sections)</h2>
+<ul><li>If $f'(x)=0$ on an interval, then $f$ is constant there. (MVT between any two points.)</li>
+<li>If $f'(x)=g'(x)$ on an interval, then $f=g+C$. This is why every antiderivative is “$F+C$” in §5.2.</li>
+<li>The monotonicity test of §4.1 ($f'&gt;0$ ⇒ increasing) is proved with the MVT.</li></ul>
+
+<h2>4. How the MVT is used on exams</h2>
+<ol><li><b>Find $c$</b>: check the hypotheses, compute the secant slope, solve $f'(c)=$ slope, keep the $c$ inside $(a,b)$.</li>
+<li><b>Explain why it fails</b>: find the point of discontinuity or non-differentiability in the interval.</li>
+<li><b>Prove an inequality</b> (Castro-style bonus): apply the MVT on $[0,x]$ or $[x,y]$, then bound $f'(c)$ using where $c$ lies. Full examples are in the lesson above and in Practice → “MVT inequality proofs”.</li></ol>

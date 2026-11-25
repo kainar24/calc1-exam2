@@ -1,0 +1,40 @@
+[
+ {"day": "Mon 23 Nov · Substitution day (the #1 topic)", "focus": "§5.2, 5.3, 5.9: 26 past occurrences together.",
+  "tasks": [
+   {"text": "Read lessons §5.2 → §5.3 → §5.9", "href": "#/lesson/5.9", "min": 45},
+   {"text": "All past §5.9 problems (definite u-sub)", "href": "#/practice?section=5.9&origin=past", "min": 60},
+   {"text": "Past §5.3 and §5.2 problems", "href": "#/practice?section=5.3&origin=past", "min": 40},
+   {"text": "10 generated u-sub problems (mark unsure/unsolved honestly)", "href": "#/practice?topic=Definite%20u-substitution&origin=generated", "min": 45}]},
+ {"day": "Tue 24 Nov · Rest of Ch. 5", "focus": "§5.4–5.8, 5.10: Riemann sums, properties, FTC, motion, average value.",
+  "tasks": [
+   {"text": "Lessons §5.4, 5.5, 5.6", "href": "#/lesson/5.4", "min": 50},
+   {"text": "Lessons §5.7, 5.8, 5.10", "href": "#/lesson/5.7", "min": 40},
+   {"text": "Fall 2025 Test 3 (both versions) on the timer, skip the area/arc length problems", "href": "#/paper/f25-t3a", "min": 60},
+   {"text": "Fall 2024 Midterm 3 (18 short problems) as a speed drill", "href": "#/paper/f24-m3", "min": 40}]},
+ {"day": "Wed 25 Nov · Chapter 7", "focus": "§7.2 integration by parts, §7.3 trig integrals (named on the exam announcement).",
+  "tasks": [
+   {"text": "Lessons §7.2 and §7.3", "href": "#/lesson/7.2", "min": 40},
+   {"text": "Review slides, Ch. 7 problems (all 6)", "href": "#/paper/rev-f26", "min": 40},
+   {"text": "Prep deck @math161nu, slides 42–86 (Riemann sums, FTC, properties, substitution, parts, average value): skip the ones marked ‘also in’ if you already solved them", "href": "#/paper/deck-nu", "min": 60},
+   {"text": "Generated integration-by-parts problems", "href": "#/practice?topic=Integration%20by%20parts&origin=generated", "min": 50},
+   {"text": "Generated trig-integral problems", "href": "#/practice?topic=Trig%20integrals&origin=generated", "min": 45}]},
+ {"day": "Thu 26 Nov · Chapter 4", "focus": "§4.1, 4.2, 4.4, 4.6, 4.8.",
+  "tasks": [
+   {"text": "Lessons §4.1, 4.2, 4.4", "href": "#/lesson/4.1", "min": 50},
+   {"text": "Lessons §4.6 and §4.8 (incl. MVT inequality proofs)", "href": "#/lesson/4.8", "min": 40},
+   {"text": "Review slides, Ch. 4 problems", "href": "#/paper/rev-f26", "min": 30},
+   {"text": "Prep deck @math161nu, slides 4–33 (function analysis, absolute extrema, optimization, Rolle/MVT)", "href": "#/paper/deck-nu", "min": 50},
+   {"text": "Past problems §4.1, 4.4, 4.8", "href": "#/practice?origin=past&section=4.4", "min": 50},
+   {"text": "Generated MVT proofs (write them out fully)", "href": "#/practice?topic=MVT%20inequality%20proofs", "min": 30}]},
+ {"day": "Fri 27 Nov · Optimization + full mock", "focus": "§4.5, then a full 90-minute mock at exam time.",
+  "tasks": [
+   {"text": "Lesson §4.5 + all optimization problems (past and generated)", "href": "#/practice?topic=Optimization", "min": 70},
+   {"text": "Mock exam #1 at 12:00 (exam time), 90 min, on paper", "href": "#/mock", "min": 100},
+   {"text": "Grade the mock, then drill the weak topics", "href": "#/home", "min": 60},
+   {"text": "Mock exam #2 in the evening (if energy allows)", "href": "#/mock", "min": 100}]},
+ {"day": "Sat 28 Nov · Exam day (12:00–13:30)", "focus": "Light review only. Sleep matters more than one more problem.",
+  "tasks": [
+   {"text": "Read the cheat sheet once, slowly", "href": "#/cheatsheet", "min": 20},
+   {"text": "5 quick problems from your weak topics", "href": "#/practice?weak=1", "min": 30},
+   {"text": "Check your room in the Moodle Excel sheet (Ballroom Left / Senate Hall); bring your ID", "min": 5}]}
+]

@@ -1,0 +1,27 @@
+<p class="muted small">Follows Lecture 12, slides 11–18.</p>
+
+<h2>1. Two methods for $\int_a^bf(g(x))g'(x)\,dx$</h2>
+<p>Indefinite substitution (§5.3): $\int f(g(x))g'(x)\,dx\ \xrightarrow{u=g(x),\ du=g'(x)dx}\ \int f(u)\,du$. For a <b>definite</b> integral there are two ways.</p>
+<div class="box def"><div class="box-title">Method 1: antiderivative first, then FTC</div>Evaluate the indefinite integral $\int f(g(x))g'(x)\,dx$ by substitution, go back to $x$, then use the original limits:
+$$\int_a^bf(g(x))g'(x)\,dx=\left[\int f(g(x))g'(x)\,dx\right]_a^b.$$</div>
+<div class="box def"><div class="box-title">Method 2: substitute directly and change the limits</div>Put $u=g(x)$, $du=g'(x)\,dx$, and use $u=g(x)$ to replace the $x$-limits:
+$$\int_a^bf(g(x))g'(x)\,dx=\int_{g(a)}^{g(b)}f(u)\,du.$$
+No need to return to $x$. This is the method used in the official exam solutions.</div>
+
+<h2>2. Lecture examples</h2>
+<details class="example" open><summary>$\int_0^2x(x^2+1)^3\,dx$ by both methods</summary>
+<p><b>Method 1.</b> $u=x^2+1$, $du=2x\,dx$: $\int x(x^2+1)^3dx=\frac12\int u^3du=\frac{u^4}8+C=\frac{(x^2+1)^4}8+C$. Then $\left[\frac{(x^2+1)^4}8\right]_0^2=\frac{625}8-\frac18=78$.</p>
+<p><b>Method 2.</b> $u=x^2+1$; $x=0\Rightarrow u=1$, $x=2\Rightarrow u=5$: $\frac12\int_1^5u^3du=\left[\frac{u^4}8\right]_1^5=\frac{625}8-\frac18=78$.</p></details>
+<details class="example"><summary>$\int_0^{\pi/8}\sin^5(2x)\cos2x\,dx$</summary>
+<ol><li>$u=\sin2x$, $du=2\cos2x\,dx$.</li><li>$x=0\Rightarrow u=0$; $x=\frac\pi8\Rightarrow u=\sin\frac\pi4=\frac1{\sqrt2}$.</li>
+<li>$\frac12\int_0^{1/\sqrt2}u^5du=\frac12\left[\frac{u^6}6\right]_0^{1/\sqrt2}=\frac12\cdot\frac1{6(\sqrt2)^6}=\frac1{96}$.</li></ol></details>
+<details class="example"><summary>$\int_2^5(2x-5)(x-3)^9\,dx$ (leftover $x$ in terms of $u$)</summary>
+<ol><li>$u=x-3$, $du=dx$, and $2x-5=2(u+3)-5=2u+1$.</li><li>$x=2\Rightarrow u=-1$; $x=5\Rightarrow u=2$.</li>
+<li>$\int_{-1}^2(2u+1)u^9du=\int_{-1}^2(2u^{10}+u^9)\,du=\left[\frac{2u^{11}}{11}+\frac{u^{10}}{10}\right]_{-1}^2$.</li>
+<li>$=\left(\frac{2^{12}}{11}+\frac{2^{10}}{10}\right)-\left(-\frac2{11}+\frac1{10}\right)=\frac{52233}{110}\approx474.8$.</li></ol></details>
+<details class="example"><summary>$\int_0^{\ln3}e^x(1+e^x)^{1/2}\,dx$</summary>
+<ol><li>$u=1+e^x$, $du=e^xdx$; $x=0\Rightarrow u=2$, $x=\ln3\Rightarrow u=4$.</li>
+<li>$\int_2^4u^{1/2}du=\frac23u^{3/2}\Big|_2^4=\frac23\left(8-2\sqrt2\right)=\frac{16-4\sqrt2}3$.</li></ol></details>
+
+<div class="box mistake"><div class="box-title">The one rule you must not break</div>In Method 2 the new limits belong to $u$. Never put $x$-limits on a $du$ integral, and never change the limits and then also substitute back to $x$.</div>
+<p class="small muted">The exam-style problems for this section (quarter-disk integrals $\int_0^1\sqrt{1-u^2}\,du=\frac\pi4$, $\arcsin$ and $\arctan$ results) are worked out in the lesson above.</p>

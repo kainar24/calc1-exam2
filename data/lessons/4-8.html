@@ -1,0 +1,37 @@
+<div class="note info">7 past problems: “find $c$ in the MVT”, “why the MVT does not apply”, and proofs of inequalities with the MVT (Castro bonus problems, Fall 2020 MT3).</div>
+<h2>What you need to know</h2>
+<ul>
+<li><b>Hypotheses</b> (check both and say them aloud on the exam): $f$ continuous on $[a,b]$ <i>and</i> differentiable on $(a,b)$.</li>
+<li><b>Rolle</b>: if moreover $f(a)=f(b)$, there is $c\in(a,b)$ with $f'(c)=0$.</li>
+<li><b>MVT</b>: there is $c\in(a,b)$ with $f'(c)=\dfrac{f(b)-f(a)}{b-a}$: the tangent at $c$ is parallel to the secant.</li>
+<li>To find $c$: compute the secant slope, solve $f'(c)=\text{slope}$, keep only the solutions inside $(a,b)$.</li>
+<li>Inequalities: apply the MVT on $[x,y]$ (or $[0,x]$) and bound $f'(c)$ using $x&lt;c&lt;y$.</li>
+<li>Typical failures: corners ($|x-3|$), cusps ($x^{2/3}$ at 0), discontinuities, $c$ at an endpoint.</li>
+</ul>
+<h2>Theorems</h2>
+<div class="box thm"><div class="box-title">Rolle's Theorem (4.8.1)</div>If $f$ is continuous on $[a,b]$, differentiable on $(a,b)$ and $f(a)=f(b)=0$ (in general $f(a)=f(b)$), then there is at least one $c\in(a,b)$ with $f'(c)=0$.</div>
+<div class="box thm"><div class="box-title">Mean-Value Theorem (4.8.2)</div>If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then there is at least one $c\in(a,b)$ with
+$$f'(c)=\frac{f(b)-f(a)}{b-a}.$$
+Consequences: if $f'=0$ on an interval, $f$ is constant; if $f'=g'$, then $f=g+C$.</div>
+<h2>Worked examples</h2>
+<details class="example" open><summary>Example 1 (Review Ch4 #5): $f(x)=x+\sin x$ on $[0,\pi]$</summary>
+<ol><li>Continuous and differentiable everywhere ⇒ MVT applies.</li><li>Secant slope $=\frac{\pi-0}{\pi-0}=1$.</li>
+<li>$f'(c)=1+\cos c=1\Rightarrow\cos c=0\Rightarrow c=\frac\pi2\in(0,\pi)$.</li></ol></details>
+<details class="example"><summary>Example 2 (Fall 2025 Test 2): $f(x)=x^2-2x$ on $[-3,5]$</summary>
+<p>Slope $\frac{15-15}{8}=0$, $f'(c)=2c-2=0\Rightarrow c=1$.</p></details>
+<details class="example"><summary>Example 3 (Castro, Fall 2020 MT3): show $\sqrt{1+x}&lt;1+\frac x2$ for $x&gt;0$</summary>
+<ol><li>$f(t)=\sqrt{1+t}$ on $[0,x]$ satisfies the hypotheses.</li>
+<li>MVT: $\dfrac{\sqrt{1+x}-1}{x}=\dfrac1{2\sqrt{1+c}}$ for some $0&lt;c&lt;x$.</li>
+<li>$c&gt;0\Rightarrow\sqrt{1+c}&gt;1\Rightarrow\dfrac1{2\sqrt{1+c}}&lt;\dfrac12$.</li>
+<li>So $\sqrt{1+x}-1&lt;\frac x2$. ∎</li></ol></details>
+<details class="example"><summary>Example 4 (Fall 2024 MT2): why the MVT fails for $|x-3|$ on $[1,4]$</summary>
+<p>Not differentiable at $x=3\in(1,4)$ (corner). Indeed $f'=\pm1$ never equals the secant slope $-\frac13$.</p></details>
+<h2>Interactive: find $c$ yourself</h2>
+<div data-plot="mvt" data-args='{"f":"x+sin(x)","a":0,"b":3.14159,"bbox":[-0.5,4.6,3.8,-0.6]}'></div>
+<div class="box mistake"><div class="box-title">Common mistakes</div><ul>
+<li>Not checking (or not writing) the hypotheses. They are usually worth a point.</li>
+<li>Keeping a $c$ outside $(a,b)$, or forgetting a second valid $c$.</li>
+<li>In proofs: writing $c&lt;x$ when actually $x&lt;c$. Draw the interval and mark where $c$ lies.</li></ul></div>
+<div class="box tip"><div class="box-title">Exam tips</div><ul>
+<li>Template for inequality proofs: choose $f$, choose the interval, check the hypotheses, write the MVT equation, bound $f'(c)$, rearrange.</li>
+<li>If the answer for $c$ is ugly, check it numerically: it must lie strictly between $a$ and $b$.</li></ul></div>

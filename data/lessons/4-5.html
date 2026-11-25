@@ -1,0 +1,36 @@
+<div class="note info">6 past problems, usually worth 12–13 points: the open-top box with different material costs (Fall 2025 Test 2, both versions), the cylinder can, rectangles under curves, triangles cut off by tangent lines.</div>
+<h2>What you need to know: the 6-step recipe</h2>
+<ol>
+<li>Draw a picture and name the variables.</li>
+<li>Write the quantity to optimize (cost, area, perimeter, distance).</li>
+<li>Use the constraint (volume, curve equation) to reduce it to <b>one variable</b>.</li>
+<li>State the <b>domain</b> (e.g. $w&gt;0$, $0&lt;x\le1$).</li>
+<li>Find the critical points of the one-variable function.</li>
+<li><b>Justify</b> that it is a max/min: closed interval → compare values at critical points and endpoints; open interval → second derivative test plus behaviour at the ends (or a sign chart).</li>
+</ol>
+<div class="box def"><div class="box-title">Formulas that come up</div>
+Box with square or rectangular base $\ell\times w$, height $h$: $V=\ell wh$; open top: area $=\ell w+2\ell h+2wh$.<br>
+Cylinder: $V=\pi r^2h$, closed surface $S=2\pi r^2+2\pi rh$.<br>
+Distance from $(x,y)$ to $(a,b)$: minimize $D^2=(x-a)^2+(y-b)^2$ instead of $D$.</div>
+<h2>Worked examples</h2>
+<details class="example" open><summary>Example 1 (Fall 2025 Test 2, version A, 13 pts): open box, $V=8$, $\ell=2w$, base 3 dollars per m², sides 4 dollars per m²</summary>
+<ol><li>$h=\dfrac{8}{2w^2}=\dfrac4{w^2}$.</li><li>Cost $C=3(2w^2)+4(2wh+2\ell h)=6w^2+24wh=6w^2+\dfrac{96}w$, $w&gt;0$.</li>
+<li>$C'(w)=12w-\dfrac{96}{w^2}=0\Rightarrow w^3=8\Rightarrow w=2$.</li>
+<li>$C''(w)=12+\dfrac{192}{w^3}&gt;0$ ⇒ minimum; it is the only critical point and $C\to\infty$ at both ends, so it is the absolute minimum.</li>
+<li>Width $2$ m (length 4, height 1, cost 72).</li></ol></details>
+<details class="example"><summary>Example 2 (Review Ch4 #4): rectangle under $y=1/x$ with smallest perimeter</summary>
+<p>$P(x)=2x+\frac2x$, $P'=2-\frac2{x^2}=0\Rightarrow x=1$, $P''=\frac4{x^3}&gt;0$. So $P(1,1)$ and perimeter $4$.</p></details>
+<details class="example"><summary>Example 3 (Castro, Fall 2020 MT3): one-liter cylinder can with least material</summary>
+<p>$h=\frac{1000}{\pi r^2}$, $S=2\pi r^2+\frac{2000}r$, $S'=4\pi r-\frac{2000}{r^2}=0\Rightarrow r=\sqrt[3]{500/\pi}\approx5.42$ cm, and $h=2r$.</p></details>
+<details class="example"><summary>Example 4 (Castro, Fall 2018 Final): tangent to $y=1-x^2$ that cuts off the smallest triangle</summary>
+<p>Tangent at $a$: $y=1+a^2-2ax$; area $A=\frac{(1+a^2)^2}{4a}$, $A'=\frac{(1+a^2)(3a^2-1)}{4a^2}=0\Rightarrow a=\frac1{\sqrt3}$.</p></details>
+<h2>Interactive: the cost function from Example 1</h2>
+<div data-plot="optim" data-args='{"f":"6*x*x+96/x","a":0.6,"b":5,"bbox":[-0.3,180,5.5,-15],"xlabel":"w","ylabel":"C"}'></div>
+<div class="box mistake"><div class="box-title">Common mistakes</div><ul>
+<li>Not stating the domain, so you can't justify an absolute extremum.</li>
+<li>Open top: counting the top in the area/cost.</li>
+<li>Answering a different quantity than asked (they asked for the width, not the cost).</li>
+<li>Skipping the justification (“show that your answer is a minimum”). That costs points.</li></ul></div>
+<div class="box tip"><div class="box-title">Exam tips</div><ul>
+<li>The official marking follows the steps: set up variables, constraint, objective in one variable, derivative, critical point, justification, answer.</li>
+<li>Keep exact values ($\sqrt[3]{18}$); a decimal approximation is optional.</li></ul></div>

@@ -1,0 +1,92 @@
+<h1>MATH 161 · Exam 2 cheat sheet — Ch. 4 (no 4.3, 4.7) · Ch. 5 · §7.2–7.3 (Anton 10e)</h1>
+
+<div class="cs-block"><h3>4.1 Increase / concavity</h3>
+$f'&gt;0\Rightarrow f\nearrow$, $f'&lt;0\Rightarrow f\searrow$ (on intervals).<br>
+$f''&gt;0$ concave up ($f'\nearrow$), $f''&lt;0$ concave down.<br>
+Inflection point: $f$ continuous and concavity <b>changes</b> (sign of $f''$ changes; $f''=0$ alone is not enough).<br>
+Graph of $f'$: $f\nearrow$ where $f'$ is above the axis; $f$ is CU where $f'$ is rising.</div>
+
+<div class="cs-block"><h3>4.2 Relative extrema</h3>
+Critical point: $f'(x_0)=0$ <b>or</b> $f'(x_0)$ does not exist ($x_0\in$ domain).<br>
+1st derivative test: $+\to-$ max, $-\to+$ min, no change: neither.<br>
+2nd derivative test ($f'(x_0)=0$): $f''&gt;0$ min, $f''&lt;0$ max, $f''=0$ inconclusive.</div>
+
+<div class="cs-block"><h3>4.4 Absolute extrema</h3>
+<b>EVT</b>: $f$ continuous on closed $[a,b]$ ⇒ abs max and min exist.<br>
+Method: critical points in $(a,b)$ + endpoints → table of values → largest / smallest.<br>
+Open/infinite interval: check limits at the ends; one relative extremum only ⇒ it is absolute.</div>
+
+<div class="cs-block"><h3>4.5 Optimization</h3>
+Picture → objective → constraint → one variable → <b>domain</b> → $f'=0$ → justify (closed interval: compare values; else $f''$ sign + end behaviour) → answer what was asked.<br>
+Open box $\ell\times w\times h$: $V=\ell wh$, area $=\ell w+2\ell h+2wh$. Cylinder: $V=\pi r^2h$, $S=2\pi r^2+2\pi rh$. Distance: minimize $D^2$.</div>
+
+<div class="cs-block"><h3>4.6 Rectilinear motion</h3>
+$v=s'$, $a=v'=s''$, speed $=|v|$. $v=0$: stopped / may turn around.<br>
+<b>Speeding up</b>: $v,a$ same sign; slowing down: opposite signs.</div>
+
+<div class="cs-block"><h3>4.8 Rolle &amp; MVT</h3>
+Hypotheses: continuous on $[a,b]$, differentiable on $(a,b)$.<br>
+Rolle: $+\,f(a)=f(b)$ ⇒ $\exists c\in(a,b)$: $f'(c)=0$.<br>
+MVT: $\exists c\in(a,b)$: $f'(c)=\dfrac{f(b)-f(a)}{b-a}$.<br>
+Proof of inequality: MVT on $[0,x]$ or $[x,y]$, then bound $f'(c)$ using $a&lt;c&lt;b$.<br>
+Fails: corner $|x-a|$, cusp $x^{2/3}$, jump, $c$ at an endpoint.</div>
+
+<div class="cs-block"><h3>5.2 Antiderivatives</h3>
+$\int x^n=\frac{x^{n+1}}{n+1}$ $(n\neq-1)$, $\int\frac{dx}x=\ln|x|$, $\int e^{kx}=\frac1ke^{kx}$, $\int b^x=\frac{b^x}{\ln b}$<br>
+$\int\sin=-\cos$, $\int\cos=\sin$, $\int\sec^2=\tan$, $\int\csc^2=-\cot$<br>
+$\int\sec x\tan x=\sec x$, $\int\csc x\cot x=-\csc x$<br>
+$\int\frac{dx}{1+x^2}=\arctan x$, $\int\frac{dx}{\sqrt{1-x^2}}=\arcsin x$, $\int\frac{dx}{a^2+x^2}=\frac1a\arctan\frac xa$<br>
+$\int\tan x=\ln|\sec x|$, $\int\sec x=\ln|\sec x+\tan x|$ &nbsp;(+C)<br>
+IVP: integrate, then use $y(x_0)=y_0$ to find $C$.</div>
+
+<div class="cs-block"><h3>5.3 / 5.9 Substitution</h3>
+$\int f(g(x))g'(x)\,dx=\int f(u)\,du$, $u=g(x)$.<br>
+Definite: $\int_a^bf(g(x))g'(x)\,dx=\int_{g(a)}^{g(b)}f(u)\,du$ — <b>change the limits</b>, don't go back to $x$.<br>
+Leftover $x$: express with $u$ (e.g. $x^2=u-1$).<br>
+$\int_0^r\sqrt{r^2-u^2}\,du=\frac{\pi r^2}4$, $\int_{-r}^r\sqrt{r^2-u^2}\,du=\frac{\pi r^2}2$.</div>
+
+<div class="cs-block"><h3>5.4 Sums &amp; area</h3>
+$\Delta x=\frac{b-a}n$, right: $x_k=a+k\Delta x$, left: $a+(k-1)\Delta x$, mid: $a+(k-\frac12)\Delta x$.<br>
+$A=\lim_{n\to\infty}\sum_{k=1}^nf(x_k)\Delta x$.<br>
+$\sum1=n$, $\sum k=\frac{n(n+1)}2$, $\sum k^2=\frac{n(n+1)(2n+1)}6$, $\sum k^3=\left[\frac{n(n+1)}2\right]^2$.</div>
+
+<div class="cs-block"><h3>5.5 Definite integral</h3>
+$\int_a^bf=\lim_{\max\Delta x_k\to0}\sum f(x_k^*)\Delta x_k$ = net signed area.<br>
+$\int_a^a=0$, $\int_b^a=-\int_a^b$, $\int_a^b=\int_a^c+\int_c^b$, $\int_a^bc\,dx=c(b-a)$.<br>
+Odd: $\int_{-a}^af=0$; even: $2\int_0^af$. $|g|$ / piecewise: split at break points.</div>
+
+<div class="cs-block"><h3>5.6 FTC</h3>
+$\int_a^bf(x)\,dx=F(b)-F(a)$ ($F'=f$, $f$ continuous).<br>
+$\frac{d}{dx}\int_a^xf(t)\,dt=f(x)$;&nbsp; $\frac{d}{dx}\int_{h(x)}^{g(x)}f(t)\,dt=f(g)g'-f(h)h'$.</div>
+
+<div class="cs-block"><h3>5.7 Motion via integrals</h3>
+$v=\int a\,dt$, $s=\int v\,dt$ (two constants!).<br>
+Displacement $=\int_{t_0}^{t_1}v\,dt$; distance $=\int_{t_0}^{t_1}|v|\,dt$ (split where $v=0$).<br>
+Constant $a$: $v=v_0+at$, $s=s_0+v_0t+\frac12at^2$.</div>
+
+<div class="cs-block"><h3>5.8 Average value</h3>
+$f_{\text{ave}}=\dfrac1{b-a}\int_a^bf(x)\,dx$. MVT for integrals: $\exists c$: $f(c)=f_{\text{ave}}$.</div>
+
+<div class="cs-block"><h3>5.10 ln as an integral</h3>
+$\ln x=\int_1^x\frac{dt}t$ $(x&gt;0)$, $\frac{d}{dx}\ln x=\frac1x$, $\ln1=0$, $\int_1^e\frac{dt}t=1$.<br>
+$F(x)=\int_a^xf(t)dt$: $F(a)=0$, $F'=f$ → analyse with §4.1.</div>
+
+<div class="cs-block"><h3>7.2 Integration by parts</h3>
+$\int u\,dv=uv-\int v\,du$;&nbsp; $\int_a^bu\,dv=[uv]_a^b-\int_a^bv\,du$.<br>
+$u$ by <b>LIATE</b>: Log, Inverse trig, Algebraic, Trig, Exponential.<br>
+Polynomial × $e^{ax}$/$\sin$/$\cos$: tabular (signs $+,-,+,\dots$).<br>
+$\ln x$, $\arctan x$: $u=$ it, $dv=dx$. Cyclic ($e^x\sin x$, $\cos\ln x$): twice, solve for $I$.</div>
+
+<div class="cs-block"><h3>7.3 Trig integrals</h3>
+$\sin^m\cos^n$: $n$ odd → save $\cos$, $u=\sin$; $m$ odd → save $\sin$, $u=\cos$; both even → $\sin^2=\frac{1-\cos2x}2$, $\cos^2=\frac{1+\cos2x}2$.<br>
+$\tan^m\sec^n$: $n$ even → save $\sec^2$, $u=\tan$; $m$ odd → save $\sec\tan$, $u=\sec$; $\tan^2=\sec^2-1$.<br>
+$\sin A\cos B=\frac12[\sin(A-B)+\sin(A+B)]$<br>
+$\sin A\sin B=\frac12[\cos(A-B)-\cos(A+B)]$<br>
+$\cos A\cos B=\frac12[\cos(A-B)+\cos(A+B)]$<br>
+$\sin2x=2\sin x\cos x$, $\ 1+\tan^2=\sec^2$.</div>
+
+<div class="cs-block"><h3>Derivatives you need</h3>
+$(\tan)'=\sec^2$, $(\sec)'=\sec\tan$, $(\cot)'=-\csc^2$, $(\csc)'=-\csc\cot$, $(\arctan x)'=\frac1{1+x^2}$, $(\arcsin x)'=\frac1{\sqrt{1-x^2}}$, $(\ln|x|)'=\frac1x$, $(e^{g})'=g'e^g$.</div>
+
+<div class="cs-block"><h3>Exam habits</h3>
+Write $u,du$ and new limits · state theorems + hypotheses · sign tables · box answers · check by differentiating · answer exactly what is asked.</div>

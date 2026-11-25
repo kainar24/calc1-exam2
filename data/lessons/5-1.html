@@ -1,0 +1,13 @@
+<div class="note">No past problem tests §5.1 alone; it is the idea behind §5.4–5.6. Learn it quickly.</div>
+<h2>What you need to know</h2>
+<ul>
+<li><b>Rectangle method</b>: approximate the area under $y=f(x)\ge0$ on $[a,b]$ by $n$ rectangles of width $\frac{b-a}n$; as $n\to\infty$ the sum tends to the exact area.</li>
+<li>Lower/upper sums: rectangles inside / containing the region. Midpoints are usually more accurate.</li>
+<li><b>Antiderivative method</b>: if $A(x)$ is the area from $a$ to $x$, then $A'(x)=f(x)$. This is the seed of the FTC.</li>
+</ul>
+<div class="box thm"><div class="box-title">Key idea</div>If $f$ is continuous and nonnegative on $[a,b]$ and $A(x)$ is the area under $f$ over $[a,x]$, then $A'(x)=f(x)$ and $A(a)=0$.</div>
+<h2>Example (Lecture 9)</h2>
+<details class="example" open><summary>Area under $y=x^2$ on $[0,1]$ with $n$ right-endpoint rectangles</summary>
+<p>$\sum_{k=1}^n\left(\frac kn\right)^2\frac1n=\frac{(n+1)(2n+1)}{6n^2}\to\frac13$. With the antiderivative method: $A(x)=\frac{x^3}3$, so $A(1)=\frac13$.</p></details>
+<div data-plot="riemann" data-args='{"f":"x*x","a":0,"b":1,"n":5,"bbox":[-0.2,1.25,1.25,-0.15]}'></div>
+<div class="box tip"><div class="box-title">Exam tip</div><ul><li>For an increasing $f$, left endpoints undershoot and right endpoints overshoot (the other way round for decreasing $f$).</li></ul></div>

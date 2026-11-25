@@ -1,0 +1,21 @@
+<div class="note info">2 past problems directly (Review Ch4 #2, a sketch on the Castro 2018 final), but relative extrema are inside many optimization and graphing problems.</div>
+<h2>What you need to know</h2>
+<ul>
+<li><b>Critical point</b>: $f'(x_0)=0$ (stationary point) or $f'(x_0)$ does not exist, with $x_0$ in the domain.</li>
+<li><b>First derivative test</b>: $f'$ changes $+\to-$ ⇒ relative max; $-\to+$ ⇒ relative min; no change ⇒ neither.</li>
+<li><b>Second derivative test</b>: $f'(x_0)=0$ and $f''(x_0)&gt;0$ ⇒ min; $f''(x_0)&lt;0$ ⇒ max; $f''(x_0)=0$ ⇒ the test says nothing (use the first derivative test).</li>
+<li>Graphing a polynomial: intercepts, end behaviour, critical points, inflection points, sign tables, then sketch.</li>
+</ul>
+<div class="box thm"><div class="box-title">Theorem 4.2.2 (relative extrema occur at critical points)</div>If $f$ has a relative extremum at $x_0$, then either $f'(x_0)=0$ or $f$ is not differentiable at $x_0$.</div>
+<h2>Worked examples</h2>
+<details class="example" open><summary>Example 1 (Review Ch4 #2): $f(x)=(x^2+x)^2$</summary>
+<ol><li>$f'=2x(x+1)(2x+1)$ ⇒ stationary points $-1,-\frac12,0$.</li><li>Signs: $-\,|\,+\,|\,-\,|\,+$.</li>
+<li>Rel. min $f(-1)=f(0)=0$; rel. max $f(-\frac12)=\frac1{16}$.</li></ol>
+<img class="svg-fig" src="assets/fig/x2x_sq.svg" alt="graph" style="max-width:420px;background:#fff;border-radius:8px"></details>
+<details class="example"><summary>Example 2 (Castro, Fall 2018 Final): sketch $f(x)=2x+3x^{2/3}$</summary>
+<p>$f'=\frac{2(x^{1/3}+1)}{x^{1/3}}$: critical points $-1$ (stationary) and $0$ ($f'$ undefined). Rel. max $f(-1)=1$, rel. min $f(0)=0$ at a cusp. $f''=-\frac23x^{-4/3}&lt;0$: concave down on both sides.</p>
+<img class="svg-fig" src="assets/fig/cusp_2x3x23.svg" alt="graph" style="max-width:420px;background:#fff;border-radius:8px"></details>
+<h2>Interactive</h2>
+<div data-plot="derivs" data-args='{"f":"pow(x*x+x,2)","df":"2*x*(x+1)*(2*x+1)","d2f":"12*x*x+12*x+2","bbox":[-1.8,0.6,0.8,-0.25],"show":[0,1]}'></div>
+<div class="box mistake"><div class="box-title">Common mistakes</div><ul><li>Missing critical points where $f'$ does not exist.</li><li>Using the second derivative test when $f''(x_0)=0$ and concluding something.</li></ul></div>
+<div class="box tip"><div class="box-title">Exam tips</div><ul><li>Always give the extremum as a point or value: “relative max $\frac1{16}$ at $x=-\frac12$”.</li></ul></div>

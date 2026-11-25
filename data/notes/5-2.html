@@ -1,0 +1,65 @@
+<p class="muted small">Follows Lecture 9, slides 29–52.</p>
+
+<h2>1. Antiderivatives</h2>
+<div class="box def"><div class="box-title">Definition (antiderivative)</div>$F$ is an <b>antiderivative</b> of $f$ on an open interval if $F'(x)=f(x)$ for all $x$ in the interval.<br>
+Example: $F(x)=\frac13x^3$ is an antiderivative of $f(x)=x^2$ on $(-\infty,\infty)$, because $\frac{d}{dx}\left[\frac13x^3\right]=x^2$.</div>
+<div class="box thm"><div class="box-title">Theorem</div>If $F$ is an antiderivative of $f$ on an open interval, then $F(x)+C$ is also an antiderivative for any constant $C$, and <b>every</b> antiderivative of $f$ on the interval has the form $F(x)+C$. (The second part follows from the MVT: two functions with the same derivative differ by a constant.)</div>
+
+<h2>2. The indefinite integral</h2>
+<div class="box def"><div class="box-title">Definitions</div>The process of finding antiderivatives is called <b>antidifferentiation</b> or <b>integration</b>. If $F'(x)=f(x)$, we write
+$$\int f(x)\,dx=F(x)+C,$$
+where $C$ is an arbitrary constant. $\int f(x)\,dx$ is the <b>indefinite integral</b>; $\int$ (an “elongated S”) is the <b>integral sign</b>; $f(x)$ is the <b>integrand</b>; $dx$ identifies the <b>independent variable</b>.<br>
+Differentiating an antiderivative gives the integrand back: $\dfrac{d}{dx}\left[\int f(x)\,dx\right]=f(x)$.</div>
+<p>Every derivative formula gives an integration formula: $\frac{d}{dx}[x^3]=3x^2\iff\int3x^2dx=x^3+C$; $\frac{d}{dx}[\sqrt x]=\frac1{2\sqrt x}\iff\int\frac{dx}{2\sqrt x}=\sqrt x+C$; $\frac{d}{dt}[\tan t]=\sec^2t\iff\int\sec^2t\,dt=\tan t+C$.</p>
+<div class="box def"><div class="box-title">Table of integration formulas (slide 32)</div>
+<table class="small"><tr><td>1. $\int dx=x+C$</td><td>8. $\int\csc x\cot x\,dx=-\csc x+C$</td></tr>
+<tr><td>2. $\int x^r\,dx=\frac{x^{r+1}}{r+1}+C\ (r\ne-1)$</td><td>9. $\int e^x\,dx=e^x+C$</td></tr>
+<tr><td>3. $\int\cos x\,dx=\sin x+C$</td><td>10. $\int b^x\,dx=\frac{b^x}{\ln b}+C\ (0&lt;b,\ b\ne1)$</td></tr>
+<tr><td>4. $\int\sin x\,dx=-\cos x+C$</td><td>11. $\int\frac1x\,dx=\ln|x|+C$</td></tr>
+<tr><td>5. $\int\sec^2x\,dx=\tan x+C$</td><td>12. $\int\frac{dx}{1+x^2}=\tan^{-1}x+C$</td></tr>
+<tr><td>6. $\int\csc^2x\,dx=-\cot x+C$</td><td>13. $\int\frac{dx}{\sqrt{1-x^2}}=\sin^{-1}x+C$</td></tr>
+<tr><td>7. $\int\sec x\tan x\,dx=\sec x+C$</td><td>14. $\int\frac{dx}{x\sqrt{x^2-1}}=\sec^{-1}|x|+C$</td></tr></table></div>
+<details class="example" open><summary>Lecture examples: the power rule</summary>
+<p>$\int x^2dx=\frac{x^3}3+C$ ($r=2$); $\ \int x^3dx=\frac{x^4}4+C$ ($r=3$); $\ \int\frac{dx}{x^5}=\int x^{-5}dx=\frac{x^{-4}}{-4}+C=-\frac1{4x^4}+C$ ($r=-5$); $\ \int\sqrt x\,dx=\int x^{1/2}dx=\frac{x^{3/2}}{3/2}+C=\frac23(\sqrt x)^3+C$ ($r=\frac12$).</p></details>
+
+<div class="box thm"><div class="box-title">Theorem (properties of the indefinite integral)</div>If $f,g$ have antiderivatives and $c$ is a constant:
+$$\int cf(x)\,dx=c\int f(x)\,dx,\qquad\int[f(x)\pm g(x)]\,dx=\int f(x)\,dx\pm\int g(x)\,dx.$$
+(There is <b>no</b> product or quotient rule for integrals: simplify first.)</div>
+<details class="example"><summary>Lecture example: $\int(3x^6-2x^2+7x+1)\,dx$</summary>
+<p>$=3\int x^6dx-2\int x^2dx+7\int x\,dx+\int1\,dx=\frac{3x^7}7-\frac{2x^3}3+\frac{7x^2}2+x+C$.</p></details>
+<details class="example"><summary>Lecture example: $\int\frac{t^2-2t^4}{t^4}\,dt$ (divide first)</summary>
+<p>$=\int\left(\frac1{t^2}-2\right)dt=\int(t^{-2}-2)\,dt=\frac{t^{-1}}{-1}-2t+C=-\frac1t-2t+C$.</p></details>
+<details class="example"><summary>Lecture example: $\int\frac{\cos x}{\sin^2x}\,dx$ (rewrite with trig)</summary>
+<p>$=\int\frac1{\sin x}\cdot\frac{\cos x}{\sin x}\,dx=\int\csc x\cot x\,dx=-\csc x+C$.</p></details>
+<details class="example"><summary>Lecture example: $\int\frac{x^2}{x^2+1}\,dx$ (add and subtract)</summary>
+<p>$=\int\left(\frac{x^2+1}{x^2+1}-\frac1{x^2+1}\right)dx=\int\left(1-\frac1{x^2+1}\right)dx=x-\tan^{-1}x+C$.</p></details>
+
+<h2>3. Integral curves</h2>
+<div class="box def"><div class="box-title">Definition</div>The graphs of the antiderivatives of $f$ are the <b>integral curves</b> of $f$. If $y=F(x)$ is one integral curve, all others are its vertical translations $y=F(x)+C$. Example: integral curves of $x^2$ are $y=\frac13x^3+C$.</div>
+<details class="example"><summary>Lecture example: a curve with slope $x^2$ through $(2,1)$</summary>
+<ol><li>The slope of the tangent is $\frac{dy}{dx}=x^2$, so $y=\int x^2dx=\frac13x^3+C$.</li>
+<li>Through $(2,1)$: $1=\frac13(2^3)+C\Rightarrow C=-\frac53$.</li>
+<li>$y=\frac13x^3-\frac53$.</li></ol></details>
+
+<h2>4. Differential equations and initial value problems</h2>
+<div class="box def"><div class="box-title">Definitions</div>An equation such as $\frac{dy}{dx}=x^2$ is a <b>differential equation</b> (it involves the derivative of an unknown function $y$). The problem
+$$\frac{dy}{dx}=f(x),\qquad y(x_0)=y_0$$
+is an <b>initial value problem</b>: find the function with derivative $f$ whose graph passes through $(x_0,y_0)$. Its solution is the integral curve of $f$ through that point.</div>
+<details class="example"><summary>Lecture example: $\frac{dy}{dx}=\cos x$, $y(0)=1$</summary>
+<p>$y=\int\cos x\,dx=\sin x+C$; $1=\sin0+C\Rightarrow C=1$. Solution: $y=\sin x+1$.</p></details>
+
+<h2>5. More examples (end of Lecture 9)</h2>
+<details class="example"><summary>(a) $\int\frac{\sec x+\cos x}{2\cos x}\,dx$</summary>
+<p>$=\frac12\int\sec^2x\,dx+\frac12\int dx=\frac12\tan x+\frac12x+C$.</p></details>
+<details class="example"><summary>(b) $\int\left[\frac1{2\sqrt{1-x^2}}-\frac3{1+x^2}\right]dx$</summary>
+<p>$=\frac12\int\frac{dx}{\sqrt{1-x^2}}-3\int\frac{dx}{1+x^2}=\frac12\sin^{-1}x-3\tan^{-1}x+C$.</p></details>
+<details class="example"><summary>(c) $\int\left(\frac{10}{y^{3/4}}-3\sqrt[3]y+\frac4{\sqrt y}\right)dy$</summary>
+<p>$=\int\left(10y^{-3/4}-3y^{1/3}+4y^{-1/2}\right)dy=40y^{1/4}-\frac94y^{4/3}+8y^{1/2}+C$.</p></details>
+<details class="example"><summary>IVP: $\frac{dy}{dx}=\frac{x+1}{\sqrt x}$, $y(1)=0$</summary>
+<ol><li>$y=\int(x^{1/2}+x^{-1/2})\,dx=\frac23x^{3/2}+2x^{1/2}+C$.</li>
+<li>$0=\frac23+2+C\Rightarrow C=-\frac83$.</li>
+<li>$y(x)=\frac23x^{3/2}+2x^{1/2}-\frac83$, $x&gt;0$.</li></ol></details>
+<details class="example"><summary>IVP: $\frac{dy}{dt}=\sec^2t-\sin t$, $y(\frac\pi4)=1$</summary>
+<ol><li>$y(t)=\tan t+\cos t+C$.</li>
+<li>$1=\tan\frac\pi4+\cos\frac\pi4+C=1+\frac{\sqrt2}2+C\Rightarrow C=-\frac{\sqrt2}2$.</li>
+<li>$y(t)=\tan t+\cos t-\frac{\sqrt2}2$.</li></ol></details>

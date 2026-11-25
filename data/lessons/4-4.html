@@ -1,0 +1,31 @@
+<div class="note info">6 past problems: closed-interval method, plus “does it have absolute extrema on an open interval?” (Review Ch4 #3) and theory questions.</div>
+<h2>What you need to know</h2>
+<ul>
+<li><b>Extreme Value Theorem</b>: continuous on a <b>closed, bounded</b> $[a,b]$ ⇒ absolute max and min both exist.</li>
+<li><b>Closed-interval method</b>: (1) find the critical points in $(a,b)$, where $f'=0$ <i>or $f'$ does not exist</i>; (2) evaluate $f$ there and at $a,b$; (3) the largest value is the max, the smallest is the min.</li>
+<li>On open or infinite intervals, extrema may not exist. Look at the limits at the ends. If there is a single critical point that is a relative extremum, it is absolute (Theorem 4.4.4).</li>
+<li>Discontinuous functions may fail to have extrema even on $[a,b]$.</li>
+</ul>
+<div class="box thm"><div class="box-title">Theorem 4.4.2 (EVT) and 4.4.3</div>If $f$ is continuous on $[a,b]$, it has an absolute max and min there. If an absolute extremum occurs inside $(a,b)$, it occurs at a critical point.</div>
+<div class="box thm"><div class="box-title">Theorem 4.4.4 (single critical point)</div>If $f$ is continuous on an interval and has exactly one relative extremum there at $x_0$, then a relative max is the absolute max and a relative min is the absolute min.</div>
+<h2>Worked examples</h2>
+<details class="example" open><summary>Example 1 (Fall 2022 Exam 3): $f(x)=x^3-3x^2+1$ on $[-\frac12,4]$</summary>
+<p>$f'=3x(x-2)$ ⇒ $x=0,2$. Values: $f(-\frac12)=\frac18$, $f(0)=1$, $f(2)=-3$, $f(4)=17$. Max $17$ at $x=4$, min $-3$ at $x=2$.</p></details>
+<details class="example"><summary>Example 2 (Castro, Fall 2017 MT2): $f(x)=3x^{2/3}-2x$ on $[-1,1]$</summary>
+<p>$f'=2x^{-1/3}-2$: zero at $x=1$, undefined at $x=0$. Values $f(-1)=5$, $f(0)=0$, $f(1)=1$. Max $5$, min $0$. Don't forget the point where $f'$ does not exist!</p></details>
+<details class="example"><summary>Example 3 (Review Ch4 #3): $f(x)=\frac1{x^3-3x^2}$ on $(0,3)$</summary>
+<ol><li>$f=\frac1{x^2(x-3)}&lt;0$ and $f\to-\infty$ at both ends ⇒ no absolute minimum.</li>
+<li>$f'=-\frac{3x(x-2)}{(x^3-3x^2)^2}$: only critical point $x=2$; $f\nearrow$ on $(0,2)$, $\searrow$ on $(2,3)$.</li>
+<li>Absolute max $f(2)=-\frac14$.</li></ol></details>
+<details class="example"><summary>Example 4 (Castro, Fall 2017 Final): $x-\tan x$ on $[-\frac\pi4,\frac\pi4]$</summary>
+<p>$f'=-\tan^2x\le0$ ⇒ decreasing. Max $1-\frac\pi4$ at the left end, min $\frac\pi4-1$ at the right end.</p></details>
+<h2>Interactive: move the interval</h2>
+<div data-plot="absext" data-args='{"f":"x*x*x-3*x*x+1","a":-0.5,"b":4,"bbox":[-1.5,19,4.8,-5]}'></div>
+<div class="box mistake"><div class="box-title">Common mistakes</div><ul>
+<li>Forgetting the endpoints, or including critical points outside the interval.</li>
+<li>Missing critical points where $f'$ is undefined ($x^{2/3}$, $|x|$).</li>
+<li>Giving only the location ($x=2$) or only the value. Give both: “abs max value 17 at $x=4$”.</li>
+<li>Claiming extrema exist on an open interval without checking the end behaviour.</li></ul></div>
+<div class="box tip"><div class="box-title">Exam tips</div><ul>
+<li>Put the candidates in a small table $x\mid f(x)$; graders like it.</li>
+<li>Say “$f$ is continuous on the closed interval, so by the EVT…” before computing.</li></ul></div>

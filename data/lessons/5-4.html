@@ -1,0 +1,24 @@
+<div class="note info">5 past problems: area as a limit of right-endpoint sums (Review #1, Castro Fall 2020 MT3) and matching a $\lim\sum$ to an integral.</div>
+<h2>What you need to know</h2>
+<ul>
+<li>Equal subintervals: $\Delta x=\frac{b-a}n$, right endpoints $x_k^*=a+k\Delta x$, left $a+(k-1)\Delta x$, midpoints $a+(k-\frac12)\Delta x$.</li>
+<li>$A=\lim_{n\to\infty}\sum_{k=1}^nf(x_k^*)\Delta x$.</li>
+<li>Expand $f(x_k^*)$, pull constants out of the sum, use the closed formulas, then let $n\to\infty$.</li>
+<li>Reverse direction: from $\sum f\left(a+\frac{(b-a)k}n\right)\frac{b-a}n$, read off $\Delta x$, $a$, $b$ and $f$.</li>
+</ul>
+<div class="box def"><div class="box-title">Sum formulas (Theorem 5.4.2)</div>
+$$\sum_{k=1}^n1=n,\quad\sum_{k=1}^nk=\frac{n(n+1)}2,\quad\sum_{k=1}^nk^2=\frac{n(n+1)(2n+1)}6,\quad\sum_{k=1}^nk^3=\left[\frac{n(n+1)}2\right]^2$$</div>
+<h2>Worked examples</h2>
+<details class="example" open><summary>Example 1 (Review Ch5 #1): area under $y=1-x^2$ on $[0,1]$, right endpoints</summary>
+<ol><li>$\Delta x=\frac1n$, $x_k^*=\frac kn$, $f(x_k^*)=1-\frac{k^2}{n^2}$.</li>
+<li>$A_n=\frac1n\sum1-\frac1{n^3}\sum k^2=1-\frac{(n+1)(2n+1)}{6n^2}$.</li><li>$A=1-\frac26=\frac23$.</li></ol>
+<img class="svg-fig" src="assets/fig/riemann_1mx2.svg" alt="Riemann sum" style="max-width:420px;background:#fff;border-radius:8px"></details>
+<details class="example"><summary>Example 2 (Castro, Fall 2020 MT3): $\int_0^3(x^3-6x)\,dx$ by a Riemann sum</summary>
+<p>$\Delta x=\frac3n$, $x_k=\frac{3k}n$: $\frac{81}{n^4}\sum k^3-\frac{54}{n^2}\sum k=\frac{81}4\left(1+\frac1n\right)^2-27\left(1+\frac1n\right)\to-\frac{27}4$.</p></details>
+<details class="example"><summary>Example 3 (Fall 2024 MT3): which integral is $\lim\sum\left[\left(1+\frac{2i}n\right)^2+1\right]\frac2n$?</summary>
+<p>$\Delta x=\frac2n$, start $a=1$, so $b=3$, $f(x)=x^2+1$: $\int_1^3(x^2+1)\,dx$.</p></details>
+<h2>Interactive: watch the sum converge</h2>
+<div data-plot="riemann" data-args='{"f":"1-x*x","a":0,"b":1,"n":4,"bbox":[-0.2,1.25,1.25,-0.15]}'></div>
+<div class="box mistake"><div class="box-title">Common mistakes</div><ul>
+<li>$x_k^*=k\Delta x$ when $a\ne0$. It must be $a+k\Delta x$.</li><li>Forgetting the factor $\Delta x$ in the sum.</li><li>Taking $n\to\infty$ before simplifying, which gives forms like $\infty-\infty$.</li></ul></div>
+<div class="box tip"><div class="box-title">Exam tips</div><ul><li>Check your limit against the FTC answer on the side (e.g. $\int_0^1(1-x^2)dx=\frac23$). If they differ, find the slip.</li></ul></div>

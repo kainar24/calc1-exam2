@@ -1,0 +1,72 @@
+<p class="muted small">Follows Lecture 7, slides 3–18 (Achenef Tesfahun), in the same order. Every example from the slides is worked out here.</p>
+
+<h2>1. Increasing, decreasing, constant</h2>
+<div class="box def"><div class="box-title">Definition</div>Let $f$ be defined on an interval, and let $x_1,x_2$ be any two points of the interval.
+<ul><li>$f$ is <b>increasing</b> on the interval if $f(x_1)&lt;f(x_2)$ whenever $x_1&lt;x_2$;</li>
+<li>$f$ is <b>decreasing</b> if $f(x_1)&gt;f(x_2)$ whenever $x_1&lt;x_2$;</li>
+<li>$f$ is <b>constant</b> if $f(x_1)=f(x_2)$ for all $x_1,x_2$.</li></ul>
+Geometrically: increasing means the graph goes up from left to right.</div>
+<div class="box thm"><div class="box-title">Theorem (derivative test for monotonicity)</div>Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$.
+<ul><li>If $f'(x)&gt;0$ for all $x\in(a,b)$, then $f$ is increasing on $[a,b]$.</li>
+<li>If $f'(x)&lt;0$ for all $x\in(a,b)$, then $f$ is decreasing on $[a,b]$.</li>
+<li>If $f'(x)=0$ for all $x\in(a,b)$, then $f$ is constant on $[a,b]$.</li></ul>
+Picture: every tangent line has positive slope ⇒ the graph rises. Note that the conclusion holds on the <b>closed</b> interval (endpoints included), because $f$ is continuous there.</div>
+
+<details class="example" open><summary>Lecture example: $f(x)=3x^4+4x^3-12x^2+2$, where is $f$ increasing / decreasing?</summary>
+<ol><li>$f'(x)=12x^3+12x^2-24x=12x(x^2+x-2)=12x(x+2)(x-1)$.</li>
+<li>Zeros of $f'$: $x=-2,0,1$. They split the line into four intervals. Sign table of the factors $(12x)(x+2)(x-1)$:
+<table class="small"><tr><th>interval</th><th>signs</th><th>$f'$</th><th>conclusion</th></tr>
+<tr><td>$x&lt;-2$</td><td>$(-)(-)(-)$</td><td>$-$</td><td>decreasing on $(-\infty,-2]$</td></tr>
+<tr><td>$-2&lt;x&lt;0$</td><td>$(-)(+)(-)$</td><td>$+$</td><td>increasing on $[-2,0]$</td></tr>
+<tr><td>$0&lt;x&lt;1$</td><td>$(+)(+)(-)$</td><td>$-$</td><td>decreasing on $[0,1]$</td></tr>
+<tr><td>$x&gt;1$</td><td>$(+)(+)(+)$</td><td>$+$</td><td>increasing on $[1,\infty)$</td></tr></table></li>
+<li>“What is special about $x=-2,0,1$?” These are exactly the points where $f$ switches between rising and falling, i.e. the candidates for relative extrema (this leads to §4.2).</li></ol></details>
+
+<h2>2. Concavity</h2>
+<p>Concavity is the <b>direction of curvature</b>.</p>
+<ul><li><b>Concave up</b>: upward curvature; the tangent lines have <i>increasing</i> slopes and the graph lies <i>above</i> its tangent lines (“cup”).</li>
+<li><b>Concave down</b>: downward curvature; tangent slopes <i>decrease</i> and the graph lies <i>below</i> its tangent lines (“cap”).</li></ul>
+<div class="box def"><div class="box-title">Definition (concave up / down)</div>If $f$ is differentiable on an open interval, $f$ is <b>concave up</b> there if $f'$ is increasing on the interval, and <b>concave down</b> if $f'$ is decreasing on the interval.</div>
+<div class="box thm"><div class="box-title">Theorem (second derivative test for concavity)</div>Let $f$ be twice differentiable on an open interval $(a,b)$.
+<ul><li>If $f''(x)&gt;0$ for all $x\in(a,b)$, then $f$ is concave up on $(a,b)$.</li>
+<li>If $f''(x)&lt;0$ for all $x\in(a,b)$, then $f$ is concave down on $(a,b)$.</li></ul>
+Why: $f''=(f')'$, so $f''&gt;0$ means $f'$ is increasing, which is the definition of concave up.</div>
+
+<details class="example"><summary>Lecture example: $f(x)=x^2-4x+3$</summary>
+<p>$f'(x)=2x-4$, $f''(x)=2&gt;0$ everywhere ⇒ concave up on $(-\infty,\infty)$.</p></details>
+<details class="example"><summary>Lecture example: $f(x)=x^3$</summary>
+<p>$f''(x)=6x&lt;0$ for $x&lt;0$ and $&gt;0$ for $x&gt;0$ ⇒ concave down on $(-\infty,0)$, concave up on $(0,\infty)$. At $x=0$ the concavity switches; this is the motivating example of an inflection point.</p></details>
+
+<h2>3. Inflection points</h2>
+<div class="box def"><div class="box-title">Definition (point of inflection)</div>If $f$ is <b>continuous on an open interval containing $x_0$</b> and $f$ <b>changes the direction of its concavity</b> at the point $(x_0,f(x_0))$, then $f$ has an inflection point at $x_0$.</div>
+<p><b>Remark.</b> Inflection points mark the places on $y=f(x)$ where the rate of change of $y$ with respect to $x$ switches from increasing to decreasing (or the other way). In other words, $f'$ has a relative max or min there.</p>
+<p><b>How to find them:</b> compute $f''$, find where $f''=0$ or $f''$ is undefined (candidates), then check that the sign of $f''$ <b>really changes</b> there and that $f$ is continuous there.</p>
+
+<details class="example"><summary>Lecture example: $f(x)=x^3-3x^2+1$, full analysis</summary>
+<ol><li>$f'(x)=3x^2-6x=3x(x-2)$. Signs: $x&lt;0$: $(-)(-)=+$; $0&lt;x&lt;2$: $(+)(-)=-$; $x&gt;2$: $+$. So $f\nearrow$ on $(-\infty,0]$, $\searrow$ on $[0,2]$, $\nearrow$ on $[2,\infty)$.</li>
+<li>$f''(x)=6x-6=6(x-1)$: negative for $x&lt;1$ (concave down on $(-\infty,1)$), positive for $x&gt;1$ (concave up on $(1,\infty)$).</li>
+<li>Concavity changes at $x=1$; $f(1)=1-3+1=-1$. Inflection point $(1,-1)$.</li></ol></details>
+<details class="example"><summary>Lecture example: $f(x)=xe^{-x}$</summary>
+<ol><li>$f'(x)=e^{-x}-xe^{-x}=(1-x)e^{-x}$. Since $e^{-x}&gt;0$: $f\nearrow$ on $(-\infty,1]$, $\searrow$ on $[1,\infty)$.</li>
+<li>$f''(x)=-e^{-x}-(1-x)e^{-x}=(x-2)e^{-x}$: concave down on $(-\infty,2)$, concave up on $(2,\infty)$.</li>
+<li>Inflection point $(2,f(2))=(2,2e^{-2})$.</li></ol></details>
+<details class="example"><summary>Lecture example: $f(x)=x^4$ (a warning)</summary>
+<p>$f'=4x^3$, $f''=12x^2$. $f''&gt;0$ for $x&gt;0$ and for $x&lt;0$, so $f$ is concave up on both sides of $0$. There is <b>no change in concavity</b> and hence <b>no inflection point at $x=0$, even though $f''(0)=0$</b>.</p></details>
+
+<h2>4. More examples (end of the lecture section)</h2>
+<details class="example"><summary>Lecture example: $f(x)=x^3\ln x$, $x&gt;0$</summary>
+<ol><li>Domain is $x&gt;0$ only (that is why $x&lt;0$ is excluded).</li>
+<li>$f'(x)=3x^2\ln x+x^3\cdot\frac1x=x^2(3\ln x+1)$. Since $x^2&gt;0$: $f'&gt;0\iff\ln x&gt;-\frac13\iff x&gt;e^{-1/3}$.
+So $f$ is decreasing on $(0,e^{-1/3}]$ and increasing on $[e^{-1/3},\infty)$.</li>
+<li>$f''(x)=6x\ln x+3x+2x=x(6\ln x+5)$. <span class="small muted">(The slide labels this as $f'$ and writes $6x[6\ln x+5]$, which is a typo; the sign analysis is the same.)</span></li>
+<li>$f''&gt;0\iff x&gt;e^{-5/6}$: concave down on $(0,e^{-5/6})$, concave up on $(e^{-5/6},\infty)$; inflection point at $x=e^{-5/6}$.</li></ol></details>
+<details class="example"><summary>Lecture example: $f(x)=e^{-x^2/2}$ (also in the Exam 2 review)</summary>
+<ol><li>$f'(x)=-xe^{-x^2/2}$: increasing on $(-\infty,0]$, decreasing on $[0,\infty)$.</li>
+<li>$f''(x)=(x^2-1)e^{-x^2/2}$: concave up on $(-\infty,-1)\cup(1,\infty)$, concave down on $(-1,1)$.</li>
+<li>Two inflection points at $x=\pm1$ (points $(\pm1,e^{-1/2})$).</li></ol></details>
+
+<h2>Summary: the procedure the lecture uses every time</h2>
+<ol><li>Find the domain.</li><li>Compute $f'$ and <b>factor</b> it. Exponentials are positive, so drop them from the sign analysis.</li>
+<li>Make a sign table of the factors ⇒ intervals of increase/decrease (closed brackets allowed).</li>
+<li>Compute $f''$, factor, sign table ⇒ concavity (open intervals).</li>
+<li>Inflection points = points where the sign of $f''$ changes (and $f$ is continuous). Give them as points $(x_0,f(x_0))$.</li></ol>

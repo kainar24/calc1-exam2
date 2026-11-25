@@ -1,0 +1,70 @@
+<p class="muted small">Follows Lecture 7, slides 19–41, in the same order.</p>
+
+<h2>1. Relative extrema</h2>
+<div class="box def"><div class="box-title">Definition</div>
+<ul><li>$f$ has a <b>relative maximum</b> at $x_0$ if $f(x_0)\ge f(x)$ for all $x$ in some <b>open interval containing $x_0$</b>.</li>
+<li>$f$ has a <b>relative minimum</b> at $x_0$ if $f(x_0)\le f(x)$ for all $x$ in some open interval containing $x_0$.</li>
+<li>A <b>relative extremum</b> is either of them.</li></ul>
+Picture from the slide: a mountain range. Every peak is a relative maximum; the highest peak is the absolute maximum. Every valley is a relative minimum; the deepest valley is the absolute minimum.</div>
+<p><b>Lecture examples (from graphs):</b> (a) $y=x^2$: relative min at $x=0$, no relative max. (b) $y=x^3$: no relative extrema. (c) $y=x^3-3x+3$: relative max at $x=-1$, relative min at $x=1$. (d) $y=\frac12x^4-\frac43x^3-x^2+4x+1$: relative minima at $x=-1$ and $x=2$, relative max at $x=1$. (e) $y=\cos x$: relative maxima at all even multiples of $\pi$, relative minima at all odd multiples of $\pi$.</p>
+
+<h2>2. Critical and stationary points</h2>
+<p><b>Remarks.</b> Relative extrema occur at points with <b>horizontal tangents</b>, but they can also occur at points of <b>non-differentiability</b> (corners, cusps).</p>
+<div class="box def"><div class="box-title">Definition</div>
+(a) <b>Critical points</b>: points <i>in the domain of $f$</i> at which either $f$ has a horizontal tangent ($f'=0$) or $f$ is not differentiable.<br>
+(b) <b>Stationary points</b>: critical points at which $f'(x)=0$ (horizontal tangent).<br>
+So every stationary point is critical, but not every critical point is stationary.</div>
+<div class="box thm"><div class="box-title">Theorem</div>Suppose $f$ is defined on an open interval containing $x_0$. If $f$ has a relative extremum at $x_0$, then $x_0$ is a critical point of $f$: either $f'(x_0)=0$ or $f$ is not differentiable at $x_0$.<br>
+<span class="small">The converse is false: a critical point need not be an extremum ($x^3$ at $0$).</span></div>
+<details class="example" open><summary>Lecture example: critical and stationary points of $f(x)=3x^{5/3}-15x^{2/3}$</summary>
+<ol><li>$f'(x)=5x^{2/3}-10x^{-1/3}=5x^{-1/3}(x-2)=\dfrac{5(x-2)}{x^{1/3}}$.</li>
+<li>$f'(x)=0\iff x=2$; $f'$ is undefined at $x=0$ (and $0$ is in the domain).</li>
+<li>Critical points: $x=0,2$. Stationary point: $x=2$ only.</li></ol></details>
+
+<h2>3. First derivative test</h2>
+<div class="box thm"><div class="box-title">Theorem (First Derivative Test)</div>A function has a relative extremum at those critical points where $f'$ <b>changes sign</b>. Suppose $f$ is <b>continuous</b> at a critical point $x_0$.
+<ol type="a"><li>If $f'&gt;0$ on an open interval extending left from $x_0$ and $f'&lt;0$ on an open interval extending right, then $f$ has a <b>relative maximum</b> at $x_0$.</li>
+<li>If $f'&lt;0$ on the left and $f'&gt;0$ on the right, then $f$ has a <b>relative minimum</b> at $x_0$.</li>
+<li>If $f'$ has the same sign on both sides, then $f$ has <b>no</b> relative extremum at $x_0$.</li></ol></div>
+<p>The slides show 8 pictures: a smooth peak (critical, stationary, max), a sharp peak (critical, not stationary, max), a smooth valley (critical, stationary, min), a V-corner (critical, not stationary, min), and four pictures where the curve keeps rising or keeps falling through $x_0$, with a horizontal tangent or a vertical one. Those are critical points that are inflection points, <b>not</b> extrema.</p>
+<details class="example"><summary>Lecture example: relative extrema of $f(x)=3x^{5/3}-15x^{2/3}$</summary>
+<ol><li>$f'(x)=\dfrac{5(x-2)}{x^{1/3}}$, critical points $x=0,2$.</li>
+<li>Sign table: $x&lt;0$: $\frac{(-)}{(-)}=+$; $0&lt;x&lt;2$: $\frac{(-)}{(+)}=-$; $x&gt;2$: $\frac{(+)}{(+)}=+$.</li>
+<li>$+\to-$ at $x=0$: relative maximum at $x=0$ (a cusp, $f(0)=0$). $-\to+$ at $x=2$: relative minimum at $x=2$, $f(2)=3\cdot2^{5/3}-15\cdot2^{2/3}=-9\sqrt[3]4\approx-14.3$.</li></ol></details>
+
+<h2>4. Second derivative test</h2>
+<div class="box thm"><div class="box-title">Theorem (Second Derivative Test)</div>Suppose $f$ is twice differentiable at $x_0$.
+<ol type="a"><li>If $f'(x_0)=0$ and $f''(x_0)&lt;0$, then $f$ has a <b>relative maximum</b> at $x_0$ (concave down, like a cap).</li>
+<li>If $f'(x_0)=0$ and $f''(x_0)&gt;0$, then $f$ has a <b>relative minimum</b> at $x_0$ (concave up, like a cup).</li>
+<li>If $f'(x_0)=0$ and $f''(x_0)=0$, the test is <b>inconclusive</b>: $f$ may have a relative max, a relative min, or neither. Use the first derivative test.</li></ol>
+It only works at <b>stationary</b> points (not at points where $f'$ does not exist).</div>
+<details class="example"><summary>Lecture example: $f(x)=3x^5-5x^3$</summary>
+<ol><li>$f'(x)=15x^4-15x^2=15x^2(x+1)(x-1)$; stationary points $x=0,-1,1$.</li>
+<li>$f''(x)=60x^3-30x=30x(2x^2-1)$.</li>
+<li>$x=-1$: $f''=-30&lt;0$ ⇒ relative max. $x=1$: $f''=30&gt;0$ ⇒ relative min. $x=0$: $f''=0$ ⇒ inconclusive.</li>
+<li>First derivative test at $x=0$: on $(-1,0)$ and on $(0,1)$ the signs are $(+)(+)(-)$, so $f'&lt;0$ on both sides. No sign change ⇒ <b>no relative extremum at $x=0$</b>.</li></ol></details>
+<details class="example"><summary>Lecture example: $f(x)=e^{-x^2/2}$</summary>
+<p>$f'(x)=-xe^{-x^2/2}$, critical point $x=0$; $f''(x)=(x^2-1)e^{-x^2/2}$, $f''(0)=-1&lt;0$ ⇒ relative maximum at $x=0$.</p></details>
+<details class="example"><summary>Lecture example: $f(x)=\sin2x$, $0&lt;x&lt;\pi$</summary>
+<ol><li>$f'(x)=2\cos2x=0\Rightarrow 2x=\frac\pi2,\frac{3\pi}2\Rightarrow x=\frac\pi4,\frac{3\pi}4$.</li>
+<li>$f''(x)=-4\sin2x$: $f''(\frac\pi4)=-4&lt;0$ (relative max), $f''(\frac{3\pi}4)=4&gt;0$ (relative min).</li></ol></details>
+
+<h2>5. Graphing polynomials</h2>
+<div class="box def"><div class="box-title">Multiplicity of a root</div>A root $x=r$ of a polynomial $p$ has <b>multiplicity $m$</b> if $(x-r)^m$ divides $p(x)$ but $(x-r)^{m+1}$ does not. A root of multiplicity 1 is a <b>simple root</b>.<br>
+Example: $p(x)=(x-2)(x-1)^5$ has degree 6, so six roots: $x=1$ repeated 5 times and $x=2$ (simple).</div>
+<div class="box thm"><div class="box-title">Theorem (geometric meaning of multiplicity)</div>Let $p$ have a root of multiplicity $m$ at $x=r$.
+<ol type="a"><li>$m$ <b>even</b>: the graph is tangent to the $x$-axis at $r$, does <b>not cross</b> it, and has no inflection point there.</li>
+<li>$m$ <b>odd, $m&gt;1$</b>: the graph is tangent to the $x$-axis, <b>crosses</b> it, and has an inflection point there.</li>
+<li>$m=1$: the graph is not tangent to the axis, crosses it, and may or may not have an inflection point there.</li></ol></div>
+<details class="example"><summary>Lecture example: $p(x)=x^3(3x-4)(x+2)^2$</summary>
+<p>$x$-intercepts $0,\frac43,-2$. $x=0$ has multiplicity 3 (odd $&gt;1$): tangent, crosses, inflection point. $x=-2$ has multiplicity 2 (even): tangent, does not cross, no inflection. $x=\frac43$ is simple: crosses without being tangent.</p></details>
+<p><b>Properties of polynomials used in sketching.</b> Natural domain $(-\infty,\infty)$; continuous and differentiable everywhere (no corners, no vertical tangents); $p(x)\to\pm\infty$ as $x\to\pm\infty$; a polynomial of degree $n&gt;1$ has <b>at most $n$ $x$-intercepts, $n-1$ relative extrema and $n-2$ inflection points</b>.</p>
+<details class="example" open><summary>Lecture example: sketch $y=x^3-3x+2$</summary>
+<ol><li>$x$-intercepts: $x^3-3x+2=(x+2)(x-1)^2$, so $x=-2$ and $x=1$ (double root: the graph touches the axis there). $y$-intercept: $y=2$.</li>
+<li>End behaviour: $y\to+\infty$ as $x\to+\infty$, $y\to-\infty$ as $x\to-\infty$.</li>
+<li>$y'=3x^2-3=3(x-1)(x+1)$: $+$ on $(-\infty,-1)$, $-$ on $(-1,1)$, $+$ on $(1,\infty)$. Relative max $(-1,4)$, relative min $(1,0)$.</li>
+<li>$y''=6x$: concave down on $(-\infty,0)$, concave up on $(0,\infty)$, inflection point $(0,2)$.</li>
+<li>Plot the points $(-2,0)$, $(-1,4)$, $(0,2)$, $(1,0)$ and join them following the sign lines.</li></ol></details>
+
+<h2>Summary: how to sketch a polynomial (the lecture's recipe)</h2>
+<ol><li>Intercepts (factor; note the multiplicities).</li><li>End behaviour (leading term).</li><li>$f'$ sign line ⇒ increase/decrease and relative extrema.</li><li>$f''$ sign line ⇒ concavity and inflection points.</li><li>Plot the key points and draw.</li></ol>

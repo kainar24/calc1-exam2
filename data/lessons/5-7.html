@@ -1,0 +1,26 @@
+<div class="note info">5 past problems: position from acceleration with two conditions, displacement vs distance, average velocity.</div>
+<h2>What you need to know</h2>
+<ul>
+<li>$s'(t)=v(t)$, $v'(t)=a(t)$. Going back means integrating: $v=\int a\,dt$, $s=\int v\,dt$. Each step adds a constant.</li>
+<li><b>Displacement</b> on $[t_0,t_1]$: $\int_{t_0}^{t_1}v(t)\,dt=s(t_1)-s(t_0)$ (signed).</li>
+<li><b>Distance traveled</b>: $\int_{t_0}^{t_1}|v(t)|\,dt$. Split where $v$ changes sign.</li>
+<li>Two conditions (e.g. $s(1)$ and $s(3)$) give two equations for $C_1, C_2$.</li>
+<li>Constant acceleration $a$: $v=v_0+at$, $s=s_0+v_0t+\frac12at^2$.</li>
+</ul>
+<div class="box def"><div class="box-title">Formulas</div>
+$$\text{displacement}=\int_{t_0}^{t_1}v\,dt,\qquad\text{distance}=\int_{t_0}^{t_1}|v|\,dt,\qquad v_{\text{ave}}=\frac{1}{t_1-t_0}\int_{t_0}^{t_1}v\,dt$$</div>
+<h2>Worked examples</h2>
+<details class="example" open><summary>Example 1 (Review Ch5 #6): $v(t)=\cos t$, $0\le t\le\pi$</summary>
+<p>Displacement $[\sin t]_0^\pi=0$. Distance: $\int_0^{\pi/2}\cos t\,dt-\int_{\pi/2}^\pi\cos t\,dt=1+1=2$ m.</p>
+<img class="svg-fig" src="assets/fig/v_cos.svg" alt="v = cos t" style="max-width:420px;background:#fff;border-radius:8px"></details>
+<details class="example"><summary>Example 2 (Fall 2025 Test 3): $a(t)=-\frac4{t^2}$, $s(1)=2$, $s(3)=4\ln3$</summary>
+<ol><li>$v=\frac4t+C_1$, $s=4\ln t+C_1t+C_2$.</li><li>$C_1+C_2=2$ and $4\ln3+3C_1+C_2=4\ln3$.</li><li>$C_1=-1$, $C_2=3$ ⇒ $s(t)=4\ln t-t+3$.</li></ol></details>
+<details class="example"><summary>Example 3 (Fall 2024 MT3): from rest, $a=2$; average velocity on $[1,5]$</summary>
+<p>$v=2t$, $v_{\text{ave}}=\frac14\int_1^52t\,dt=\frac{25-1}4=6$ m/s.</p></details>
+<h2>Interactive</h2>
+<div data-plot="motion" data-args='{"v":"cos(x)","a":0,"b":3.14159,"bbox":[-0.3,1.4,3.6,-1.4]}'></div>
+<div class="box mistake"><div class="box-title">Common mistakes</div><ul>
+<li>Computing distance as $\left|\int v\,dt\right|$. You need $\int|v|\,dt$.</li>
+<li>Using one constant for two integrations.</li>
+<li>Not finding where $v=0$ before splitting.</li></ul></div>
+<div class="box tip"><div class="box-title">Exam tips</div><ul><li>Make a sign table of $v$ first, then write distance as a sum of $\pm\int v$ over the pieces.</li></ul></div>

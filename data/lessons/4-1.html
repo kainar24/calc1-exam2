@@ -1,0 +1,37 @@
+<div class="note info">Second most frequent section (9 problems). It often comes as “read the graph of $f'$” or as a full analysis: increasing/decreasing, concavity, inflection points.</div>
+<h2>What you need to know</h2>
+<ul>
+<li>$f'&gt;0$ on an interval ⇒ $f$ increasing; $f'&lt;0$ ⇒ decreasing.</li>
+<li>$f''&gt;0$ ⇒ concave up (cup, $f'$ increasing); $f''&lt;0$ ⇒ concave down (cap, $f'$ decreasing).</li>
+<li><b>Inflection point</b>: a point where $f$ is continuous and the concavity changes. $f''=0$ alone is not enough; the sign must change.</li>
+<li>Method: compute $f'$ and $f''$, factor them, find zeros and undefined points, then make a sign table.</li>
+<li>From a graph of $f'$: $f$ increases where the graph of $f'$ is above the axis. $f$ is concave up where the graph of $f'$ is going up.</li>
+</ul>
+<h2>Key facts</h2>
+<div class="box thm"><div class="box-title">Theorem 4.1.2 (monotonicity)</div>Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$. If $f'(x)&gt;0$ for all $x\in(a,b)$, then $f$ is increasing on $[a,b]$; if $f'(x)&lt;0$, decreasing; if $f'(x)=0$, constant.</div>
+<div class="box thm"><div class="box-title">Theorem 4.1.4 (concavity)</div>If $f''(x)&gt;0$ on an open interval, $f$ is concave up there; if $f''(x)&lt;0$, concave down.</div>
+<div class="box def"><div class="box-title">Useful derivatives</div>$\dfrac{d}{dx}e^{g(x)}=g'(x)e^{g(x)}$, $\quad\dfrac{d}{dx}\dfrac{\ln x}{x}=\dfrac{1-\ln x}{x^2}$, $\quad\dfrac{d}{dx}\left(xe^{-x^2}\right)=(1-2x^2)e^{-x^2}$.</div>
+<h2>Worked examples</h2>
+<details class="example" open><summary>Example 1 (Review Ch4 #1): $f(x)=e^{-x^2/2}$</summary>
+<ol><li>$f'(x)=-xe^{-x^2/2}$. Since $e^{(\cdot)}&gt;0$, the sign of $f'$ is the sign of $-x$: increasing on $(-\infty,0]$, decreasing on $[0,\infty)$.</li>
+<li>$f''(x)=-e^{-x^2/2}+x^2e^{-x^2/2}=(x^2-1)e^{-x^2/2}$, zero at $x=\pm1$.</li>
+<li>Sign table for $x^2-1$: $+\,|\,-\,|\,+$ ⇒ concave up on $(-\infty,-1)\cup(1,\infty)$, concave down on $(-1,1)$.</li>
+<li>Inflection points: $(\pm1,\,e^{-1/2})=(\pm1,\tfrac1{\sqrt e})$.</li></ol></details>
+<details class="example"><summary>Example 2 (Fall 2025 Test 2): reading the graph of $f'$</summary>
+<p>The graph of $f'(x)=(x+2)(x-1)^2$ is given. It crosses zero at $x=-2$, has a peak at $x=-1$ and only touches zero at $x=1$.</p>
+<ul><li>Increasing: $f'\ge0$ ⇒ $[-2,\infty)$. At $x=1$ the sign does not change, so it is not an extremum.</li>
+<li>Concave down: $f'$ decreasing ⇒ $(-1,1)$. Concave up: $(-\infty,-1)\cup(1,\infty)$.</li></ul>
+<img class="svg-fig" src="assets/fig/fprime_t2a.svg" alt="graph of f prime" style="max-width:420px;background:#fff;border-radius:8px"></details>
+<details class="example"><summary>Example 3 (Fall 2024 MT2): inflection points of $y=2x+\cos x$ on $[-\pi,\pi]$</summary>
+<p>$y''=-\cos x=0$ at $x=\pm\frac\pi2$, and $-\cos x$ changes sign at both ⇒ <b>2</b> inflection points.</p></details>
+<h2>Interactive: $f$, $f'$, $f''$ together</h2>
+<div data-plot="derivs" data-args='{"f":"x*exp(-x*x)","df":"(1-2*x*x)*exp(-x*x)","d2f":"(4*x*x*x-6*x)*exp(-x*x)","bbox":[-3,1.3,3,-1.3],"show":[0,1],"caption":"f(x)=x·e^(−x²): tick f′ and f″ and compare the signs with the shape."}'></div>
+<div class="box mistake"><div class="box-title">Common mistakes</div><ul>
+<li>Calling every zero of $f''$ an inflection point. Always check that the sign changes ($y=x^4$ has $f''(0)=0$ but no inflection).</li>
+<li>Mixing up the graphs of $f$ and $f'$. Read the question carefully: “the graph below shows $f'$”.</li>
+<li>Forgetting points where $f'$ or $f''$ is undefined (e.g. $x^{1/3}$).</li>
+<li>Giving inflection points as $x$-values only, when the question asks for points $(x,f(x))$.</li></ul></div>
+<div class="box tip"><div class="box-title">Exam tips</div><ul>
+<li>Always factor $f'$ and $f''$ completely. Exponentials are always positive, so drop them from the sign analysis.</li>
+<li>Draw the sign table: it is worth marks even if you make an arithmetic slip.</li>
+<li>Intervals of increase can be written closed, $[a,b]$; concavity intervals open.</li></ul></div>

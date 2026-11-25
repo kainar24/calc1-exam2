@@ -1,0 +1,30 @@
+<div class="note info">7 past problems: basic antiderivatives (often trig, with algebra first) and initial value problems.</div>
+<h2>What you need to know</h2>
+<ul>
+<li>$F$ is an antiderivative of $f$ if $F'=f$. All antiderivatives are $F+C$.</li>
+<li>Integrate term by term with the basic table. Simplify first (expand, split fractions, use trig identities).</li>
+<li><b>Initial value problem</b>: integrate, then use the given point to find $C$.</li>
+<li>Rewrite roots and fractions as powers: $\frac3{x^6}=3x^{-6}$, $\sqrt[3]{x^2}=x^{2/3}$.</li>
+</ul>
+<h2>Table of integrals (must know)</h2>
+<div class="box def">
+$\int x^n\,dx=\frac{x^{n+1}}{n+1}+C\ (n\ne-1)$, $\ \int\frac{dx}x=\ln|x|+C$, $\ \int e^x\,dx=e^x+C$, $\ \int b^x\,dx=\frac{b^x}{\ln b}+C$<br>
+$\int\sin x=-\cos x$, $\int\cos x=\sin x$, $\int\sec^2x=\tan x$, $\int\csc^2x=-\cot x$, $\int\sec x\tan x=\sec x$, $\int\csc x\cot x=-\csc x$ (all $+C$)<br>
+$\int\frac{dx}{1+x^2}=\arctan x+C$, $\ \int\frac{dx}{\sqrt{1-x^2}}=\arcsin x+C$, $\ \int\frac{dx}{|x|\sqrt{x^2-1}}=\operatorname{arcsec}x+C$</div>
+<h2>Worked examples</h2>
+<details class="example" open><summary>Example 1 (Fall 2025 Test 3): $\int\csc x(\cot x+\sin x)\,dx$</summary>
+<p>Expand: $\csc x\cot x+1$ ⇒ $-\csc x+x+C$.</p></details>
+<details class="example"><summary>Example 2 (Fall 2024 MT2): $\displaystyle\int\frac{1+2x^2}{x^2(1+x^2)}\,dx$</summary>
+<p>$\frac{(1+x^2)+x^2}{x^2(1+x^2)}=\frac1{x^2}+\frac1{1+x^2}$ ⇒ $-\frac1x+\arctan x+C$.</p></details>
+<details class="example"><summary>Example 3 (Fall 2024 MT3): $\int\left(\frac1{\cos^2x}-\frac1{\sin^2x}\right)dx$</summary>
+<p>$\tan x+\cot x+C$, which equals $2\csc2x+C$ because $\tan x+\cot x=\frac1{\sin x\cos x}=\frac2{\sin2x}$.</p></details>
+<details class="example"><summary>Example 4 (Castro, Fall 2018 Final): slope $(x+1)^2$, passes through $(-2,8)$</summary>
+<p>$y=\frac{(x+1)^3}3+C$; $8=-\frac13+C\Rightarrow C=\frac{25}3$.</p></details>
+<div class="box mistake"><div class="box-title">Common mistakes</div><ul>
+<li>$\int\frac1{x^6}dx=\ln|x^6|$ ✗. It is the power rule: $\frac{x^{-5}}{-5}$.</li>
+<li>Sign errors: $\int\sin x\,dx=-\cos x$ and $\int\csc^2x\,dx=-\cot x$.</li>
+<li>Integrating a product as the product of integrals.</li>
+<li>Forgetting $+C$ (and then not being able to use the initial condition).</li></ul></div>
+<div class="box tip"><div class="box-title">Exam tips</div><ul>
+<li>Different-looking answers can both be right ($\tan x+\cot x=2\csc2x$). Differentiate to check.</li>
+<li>In an IVP, write the value of $C$ and the final function in a box.</li></ul></div>

@@ -1,0 +1,21 @@
+<div class="note info">5 past problems, all of the same form: “find the average value of $f$ on $[a,b]$”, which in practice is a u-substitution (Fall 2025 Test 3 #7, Review #5, Fall 2022, Fall 2024).</div>
+<h2>What you need to know</h2>
+<ul>
+<li>$f_{\text{ave}}=\dfrac1{b-a}\displaystyle\int_a^bf(x)\,dx$. Don't forget the factor $\frac1{b-a}$.</li>
+<li><b>MVT for integrals</b>: if $f$ is continuous on $[a,b]$, there is $c$ with $f(c)=f_{\text{ave}}$.</li>
+<li>Average velocity $=\frac1{t_1-t_0}\int v\,dt$ = (change in position)/(time).</li>
+</ul>
+<div class="box thm"><div class="box-title">Mean-Value Theorem for Integrals (5.8.2)</div>If $f$ is continuous on $[a,b]$, there is at least one $c\in[a,b]$ with $\int_a^bf(x)\,dx=f(c)(b-a)$.</div>
+<h2>Worked examples</h2>
+<details class="example" open><summary>Example 1 (Fall 2025 Test 3 #7, 12 pts): $f=x^2\sqrt{3x^3+1}$ on $[0,2]$</summary>
+<ol><li>$f_{\text{ave}}=\frac12\int_0^2x^2\sqrt{3x^3+1}\,dx$.</li><li>$u=3x^3+1$, $du=9x^2dx$, $u:1\to25$.</li>
+<li>$\int=\frac19\cdot\frac23[u^{3/2}]_1^{25}=\frac2{27}(125-1)=\frac{248}{27}$.</li><li>$f_{\text{ave}}=\frac{124}{27}$.</li></ol>
+<p class="small muted">Marking scheme: setup 2, substitution 3, evaluation 4, final answer 3.</p></details>
+<details class="example"><summary>Example 2 (Review Ch5 #5): $f=\frac{x^2}{\sqrt{x^3+1}}$ on $[0,2]$</summary>
+<p>$\frac12\cdot\frac13\int_1^9u^{-1/2}du=\frac16[2\sqrt u]_1^9=\frac23$.</p></details>
+<details class="example"><summary>Example 3 (Fall 2022 Exam 3): average velocity, $v=e^{2t}+\sin t$ on $[0,\pi]$</summary>
+<p>$\frac1\pi\left[\frac12e^{2t}-\cos t\right]_0^\pi=\frac{e^{2\pi}+3}{2\pi}$.</p></details>
+<h2>Picture</h2>
+<div data-plot="avg" data-args='{"f":"x*x/sqrt(x*x*x+1)","a":0,"b":2,"bbox":[-0.3,1.6,2.4,-0.25]}'></div>
+<div class="box mistake"><div class="box-title">Common mistakes</div><ul><li>Forgetting $\frac1{b-a}$ (computing just the integral).</li><li>Not changing the limits in the substitution.</li></ul></div>
+<div class="box tip"><div class="box-title">Exam tips</div><ul><li>Write the formula with numbers first: “$f_{\text{ave}}=\frac1{2-0}\int_0^2\dots$”. That line alone is worth 2 points.</li></ul></div>

@@ -1,0 +1,19 @@
+<div class="note info">4 past problems: velocity when acceleration equals a value (Fall 2025 Test 2), maximum acceleration on an interval, speeding up / slowing down (Lecture 8).</div>
+<h2>What you need to know</h2>
+<ul>
+<li>$v(t)=s'(t)$, $a(t)=v'(t)=s''(t)$, speed $=|v(t)|$.</li>
+<li>$v&gt;0$: moving in the positive direction; $v&lt;0$: negative; $v=0$: momentarily stopped (a possible turning point).</li>
+<li><b>Speeding up</b> when $v$ and $a$ have the same sign; <b>slowing down</b> when they have opposite signs.</li>
+<li>Max or min of $v$ or $a$ on an interval: use the closed-interval method of §4.4.</li>
+</ul>
+<h2>Worked examples</h2>
+<details class="example" open><summary>Example 1 (Fall 2025 Test 2 A): $s=\frac12t^3-3t^2+4t$; $v$ when $a=6$</summary>
+<p>$a=3t-6=6\Rightarrow t=4$; $v(4)=24-24+4=4$ m/s.</p></details>
+<details class="example"><summary>Example 2 (Fall 2024 MT2 #14): maximum acceleration on $[0,3]$ for $v=\frac23t^3-4t^2+8t-2$</summary>
+<p>$a=2t^2-8t+8=2(t-2)^2$; candidates $a(0)=8$, $a(2)=0$, $a(3)=2$ ⇒ max $8$ at $t=0$.</p></details>
+<details class="example"><summary>Example 3 (Lecture 8): $s(t)=2t^3-21t^2+60t+3$</summary>
+<p>$v=6(t-2)(t-5)$, $a=12\left(t-\frac72\right)$. Speeding up on $(2,\frac72)$ and $(5,\infty)$, slowing down on $(0,2)$ and $(\frac72,5)$. It turns around at $t=2$ ($s=55$) and at $t=5$ ($s=28$).</p></details>
+<h2>Interactive: $s$, $v$, $a$</h2>
+<div data-plot="derivs" data-args='{"f":"2*x*x*x-21*x*x+60*x+3","df":"6*x*x-42*x+60","d2f":"12*x-42","bbox":[-0.5,70,7,-50],"show":[0,1,2],"caption":"Blue: s(t). Dashed orange: v(t). Green: a(t). Speeding up where v and a have the same sign."}'></div>
+<div class="box mistake"><div class="box-title">Common mistakes</div><ul><li>Confusing speed with velocity (speed is never negative).</li><li>“Speeding up when $a&gt;0$”: not always! Compare the signs of $v$ and $a$.</li></ul></div>
+<div class="box tip"><div class="box-title">Exam tips</div><ul><li>Draw two sign lines (for $v$ and $a$) one above the other; the speeding-up intervals can be read off directly.</li></ul></div>

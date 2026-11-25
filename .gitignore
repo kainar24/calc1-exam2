@@ -1,0 +1,6 @@
+.venv/
+materials/
+work/
+.playwright-mcp/
+__pycache__/
+.DS_Store

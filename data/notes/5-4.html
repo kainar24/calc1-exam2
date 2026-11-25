@@ -1,0 +1,47 @@
+<p class="muted small">Follows Lecture 10, slides 14–31.</p>
+
+<h2>1. Sigma notation</h2>
+<div class="box def"><div class="box-title">Definition</div>To write a long sum compactly we use sigma ($\Sigma$) notation: $1^2+2^2+3^2+4^2+5^2=\sum_{k=1}^5k^2$, “the summation of $k^2$, where $k$ runs from 1 to 5”. In general, for integers $m\le n$, $\sum_{k=m}^nf(k)$: $m$ is the starting value of $k$, $n$ the ending value.</div>
+<p><b>Lecture examples:</b> $\sum_{k=0}^5(2k+1)=1+3+5+7+9+11$; $\ \sum_{k=0}^5(-1)^k(2k+1)=1-3+5-7+9-11$; $\ \sum_{k=-3}^1k^3=-27-8-1+0+1$; $\ \sum_{k=1}^3k\sin\frac{k\pi}5=\sin\frac\pi5+2\sin\frac{2\pi}5+3\sin\frac{3\pi}5$.</p>
+<ul><li>The name of the index does not matter: $\sum_{i=1}^6\frac1i=\sum_{j=1}^6\frac1j=\sum_{k=1}^6\frac1k$.</li>
+<li>Equal limits give a single term: $\sum_{i=2}^2\frac1i=\frac12$, $\ \sum_{k=n}^n\frac1{k+2}=\frac1{n+2}$.</li>
+<li>A summand that does not depend on the index is just repeated: $\sum_{i=1}^52=2(5)$, $\ \sum_{k=0}^2x^3=3x^3$ (note: $k=0,1,2$ is <b>three</b> terms).</li>
+<li>Dummy indices can be shifted: $\sum_{i=1}^52i=\sum_{j=0}^4(2j+2)=\sum_{k=3}^7(2k-4)$.</li></ul>
+<div class="box thm"><div class="box-title">Theorem (properties)</div>$\sum_{k=1}^nca_k=c\sum_{k=1}^na_k$ ($c$ independent of $k$), $\qquad\sum(a_k\pm b_k)=\sum a_k\pm\sum b_k$.</div>
+<div class="box thm"><div class="box-title">Theorem (closed forms)</div>
+$$\sum_{k=1}^nk=\frac{n(n+1)}2,\qquad\sum_{k=1}^nk^2=\frac{n(n+1)(2n+1)}6,\qquad\sum_{k=1}^nk^3=\left[\frac{n(n+1)}2\right]^2,\qquad\sum_{k=1}^n1=n.$$</div>
+<details class="example"><summary>Lecture example: $\sum_{k=1}^{30}k(k+1)$</summary>
+<p>$=\sum k^2+\sum k=\frac{30\cdot31\cdot61}6+\frac{30\cdot31}2=9455+465=9920$.</p></details>
+<details class="example"><summary>Lecture example: closed form of $\sum_{k=1}^n(3+k)^2$</summary>
+<ol><li>$\sum_{k=1}^n(3+k)^2=4^2+5^2+\dots+(n+3)^2=\left[1^2+2^2+\dots+(n+3)^2\right]-\left[1^2+2^2+3^2\right]$.</li>
+<li>$=\sum_{k=1}^{n+3}k^2-14=\frac{(n+3)(n+4)(2n+7)}6-14=\frac16\left(2n^3+21n^2+73n\right)$.</li></ol></details>
+
+<h2>2. Area as a limit</h2>
+<p><b>Problem:</b> $f$ continuous and nonnegative on $[a,b]$; find the area $A$ of the region $R$ under $y=f(x)$.</p>
+<ol><li>Divide $[a,b]$ into $n$ equal subintervals of width $\Delta x=\frac{b-a}n$ with points $a=x_0&lt;x_1&lt;\dots&lt;x_n=b$.</li>
+<li>In each subinterval $[x_{k-1},x_k]$ choose a point $x_k^*$ and build a rectangle of height $f(x_k^*)$.</li>
+<li>$A\approx\sum_{k=1}^nf(x_k^*)\Delta x$. This sum is a <b>Riemann sum</b>.</li></ol>
+<div class="box def"><div class="box-title">Definition (area under a curve)</div>If $f$ is continuous and nonnegative on $[a,b]$, the area under $y=f(x)$ over $[a,b]$ is
+$$A=\lim_{n\to\infty}\sum_{k=1}^nf(x_k^*)\Delta x.$$
+The points $x_k^*$ can be chosen arbitrarily in $[x_{k-1},x_k]$ (the limit is the same). Typical choices:
+<ul><li>left endpoints: $x_k^*=x_{k-1}=a+(k-1)\Delta x$;</li><li>right endpoints: $x_k^*=x_k=a+k\Delta x$;</li><li>midpoints: $x_k^*=\frac12(x_{k-1}+x_k)=a+\left(k-\frac12\right)\Delta x$.</li></ul></div>
+<details class="example" open><summary>Lecture example: area under $f(x)=x^2$ over $[0,1]$, right endpoints</summary>
+<ol><li>$\Delta x=\frac{1-0}n=\frac1n$, $x_k^*=0+k\Delta x=\frac kn$.</li>
+<li>$\sum_{k=1}^n(x_k^*)^2\Delta x=\sum\left(\frac kn\right)^2\frac1n=\frac1{n^3}\sum_{k=1}^nk^2=\frac1{n^3}\cdot\frac{n(n+1)(2n+1)}6$.</li>
+<li>$=\frac16\left(\frac nn\cdot\frac{n+1}n\cdot\frac{2n+1}n\right)=\frac16\left(1+\frac1n\right)\left(2+\frac1n\right)$.</li>
+<li>$A=\lim_{n\to\infty}\frac16\left(1+\frac1n\right)\left(2+\frac1n\right)=\frac16\cdot1\cdot2=\frac13$.</li></ol></details>
+<details class="example"><summary>Lecture example: approximate the area under $y=9-x^2$ on $[0,3]$ with $n=10,20,50$</summary>
+<p>$\Delta x=\frac3n$. For $n=10$ ($\Delta x=0.3$): left endpoints give $0.3\cdot64.35=19.305$, right endpoints $0.3\cdot55.35=16.605$, midpoints $0.3\cdot60.075=18.0225$.</p>
+<table class="small"><tr><th>$n$</th><th>left</th><th>right</th><th>midpoint</th></tr><tr><td>10</td><td>19.305</td><td>16.605</td><td>18.0225</td></tr><tr><td>20</td><td>18.66375</td><td>17.31375</td><td>18.005625</td></tr><tr><td>50</td><td>18.2682</td><td>17.7282</td><td>18.0009</td></tr></table>
+<p>The function is decreasing, so left endpoints overestimate and right endpoints underestimate; the midpoint rule is the best. The exact area is $\int_0^3(9-x^2)\,dx=27-9=18$.</p></details>
+
+<h2>3. Net signed area</h2>
+<div class="box def"><div class="box-title">Definition (net signed area)</div>If $f$ is continuous on $[a,b]$ (any sign), the <b>net signed area</b> between $y=f(x)$ and $[a,b]$ is $A=\lim_{n\to\infty}\sum_{k=1}^nf(x_k^*)\Delta x$. Rectangles below the axis contribute negatively: $A=A_{\rm I}+A_{\rm III}-A_{\rm II}=$ (area above) $-$ (area below).</div>
+<details class="example"><summary>Lecture example: net signed area for $f(x)=x-1$ on $[0,2]$, left endpoints</summary>
+<ol><li>$\Delta x=\frac2n$, $x_k^*=x_{k-1}=(k-1)\frac2n$.</li>
+<li>$\sum(x_k^*-1)\Delta x=\sum\left[(k-1)\frac2n-1\right]\frac2n=\sum\left[\frac4{n^2}k-\frac4{n^2}-\frac2n\right]$.</li>
+<li>$=\frac4{n^2}\cdot\frac{n(n+1)}2-\frac4{n^2}\cdot n-\frac2n\cdot n=\frac{2(n+1)}n-\frac4n-2=-\frac2n$.</li>
+<li>$A=\lim_{n\to\infty}\left(-\frac2n\right)=0$. Geometrically, the triangle below the axis ($A_2=\frac12$) cancels the triangle above ($A_1=\frac12$).</li></ol></details>
+
+<h2>Exam recipe (right endpoints)</h2>
+<ol><li>$\Delta x=\frac{b-a}n$, $x_k=a+k\Delta x$.</li><li>Write $f(x_k)\Delta x$ and expand it into powers of $k$.</li><li>Pull out constants; use the closed forms for $\sum1,\sum k,\sum k^2,\sum k^3$.</li><li>Simplify to an expression in $n$, then let $n\to\infty$.</li><li>Check with the FTC.</li></ol>

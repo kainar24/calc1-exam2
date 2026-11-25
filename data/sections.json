@@ -1,0 +1,20 @@
+[
+  {"id": "4.1", "chapter": 4, "title": "Analysis of Functions I: Increase, Decrease, and Concavity", "short": "Increase/decrease, concavity"},
+  {"id": "4.2", "chapter": 4, "title": "Analysis of Functions II: Relative Extrema; Graphing Polynomials", "short": "Relative extrema"},
+  {"id": "4.4", "chapter": 4, "title": "Absolute Maxima and Minima", "short": "Absolute extrema"},
+  {"id": "4.5", "chapter": 4, "title": "Applied Maximum and Minimum Problems", "short": "Optimization"},
+  {"id": "4.6", "chapter": 4, "title": "Rectilinear Motion", "short": "Rectilinear motion"},
+  {"id": "4.8", "chapter": 4, "title": "Rolle's Theorem; Mean-Value Theorem", "short": "Rolle & MVT"},
+  {"id": "5.1", "chapter": 5, "title": "An Overview of the Area Problem", "short": "Area problem"},
+  {"id": "5.2", "chapter": 5, "title": "The Indefinite Integral", "short": "Indefinite integral"},
+  {"id": "5.3", "chapter": 5, "title": "Integration by Substitution", "short": "u-substitution"},
+  {"id": "5.4", "chapter": 5, "title": "The Definition of Area as a Limit; Sigma Notation", "short": "Riemann sums, sigma"},
+  {"id": "5.5", "chapter": 5, "title": "The Definite Integral", "short": "Definite integral"},
+  {"id": "5.6", "chapter": 5, "title": "The Fundamental Theorem of Calculus", "short": "FTC"},
+  {"id": "5.7", "chapter": 5, "title": "Rectilinear Motion Revisited Using Integration", "short": "Motion via integrals"},
+  {"id": "5.8", "chapter": 5, "title": "Average Value of a Function and its Applications", "short": "Average value"},
+  {"id": "5.9", "chapter": 5, "title": "Evaluating Definite Integrals by Substitution", "short": "Definite u-sub"},
+  {"id": "5.10", "chapter": 5, "title": "Logarithmic and Other Functions Defined by Integrals", "short": "Functions defined by integrals"},
+  {"id": "7.2", "chapter": 7, "title": "Integration by Parts", "short": "Integration by parts"},
+  {"id": "7.3", "chapter": 7, "title": "Integrating Trigonometric Functions", "short": "Trig integrals"}
+]

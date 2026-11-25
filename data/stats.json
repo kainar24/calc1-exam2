@@ -1,0 +1,133 @@
+{
+ "by_section": {
+  "5.9": 12,
+  "4.1": 9,
+  "5.6": 9,
+  "4.8": 7,
+  "5.5": 7,
+  "5.3": 7,
+  "5.2": 7,
+  "4.5": 6,
+  "4.4": 6,
+  "7.2": 6,
+  "5.7": 5,
+  "5.8": 5,
+  "5.4": 5,
+  "4.6": 4,
+  "7.3": 3,
+  "4.2": 2
+ },
+ "by_topic": {
+  "Definite u-substitution": 12,
+  "Increase/decrease & concavity": 9,
+  "Antiderivatives & IVPs": 9,
+  "FTC: derivative of an integral": 8,
+  "Optimization": 6,
+  "Riemann sums & sigma notation": 6,
+  "Definite integral: properties & geometry": 6,
+  "Absolute extrema": 6,
+  "Integration by parts": 6,
+  "Mean Value Theorem / Rolle": 5,
+  "Motion via integrals": 5,
+  "u-substitution (indefinite)": 5,
+  "Average value": 5,
+  "Rectilinear motion (derivatives)": 4,
+  "Trig integrals": 3,
+  "MVT inequality proofs": 2,
+  "Relative extrema & curve sketching": 2,
+  "FTC: evaluating definite integrals": 1
+ },
+ "by_section_achenef": {
+  "4.1": 5,
+  "5.5": 4,
+  "5.6": 4,
+  "4.8": 3,
+  "4.5": 3,
+  "5.7": 3,
+  "5.3": 3,
+  "5.8": 3,
+  "5.9": 3,
+  "7.2": 3,
+  "7.3": 3,
+  "4.6": 2,
+  "5.2": 2,
+  "5.4": 2,
+  "4.2": 1,
+  "4.4": 1
+ },
+ "topic_sections": {
+  "Rectilinear motion (derivatives)": [
+   "4.6"
+  ],
+  "Mean Value Theorem / Rolle": [
+   "4.8"
+  ],
+  "Increase/decrease & concavity": [
+   "4.1"
+  ],
+  "Optimization": [
+   "4.5"
+  ],
+  "Riemann sums & sigma notation": [
+   "5.4",
+   "5.5"
+  ],
+  "Definite integral: properties & geometry": [
+   "5.5"
+  ],
+  "Motion via integrals": [
+   "5.7"
+  ],
+  "FTC: derivative of an integral": [
+   "5.6"
+  ],
+  "u-substitution (indefinite)": [
+   "5.3"
+  ],
+  "Antiderivatives & IVPs": [
+   "5.2",
+   "5.3"
+  ],
+  "Average value": [
+   "5.8"
+  ],
+  "Definite u-substitution": [
+   "5.9"
+  ],
+  "Absolute extrema": [
+   "4.4"
+  ],
+  "FTC: evaluating definite integrals": [
+   "5.6"
+  ],
+  "Integration by parts": [
+   "7.2"
+  ],
+  "MVT inequality proofs": [
+   "4.8"
+  ],
+  "Relative extrema & curve sketching": [
+   "4.2"
+  ],
+  "Trig integrals": [
+   "7.3"
+  ]
+ },
+ "out_of_scope_by_section": {
+  "3.6": 9,
+  "3.5": 6,
+  "6.1": 6,
+  "3.4": 4,
+  "3.1": 4,
+  "6.4": 4,
+  "4.3": 4,
+  "3.2": 3,
+  "2.2": 3,
+  "1.3": 2,
+  "4.7": 2,
+  "7.7": 1,
+  "3.3": 1,
+  "1.5": 1,
+  "2.6": 1
+ }
+}

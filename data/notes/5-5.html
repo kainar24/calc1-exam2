@@ -1,0 +1,41 @@
+<p class="muted small">Follows Lecture 11, slides 3–18.</p>
+
+<h2>1. Riemann sums with arbitrary partitions</h2>
+<div class="box def"><div class="box-title">Partition</div>A <b>partition</b> of $[a,b]$ is a set of points $a=x_0&lt;x_1&lt;\dots&lt;x_{n-1}&lt;x_n=b$; the $k$-th subinterval has width $\Delta x_k=x_k-x_{k-1}$.
+<ol><li><b>Regular partition</b>: all widths equal, $\Delta x_k=\Delta x=\frac{b-a}n$, and $\Delta x\to0$ as $n\to\infty$. Riemann sum $\sum f(x_k^*)\Delta x$.</li>
+<li><b>Irregular partition</b>: different widths. $\max\Delta x_k$ is the <b>mesh size</b>, and we require $\max\Delta x_k\to0$. Example: $0,\frac32,\frac52,\frac92,6$ has mesh $\Delta x_3=\frac92-\frac52=2$. Riemann sum $\sum f(x_k^*)\Delta x_k$.</li></ol></div>
+
+<h2>2. The definite integral</h2>
+<div class="box def"><div class="box-title">Definition</div>$f$ is <b>integrable</b> on a finite closed interval $[a,b]$ if the limit $\displaystyle\lim_{\max\Delta x_k\to0}\sum_{k=1}^nf(x_k^*)\Delta x_k$ exists. The limit is written
+$$\int_a^bf(x)\,dx=\lim_{\max\Delta x_k\to0}\sum_{k=1}^nf(x_k^*)\Delta x_k$$
+and called the <b>definite integral of $f$ from $a$ to $b$</b>; $a,b$ are the lower and upper <b>limits of integration</b>, $f(x)$ is the <b>integrand</b>.</div>
+<div class="box thm"><div class="box-title">Theorem</div>If $f$ is continuous on $[a,b]$, then $f$ is integrable on $[a,b]$, and the net signed area between the graph of $f$ and $[a,b]$ is $A=\int_a^bf(x)\,dx$.</div>
+<details class="example" open><summary>Lecture examples: integrals as areas</summary>
+<ul><li>$\int_{-1}^2(x+2)\,dx$: trapezoid with parallel sides $1$ and $4$, width $3$: $\frac12(1+4)(3)=\frac{15}2$.</li>
+<li>$\int_0^1\sqrt{1-x^2}\,dx$: the graph is a quarter of the unit disk: $\frac14\pi(1^2)=\frac\pi4$.</li>
+<li>$\int_0^2(x-1)\,dx$: two triangles of area $\frac12$, one above and one below: $A_1-A_2=0$.</li>
+<li>$\int_0^1(x-1)\,dx$: only the triangle below the axis: $-\frac12$.</li></ul></details>
+
+<h2>3. Properties</h2>
+<div class="box def"><div class="box-title">Definitions</div>(a) If $a$ is in the domain of $f$: $\int_a^af(x)\,dx=0$. (b) If $f$ is integrable on $[a,b]$: $\int_b^af(x)\,dx=-\int_a^bf(x)\,dx$.<br>
+Examples: $\int_1^1x^2dx=0$; $\ \int_1^0\sqrt{1-x^2}\,dx=-\int_0^1\sqrt{1-x^2}\,dx=-\frac\pi4$.</div>
+<div class="box thm"><div class="box-title">Theorem (linearity)</div>If $f,g$ are integrable on $[a,b]$ and $c$ is a constant, then $cf$, $f\pm g$ are integrable and
+$$\int_a^bcf=c\int_a^bf,\qquad\int_a^b(f\pm g)=\int_a^bf\pm\int_a^bg.$$</div>
+<div class="box thm"><div class="box-title">Theorem (additivity)</div>$$\int_a^bf(x)\,dx=\int_a^cf(x)\,dx+\int_c^bf(x)\,dx$$ (the area over $[a,b]$ splits at $c$; with the conventions above this works for any order of $a,b,c$).</div>
+<div class="box thm"><div class="box-title">Theorem (comparison)</div>(a) If $f\ge0$ on $[a,b]$, then $\int_a^bf\ge0$. (b) If $f\ge g$ on $[a,b]$, then $\int_a^bf\ge\int_a^bg$.</div>
+<details class="example"><summary>Lecture example: $\int_0^1\left(5-3\sqrt{1-x^2}\right)dx$</summary>
+<p>$=\int_0^15\,dx-3\int_0^1\sqrt{1-x^2}\,dx=5-3\cdot\frac\pi4=5-\frac{3\pi}4$.</p></details>
+
+<h2>4. More examples (evaluate with area formulas)</h2>
+<details class="example"><summary>(a) $\int_0^\pi\cos x\,dx$</summary>
+<p>The region over $[0,\frac\pi2]$ is above the axis (positive), the region over $[\frac\pi2,\pi]$ is below (negative). By symmetry they have the same size and cancel: the integral is $0$.</p></details>
+<details class="example"><summary>(b) $\int_0^3|x-2|\,dx$</summary>
+<p>Two triangles: on $[0,2]$ area $\frac12(2)(2)=2$; on $[2,3]$ area $\frac12(1)(1)=\frac12$. Total $\frac52$.</p></details>
+<details class="example"><summary>(c) $\int_{1/2}^5f(x)\,dx$ with $f(x)=2x$ for $x\le1$, $2$ for $x&gt;1$</summary>
+<p>Split at $x=1$: $\int_{1/2}^12x\,dx$ is a trapezoid with sides $1$ and $2$, width $\frac12$: $\frac34$. $\int_1^52\,dx$ is a rectangle $4\times2=8$. Total $\frac{35}4$.</p></details>
+<details class="example"><summary>(d) $\int_{-3}^0\left(2+\sqrt{9-x^2}\right)dx$</summary>
+<p>$\int_{-3}^02\,dx=6$ (rectangle) and $\int_{-3}^0\sqrt{9-x^2}\,dx$ = quarter disk of radius 3 $=\frac{9\pi}4$. Total $6+\frac{9\pi}4\approx13.07$.</p></details>
+<details class="example"><summary>(e) $\int_0^3\sqrt{6x-x^2}\,dx$ (complete the square)</summary>
+<ol><li>$6x-x^2=9-(x^2-6x+9)=9-(x-3)^2$.</li>
+<li>$y=\sqrt{9-(x-3)^2}$ is the upper half of the circle with center $(3,0)$, radius 3.</li>
+<li>On $[0,3]$ the region is a quarter of this disk: $\frac14\pi\cdot3^2=\frac{9\pi}4\approx7.07$.</li></ol></details>
