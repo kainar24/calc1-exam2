@@ -388,6 +388,8 @@
         '<span class="tag">' + esc(r.source || '') + '</span></div>' +
         '<div class="small">' + (r.note || '') + '</div>' +
         '<div class="btn-row" style="margin-top:8px">' + (r.files || []).map(function (f) {
+          var local = /^(localhost|127\.0\.0\.1|\d+\.\d+\.\d+\.\d+)$/.test(location.hostname);
+          if (!local && f.indexOf('materials/textbook/') === 0) return '<span class="small muted">The textbook PDF is not on the online site: take it from the MATH 161 Telegram group.</span>';
           return '<a class="btn small" target="_blank" href="' + esc(f) + '">' + esc(f.split('/').pop()) + '</a>';
         }).join('') + '</div></div>';
     });

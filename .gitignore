@@ -1,5 +1,5 @@
 .venv/
-materials/
+materials/textbook/
 work/
 .playwright-mcp/
 __pycache__/
