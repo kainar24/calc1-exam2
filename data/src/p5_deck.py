@@ -5,11 +5,14 @@
 from pkit import *
 
 DECK = "materials/telegram/MATH161_All_Sections/MATH161 Chapters 4,5,7.pptx"
+MARKED = "materials/marked/MATH161 Chapters 4,5,7 (marked for Exam 2)"
 paper("deck-nu", "Prep deck “Chapters 4, 5, 7” · @math161nu (101 slides)", "Prep deck", "deck", 2026, "Fall",
-      [(DECK, "PowerPoint (101 slides, no solutions)")], False, None, None,
+      [(MARKED + ".pdf", "PDF with red marks on the slides that are NOT on Exam 2"),
+       (MARKED + ".pptx", "Same, as PowerPoint"),
+       (DECK, "Original PowerPoint (101 slides, no solutions)")], False, None, None,
       "The student channel's midterm prep deck, all ~100 problems in slide order. About 60 of them are copied from past papers "
       "(marked “also in …”, same solution as there); the other ~40 are new and solved here. Slides with Ch. 6 areas and "
-      "§4.3 rational-function sketching are marked out of scope but still solved.")
+      "§4.3 rational-function sketching are marked out of scope but still solved. The marked PDF/PowerPoint copy has a red banner on those 12 slides (4, 34, 36, 38–41, 87–90, 93) so you can skip them.")
 S = "deck-nu"
 img = lambda n: f"assets/deck/s{n:03d}.png"
 _by_id = {p["id"]: p for p in PROBLEMS}

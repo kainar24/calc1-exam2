@@ -48,14 +48,22 @@
   "term": "Fall",
   "files": [
    {
+    "path": "materials/marked/MATH161 Chapters 4,5,7 (marked for Exam 2).pdf",
+    "label": "PDF with red marks on the slides that are NOT on Exam 2"
+   },
+   {
+    "path": "materials/marked/MATH161 Chapters 4,5,7 (marked for Exam 2).pptx",
+    "label": "Same, as PowerPoint"
+   },
+   {
     "path": "materials/telegram/MATH161_All_Sections/MATH161 Chapters 4,5,7.pptx",
-    "label": "PowerPoint (101 slides, no solutions)"
+    "label": "Original PowerPoint (101 slides, no solutions)"
    }
   ],
   "has_solutions": false,
   "instructor": null,
   "duration_min": null,
-  "notes": "The student channel's midterm prep deck, all ~100 problems in slide order. About 60 of them are copied from past papers (marked “also in …”, same solution as there); the other ~40 are new and solved here. Slides with Ch. 6 areas and §4.3 rational-function sketching are marked out of scope but still solved.",
+  "notes": "The student channel's midterm prep deck, all ~100 problems in slide order. About 60 of them are copied from past papers (marked “also in …”, same solution as there); the other ~40 are new and solved here. Slides with Ch. 6 areas and §4.3 rational-function sketching are marked out of scope but still solved. The marked PDF/PowerPoint copy has a red banner on those 12 slides (4, 34, 36, 38–41, 87–90, 93) so you can skip them.",
   "split": true,
   "problems": [
    "deck-4",

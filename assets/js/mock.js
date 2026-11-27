@@ -54,6 +54,47 @@
     return { ids: chosen.map(function (p) { return p.id; }), start: Date.now(), end: Date.now() + MINUTES * 60000, finished: false, results: {} };
   }
 
+  /* Fall 2025 format (Achenef's Test 2 and Test 3): 6 multiple choice × 5 pts + 4 open problems × 12–13 pts = 80 pts */
+  var F25_MC = { 4: 2, 5: 3, 7: 1 }, F25_OPEN = { 4: 1, 5: 2, 7: 1 }, F25_OPEN_PTS = [12, 12, 13, 13];
+  function isMC(p) { return (p.tags || []).indexOf('originally multiple choice') >= 0; }
+  function f25Weight(topicW) {
+    return function (x) {
+      var w = (topicW[x.topic] || 1);
+      if (/^(rev-|f25t)/.test(x.id)) w *= 3;
+      else if (/^f24m/.test(x.id)) w *= 1.5;
+      return w;
+    };
+  }
+  function pickByQuota(quota, cand, wfn, chosen) {
+    var out = [], usedTopics = {};
+    Object.keys(quota).forEach(function (c) {
+      for (var i = 0; i < quota[c]; i++) {
+        var pool = cand.filter(function (p) { return chapterOf(p.section) === c && !usedTopics[p.topic] && chosen.indexOf(p) < 0 && out.indexOf(p) < 0; });
+        if (!pool.length) pool = cand.filter(function (p) { return chapterOf(p.section) === c && chosen.indexOf(p) < 0 && out.indexOf(p) < 0; });
+        if (!pool.length) continue;
+        var p = weightedPick(pool, wfn); out.push(p); usedTopics[p.topic] = 1;
+      }
+    });
+    out.sort(function (a, b) { return parseFloat(a.section) - parseFloat(b.section); });
+    return out;
+  }
+  function buildF25() {
+    var topicW = (D.stats && D.stats.by_topic) || {}, wfn = f25Weight(topicW);
+    var ok = D.problems.filter(function (p) { return A.listed(p) && p.answer && (p.steps || []).length; });
+    var mc = pickByQuota(F25_MC, ok.filter(isMC), wfn, []);
+    var open = pickByQuota(F25_OPEN, ok.filter(function (p) { return !isMC(p) && p.difficulty !== 'easy'; }), wfn, mc);
+    var pts = {};
+    mc.forEach(function (p) { pts[p.id] = 5; });
+    open.forEach(function (p, i) { pts[p.id] = F25_OPEN_PTS[i] || 12; });
+    var ids = mc.concat(open).map(function (p) { return p.id; });
+    return { style: 'f25', ids: ids, pts: pts, start: Date.now(), end: Date.now() + MINUTES * 60000, finished: false, results: {} };
+  }
+  function ptsLabel(cur, id) {
+    if (!cur.pts) return '';
+    var p = A.probById[id];
+    return ' <span class="small muted">· ' + cur.pts[id] + ' pts' + (p && isMC(p) ? ' · multiple choice' : ' · full solution') + '</span>';
+  }
+
   A.route(/^\/mock$/, function (app) {
     var cur = Store.get('mockCurrent', null);
     if (cur && !cur.finished) return running(app, cur);
@@ -70,6 +111,12 @@
       'Multiple-choice originals and “easy” warm-ups are left out.</p>' +
       '<p class="small muted">The timer keeps running if you reload or close the page.</p>' +
       '<button class="btn primary" id="go">Start the 90-minute mock</button></div>' +
+      '<div class="card"><h2 style="margin-top:0">Fall 2025 format</h2>' +
+      '<p>Achenef\'s Fall 2025 Test 2 and Test 3 (the same instructor sets our Exam 2) were 6 multiple-choice questions × 5 pts + 4 open problems × 12–13 pts = 80 pts. ' +
+      'This mock copies that layout: 2 MC from Ch. 4, 3 from Ch. 5, 1 from Ch. 7, then open problems from Ch. 4 (×1), Ch. 5 (×2) and Ch. 7 (×1). ' +
+      'Problems from the Fall 2025 tests and the Exam 2 Review come up 3× more often.</p>' +
+      '<p class="small muted">Timer: 90 minutes, the length of this year\'s exam. Last year\'s tests were 75 minutes.</p>' +
+      '<button class="btn primary" id="goF25">Start the Fall 2025-format mock (6 MC + 4 open)</button></div>' +
       (hist.length ? '<h2>Previous attempts</h2><div class="card table-wrap"><table><thead><tr><th>Date</th><th>Score (self-graded)</th><th>Weak topics</th></tr></thead><tbody>' +
         hist.slice().reverse().map(function (h) {
           return '<tr><td>' + new Date(h.date).toLocaleString() + '</td><td>' + h.score + ' / ' + h.max + '</td><td class="small">' + (h.weak || []).map(esc).join(', ') + '</td></tr>';
@@ -77,17 +124,20 @@
     A.qs('#go', app).addEventListener('click', function () {
       Store.set('mockCurrent', buildExam()); A.navigate();
     });
+    A.qs('#goF25', app).addEventListener('click', function () {
+      Store.set('mockCurrent', buildF25()); A.navigate();
+    });
   }
 
   function running(app, cur) {
     app.innerHTML = '<h1>Mock exam</h1>' +
-      '<div class="timer-bar"><span class="clock" id="clock"></span><span class="small muted">8 problems · write full solutions on paper</span>' +
+      '<div class="timer-bar"><span class="clock" id="clock"></span><span class="small muted">' + cur.ids.length + ' problems' + (cur.pts ? ' · 80 pts' : '') + ' · write full solutions on paper</span>' +
       '<button class="btn primary small" id="fin" style="margin-left:auto">Finish &amp; see solutions</button>' +
       '<button class="btn small" id="quit">Abandon</button></div><div id="list"></div>';
     var list = A.qs('#list', app);
     cur.ids.forEach(function (id, i) {
       var p = A.probById[id]; if (!p) return;
-      list.appendChild(A.h('<article class="card problem"><div class="problem-head"><span class="pid">Problem ' + (i + 1) + '</span></div>' +
+      list.appendChild(A.h('<article class="card problem"><div class="problem-head"><span class="pid">Problem ' + (i + 1) + '</span>' + ptsLabel(cur, id) + '</div>' +
         '<div class="problem-statement">' + p.statement + '</div>' + (p.figure ? '<div class="figure"><img src="' + esc(p.figure) + '" alt="figure"></div>' : '') + '</article>'));
     });
     A.renderMath(list);
@@ -113,7 +163,7 @@
     var list = A.qs('#list', app);
     cur.ids.forEach(function (id, i) {
       var p = A.probById[id]; if (!p) return;
-      var card = A.problemCard(p, { label: 'Problem ' + (i + 1), noStatus: true });
+      var card = A.problemCard(p, { label: 'Problem ' + (i + 1) + (cur.pts ? ' (' + cur.pts[id] + ' pts)' : ''), noStatus: true });
       var g = A.h('<div class="btn-row" style="margin-top:10px"><span class="small muted">My result:</span>' +
         ['right', 'partial', 'wrong'].map(function (m) { return '<button class="btn small' + (cur.results[id] === m ? ' primary' : '') + '" data-m="' + m + '">' + m + '</button>'; }).join('') + '</div>');
       g.addEventListener('click', function (e) {
@@ -126,12 +176,13 @@
     });
     A.renderMath(list);
     function summary() {
-      var byTopic = {}, score = 0, graded = 0;
+      var byTopic = {}, score = 0, graded = 0, max = 0;
+      function w(id) { return cur.pts ? cur.pts[id] : 1; }
       cur.ids.forEach(function (id) {
         var p = A.probById[id], r = cur.results[id]; if (!p) return;
         byTopic[p.topic] = byTopic[p.topic] || { n: 0, s: 0, sec: p.section };
-        byTopic[p.topic].n++;
-        if (r) { graded++; score += MARKS[r]; byTopic[p.topic].s += MARKS[r]; }
+        byTopic[p.topic].n += w(id); max += w(id);
+        if (r) { graded++; score += MARKS[r] * w(id); byTopic[p.topic].s += MARKS[r] * w(id); }
       });
       var weak = Object.keys(byTopic).filter(function (t) { return cur.ids.some(function (id) { var p = A.probById[id]; return p && p.topic === t && cur.results[id] && cur.results[id] !== 'right'; }); });
       A.qs('#sum', app).innerHTML = '<h2 style="margin-top:0">Breakdown by topic</h2>' +
@@ -140,14 +191,14 @@
           var b = byTopic[t];
           return '<tr><td>' + esc(t) + '</td><td><a href="' + A.lessonHref(b.sec) + '">§' + b.sec + '</a></td><td>' + b.s + ' / ' + b.n + '</td></tr>';
         }).join('') + '</tbody></table></div>' +
-        '<p><b>Score: ' + score + ' / ' + cur.ids.length + '</b> <span class="muted small">(' + graded + ' of ' + cur.ids.length + ' graded)</span></p>' +
+        '<p><b>Score: ' + score + ' / ' + max + '</b> <span class="muted small">(' + graded + ' of ' + cur.ids.length + ' graded)</span></p>' +
         (weak.length ? '<p><b>Weak topics:</b> ' + weak.map(function (t) { return '<a class="tag warn" href="#/practice?topic=' + encodeURIComponent(t) + '">' + esc(t) + '</a>'; }).join(' ') + '</p>' : '') +
         '<div class="btn-row"><button class="btn primary" id="save"' + (graded < cur.ids.length ? ' disabled title="Grade every problem first"' : '') + '>Save result &amp; new mock</button>' +
         '<button class="btn" id="discard">Discard</button></div>';
       var save = A.qs('#save', app);
       save.addEventListener('click', function () {
         var hist = Store.get('mockHistory', []) || [];
-        hist.push({ date: Date.now(), score: score, max: cur.ids.length, weak: weak,
+        hist.push({ date: Date.now(), score: score, max: max, style: cur.style || 'standard', weak: weak,
           results: cur.ids.map(function (id) { return { id: id, self: cur.results[id] }; }) });
         Store.set('mockHistory', hist); Store.set('mockCurrent', null); A.navigate();
       });

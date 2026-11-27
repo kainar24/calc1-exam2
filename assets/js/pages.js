@@ -113,6 +113,16 @@
           '<div id="weakOut" class="small" style="margin-top:8px"></div>' +
         '</div>' +
       '</div>' +
+      '<div class="card"><b>Closest format to expect: Achenef\'s Fall 2025 tests</b>' +
+        '<p class="small" style="margin:6px 0">This year\'s Exam 1 was very close to Fall 2025 Midterm 1, and the Exam 2 Review on Moodle is Achenef\'s too, so expect Exam 2 to look like his Fall 2025 tests. ' +
+        'Last year our topics were split between Test 2 (the Ch. 4 problems) and Test 3 (the Ch. 5 problems). Each was 6 multiple-choice × 5 pts + 4 open problems × 12–13 pts = 80 pts. ' +
+        '§7.2–7.3 were not on those tests: practise them from the Exam 2 Review and Fall 2024 Midterm 3.</p>' +
+        '<div class="btn-row">' +
+          '<a class="btn primary" href="#/mock">Fall 2025-format mock</a>' +
+          '<a class="btn" href="#/paper/f25-t2a">F25 Test 2 · A</a><a class="btn" href="#/paper/f25-t2b">F25 Test 2 · B</a>' +
+          '<a class="btn" href="#/paper/f25-t3a">F25 Test 3 · A</a><a class="btn" href="#/paper/f25-t3b">F25 Test 3 · B</a>' +
+          '<a class="btn" href="#/paper/rev-f26">Exam 2 Review</a><a class="btn" href="#/paper/f24-m3">F24 Midterm 3 (Ch. 7)</a>' +
+        '</div></div>' +
       '<h2>Sections</h2><p class="muted small">Bar = your marks in Practice (green solved, amber unsure, red unsolved). “seen ×N” = how often the section appears in past papers.</p>' +
       '<div id="secmap"></div>';
 
@@ -221,7 +231,8 @@
         '<div class="table-wrap card"><table><thead><tr><th>Paper</th><th>Type</th><th>Problems</th><th>Solutions</th><th></th></tr></thead><tbody>';
       D.papers.forEach(function (p) {
         var inScopeN = (p.problems || []).filter(function (id) { return A.probById[id] && A.inScope(A.probById[id]); }).length;
-        html += '<tr><td><a href="#/paper/' + esc(p.id) + '"><b>' + esc(p.title) + '</b></a>' + (p.notes ? '<div class="small muted">' + esc(p.notes) + '</div>' : '') + '</td>' +
+        var likely = ['f25-t2a', 'f25-t2b', 'f25-t3a', 'f25-t3b'].indexOf(p.id) >= 0;
+        html += '<tr><td><a href="#/paper/' + esc(p.id) + '"><b>' + esc(p.title) + '</b></a>' + (likely ? ' <span class="tag good" title="Same instructor and format as this year">closest format</span>' : '') + (p.notes ? '<div class="small muted">' + esc(p.notes) + '</div>' : '') + '</td>' +
           '<td>' + esc(p.kind || '') + '</td><td>' + (p.split === false ? '<span class="muted small">not split (Exam 1 topics)</span>' : inScopeN + ' in scope' + ((p.problems || []).length > inScopeN ? ' <span class="muted small">(+' + ((p.problems || []).length - inScopeN) + ' out of scope)</span>' : '')) + '</td>' +
           '<td>' + (p.has_solutions ? '<span class="tag good">yes</span>' : '<span class="tag">own</span>') + '</td>' +
           '<td><a class="btn small" href="#/paper/' + esc(p.id) + '">Open</a></td></tr>';

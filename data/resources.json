@@ -76,8 +76,10 @@
    "7.2",
    "7.3"
   ],
-  "note": "A 101-slide deck made by the student channel @math161nu: ~100 problems (pictures, no solutions) grouped by type. All 101 slides are now transcribed into the site as the paper “Prep deck” (#/paper/deck-nu), in slide order, each with the original slide picture and a full step-by-step solution. 62 problems are copies of past-paper problems already on the site (they say “also in …” and reuse that verified solution); the other ~40 are new and were solved and checked with SymPy here. Out of scope but still solved: §4.3 rational-function sketching (slides 4, 34, 36, 38–41) and Ch. 6 areas (87–90, 93).",
+  "note": "A 101-slide deck made by the student channel @math161nu: ~100 problems (pictures, no solutions) grouped by type. All 101 slides are now transcribed into the site as the paper “Prep deck” (#/paper/deck-nu), in slide order, each with the original slide picture and a full step-by-step solution. 62 problems are copies of past-paper problems already on the site (they say “also in …” and reuse that verified solution); the other ~40 are new and were solved and checked with SymPy here. Out of scope but still solved: §4.3 rational-function sketching (slides 4, 34, 36, 38–41) and Ch. 6 areas (87–90, 93). The “marked for Exam 2” copy (PDF and PowerPoint) has a red “НЕ БУДЕТ НА EXAM 2” banner and frame on those 12 slides, a legend on slide 1, and the out-of-scope topic types flagged on slides 2–3.",
   "files": [
+   "materials/marked/MATH161 Chapters 4,5,7 (marked for Exam 2).pdf",
+   "materials/marked/MATH161 Chapters 4,5,7 (marked for Exam 2).pptx",
    "materials/telegram/MATH161_All_Sections/MATH161 Chapters 4,5,7.pptx"
   ]
  },
